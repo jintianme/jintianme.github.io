@@ -1,0 +1,261 @@
+<!DOCTYPE HTML>
+
+<!-- 
+Strata by HTML5 UP
+html5up.net | @n33co
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>mxnet开车教程series1-mnist上手 &middot; Strata</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="金天(Lewis Jin)">
+		<meta name="description" content="一个独立思考着思索的地方">
+		<meta http-equiv="content-language" content="en-us" />
+
+		
+		<meta name="og:site_name" content="Strata">
+		<meta name="og:title" content="mxnet开车教程series1-mnist上手">
+		<meta name="og:url" content="https://example.org/post/mxnet%E5%BC%80%E8%BD%A6%E6%95%99%E7%A8%8Bseries1-mnist%E4%B8%8A%E6%89%8B/">
+		<meta name="og:image" content="https://example.org/images/avatar.jpg">
+		
+
+		<meta name="generator" content="Hugo 0.18.1" />
+
+		<!--[if lte IE 8]><script src='https://example.org/js/ie/html5shiv.js'></script><![endif]-->
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+		<link rel="stylesheet" href="https://example.org/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="https://example.org//css/ie8.css"><![endif]-->
+
+		
+		
+	</head>
+
+	<body id="top">
+		<!-- Header -->
+<header id="header">
+	<a href="https://example.org/" class="image avatar"><img src="https://example.org/images/avatar.jpg" alt="" /></a>
+	
+		<h1><strong>我是金天</strong>深度学习，人工智能爱好者<br>一个永远崇尚自由的思考者<br> 目前任职滴滴出行无人驾驶算法工程师.</h1>
+	
+
+	
+		<nav id="sidebar">
+			<ul>
+			
+				<li><a href="https://example.org/">Home</a></li>
+			
+				<li><a href="https://example.org/post/">Blog</a></li>
+			
+			</ul>
+		</nav>
+	
+</header>
+
+
+		<!-- Main -->
+		<div id="main">
+			
+	<span>
+		<h1>mxnet开车教程series1-mnist上手</h1>
+
+		<i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2016-12-03 21:50:54 &#43;0000 UTC">2016-12-03</time>&nbsp;&nbsp;
+
+
+
+
+   
+	</span>
+
+	<p>
+	    
+
+<p>mxnet入门中文教程，让我们从mnist果蝇数据集开始开车
+<!-- more -->
+&gt; 本文由中南大学较为牛逼的研究生金天同学原创，欢迎转载，但是请保留这段版权信息，如果你对文章有任何疑问，欢迎微信联系我：jintianiloveu。牛逼大神一一为你解答！</p>
+
+<h3 id="前言">前言</h3>
+
+<p>最近搭建起了深度学习环境，mxnet被亚马逊钦定为官方的机器学习库，加上mxnet快速，代码清晰的特点，我赶紧乘上了mxnet快车，准备以mxnet为基础开始一些理论研究和产品实现。然而&hellip;.mxnet搭建过程还是有点麻烦的，尤其是对于对编译过程不是非常熟悉的同学，这一点和caffe有点像，不过这不是问题，在本博客前面几篇文章对此有一个专门的教程，大家可以去看看，欢迎评论转载。这篇文章是mxnet开车教程的第一弹，让我们从果蝇数据集开始下手。</p>
+
+<h3 id="开车">开车！</h3>
+
+<p>二话不多说，开始开车，作为一名深度学习老司机，我们应该要学会果蝇数据集的正确下载方式，我这里就不贴了，去Lecun的官网下载。下载之后解压，你将会看到四个文件：</p>
+
+<pre><code>t10k-images.idx3-ubyte
+t10k-labels.idx1-ubyte
+train-images.idx3-ubyte
+train-labels.idx1-ubyte
+</code></pre>
+
+<p>这就是训练集和测试集的数据和标签，很多人一看不知道这是什么鬼，其实我也不知道这是什么鬼，反正是一种文件格式就对了。不多说了直接上代码，开车之前先导入包：</p>
+
+<pre><code>import struct
+import numpy as np
+import matplotlib.pyplot as plt
+import mxnet as mx
+import logging
+logging.getLogger().setLevel(logging.DEBUG)
+</code></pre>
+
+<p>哪个包缺少安装哪个，玩mxnet你不要告诉我你还没有安装mxnet，快去我的另外一片博文看教程安装。</p>
+
+<h3 id="读取mnist数据集的正确姿势">读取mnist数据集的正确姿势</h3>
+
+<p>接下来我有必要传授大家读取mnist数据集的正确方式了，网上流传的各种方法都是瞎扯淡，不懂得科学内涵（手动装逼）。正确的读取方式我谢了两个函数，一个读取label，一个读取image：</p>
+
+<pre><code>def read_mnist_label(file_name):
+    bin_file = open(file_name, 'rb')
+    magic, num = struct.unpack(&quot;&gt;II&quot;, bin_file.read(8))
+    label = np.fromstring(bin_file.read(), dtype=np.int8)
+    return label
+
+def read_mnist_image(file_name):
+    bin_file = open(file_name, 'rb')
+    magic, num, rows, cols = struct.unpack(&quot;&gt;IIII&quot;, bin_file.read(16))
+    image = np.fromstring(bin_file.read(), dtype=np.uint8).reshape(num, rows, cols)
+    return image
+</code></pre>
+
+<p>将我们下载的文件传进去，就能得到label，images的输出，应该都是numpy.array的格式。</p>
+
+<h3 id="测试图片">测试图片</h3>
+
+<p>我们写个显示图片的函数把：</p>
+
+<pre><code>def plot_image(image_array):
+    plt.imshow(image_array, cmap='gray')
+    plt.show()
+</code></pre>
+
+<p>输入图片矩阵，画出图片。</p>
+
+<pre><code>val_img = read_mnist_image('t10k-images.idx3-ubyte')
+plot_image(val_img[0])
+</code></pre>
+
+<p>这就把测试集的第一张图片显示出来了。</p>
+
+<h3 id="搭建mxnet网络">搭建mxnet网络</h3>
+
+<p>这部分直接根据官网的来：</p>
+
+<pre><code>batch_size = 100
+train_iter = mx.io.NDArrayIter(to4d(train_img), train_lbl, batch_size, shuffle=True)
+
+val_iter = mx.io.NDArrayIter(to4d(val_img), val_lbl, batch_size)
+
+data = mx.sym.Variable('data')
+data = mx.sym.Flatten(data=data)
+
+fc1 = mx.sym.FullyConnected(data=data, name='fc1', num_hidden=128)
+act1 = mx.sym.Activation(data=fc1, name='relu1', act_type=&quot;relu&quot;)
+
+fc2 = mx.sym.FullyConnected(data=act1, name='fc2', num_hidden=64)
+act2 = mx.sym.Activation(data=fc2, name='relu2', act_type=&quot;relu&quot;)
+
+fc3 = mx.sym.FullyConnected(data=act2, name='fc3', num_hidden=10)
+mlp = mx.sym.SoftmaxOutput(data=fc3, name='softmax')
+
+shape = {&quot;data&quot;: (batch_size, 1, 28, 28)}
+# mx.viz.plot_network(symbol=mlp, shape=shape)
+
+model = mx.model.FeedForward(
+    ctx=mx.gpu(0),
+    symbol=mlp,
+    num_epoch=4,
+    learning_rate=0.1
+)
+model.fit(
+    X=train_iter,
+    eval_data=val_iter,
+    batch_end_callback=mx.callback.Speedometer(batch_size, 200)
+)
+</code></pre>
+
+<h3 id="预测">预测</h3>
+
+<p>最后最重要的部分来了，那就是预测：</p>
+
+<pre><code>predict_img = val_img[0].astype(np.float32).reshape((1, 1, 28, 28))/255.0
+prob = model.predict(predict_img)[0]
+print('prob:', prob)
+print('Classified as {0} with probability {1}'.format(prob.argmax(), max(prob)))
+</code></pre>
+
+<p>输出结果如下：</p>
+
+<pre><code>Classified as 7 with probability 0.9959895014762878
+</code></pre>
+
+<p>说明我们的预测准确度还是非常高的啊！</p>
+
+	</p>
+
+	<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'spf13';
+    var disqus_identifier = 'https:\/\/example.org\/post\/mxnet%E5%BC%80%E8%BD%A6%E6%95%99%E7%A8%8Bseries1-mnist%E4%B8%8A%E6%89%8B\/';
+    var disqus_title = 'mxnet开车教程series1-mnist上手';
+    var disqus_url = 'https:\/\/example.org\/post\/mxnet%E5%BC%80%E8%BD%A6%E6%95%99%E7%A8%8Bseries1-mnist%E4%B8%8A%E6%89%8B\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+		</div>
+
+		<!-- Footer -->
+<footer id="footer">
+	<ul class="icons">
+		
+		
+		
+		<li><a href="//twitter.com/spf13" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		
+		
+		<li><a href="//github.com/spf13" target="_blank" class="icon fa-github"><span class="label">Github</span></a></li>
+		
+		
+		
+		
+		
+		<li><a href="https://example.org/#contact-form" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+		
+		
+		<li><a href="https://example.org/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		
+	</ul>
+
+	<ul class="copyright">
+		
+		<li>&copy; Lewis Jin</li>
+		
+		<li>Design: <a href="//html5up.net">Jin Tian</a></li>
+		
+		<li>Demo Images: <a href="//unsplash.com/">Unsplash</a></li>
+		
+	</ul>
+</footer>
+
+<!-- Scripts -->
+<script src="https://example.org/js/jquery.min.js"></script>
+<script src="https://example.org/js/jquery.poptrox.min.js"></script>
+<script src="https://example.org/js/skel.min.js"></script>
+<script src="https://example.org/js/util.js"></script>
+
+<script src="https://example.org/js/main.js"></script>
+
+
+
+
+
+	</body>
+</html>

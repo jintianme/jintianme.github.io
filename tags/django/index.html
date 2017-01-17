@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+
+<!-- 
+Strata by HTML5 UP
+html5up.net | @n33co
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Django &middot; Strata</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="金天(Lewis Jin)">
+		<meta name="description" content="一个独立思考着思索的地方">
+		<meta http-equiv="content-language" content="en-us" />
+
+		
+		<meta name="og:site_name" content="Strata">
+		<meta name="og:title" content="Django">
+		<meta name="og:url" content="https://example.org/tags/django/">
+		<meta name="og:image" content="https://example.org/images/avatar.jpg">
+		
+
+		<meta name="generator" content="Hugo 0.18.1" />
+
+		<!--[if lte IE 8]><script src='https://example.org/js/ie/html5shiv.js'></script><![endif]-->
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+		<link rel="stylesheet" href="https://example.org/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="https://example.org//css/ie8.css"><![endif]-->
+
+		
+		<link href="https://example.org/tags/django/index.xml" rel="alternate" type="application/rss+xml" title="Strata" />
+		<link href="https://example.org/tags/django/index.xml" rel="feed" type="application/rss+xml" title="Strata" />
+		
+		
+	</head>
+
+	<body id="top">
+		<!-- Header -->
+<header id="header">
+	<a href="https://example.org/" class="image avatar"><img src="https://example.org/images/avatar.jpg" alt="" /></a>
+	
+		<h1><strong>我是金天</strong>深度学习，人工智能爱好者<br>一个永远崇尚自由的思考者<br> 目前任职滴滴出行无人驾驶算法工程师.</h1>
+	
+
+	
+		<nav id="sidebar">
+			<ul>
+			
+				<li><a href="https://example.org/">Home</a></li>
+			
+				<li><a href="https://example.org/post/">Blog</a></li>
+			
+			</ul>
+		</nav>
+	
+</header>
+
+
+		<!-- Main -->
+		<div id="main">
+			
+    
+    
+        <span>
+    <h1>
+        <a href="https://example.org/post/Django%E4%B9%8B%E6%AD%8C-Post-1-Django-%E5%92%8C-mysql/">Django之歌-Post 1 Django和mysql</a>
+    </h1>
+
+    <i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2017-01-12 20:31:45 &#43;0000 UTC">2017-01-12</time>&nbsp;&nbsp;
+
+
+
+
+   
+   
+       &nbsp;&nbsp;<i class="fa fa-tags"></i>&nbsp;&nbsp;
+       
+</span>
+
+<p>这个post是讲述django和mysql的故事，记录django常用命令以及mysql的python接口安装方法，环境为python3.6。  本文由作者金天原创，欢迎大家转载，不过请保留这段版权信息，多谢合作，如对本文有任何问题欢迎联系作者: jintianiloveu
+ Django大法 作为一位极客，不会点服务端还真不行，现在什么都离不开云啊，最近一直想建站，app接口也要用到云，本来打算用java，可是想了一下java即使使用框架访问数据库的效率还是有点低，而我呢，python玩得这么6，人生苦短啊为何不用python，反正都是事先一样的东西，我们做的也不是淘宝天猫，不需要考虑太多并发的东西，因此从某种意义上来讲，使用django是一个非常不错的选择。好了闲话不多说，这是一个django之歌的系列，既然是歌那就得分乐章，不分逻辑了。
+Django命令 Django的安装就不多说了，安装好python，比如mac下brew install pyton3就ok了，再次必须说明一下，我不太喜欢过时的东西，但是太新意味着踩坑，所以大家要做好踩坑的准备。Django安装好之后就可以直接用了，这里我收集一下django入门会用到的命令吧：
+django-admin startproject deepx python3 manage.py startapp article python3 manage.py runserver  第一个命令是新建项目，第二个新建一个app，这里一个app其实就是项目中的一个功能模块，在我看来。 新建好的django一般是这样的工程目录：
+. ├── article │ ├── __init__.py │ ├── __pycache__ │ │ └── __init__.cpython-36.pyc │ ├── admin.py │ ├── apps.py │ ├── migrations │ │ └── __init__.py │ ├── models.py │ ├── tests.py │ └── views.py ├── lewisblog │ ├── __init__.py │ ├── __pycache__ │ │ ├── __init__.</p>
+<hr>
+
+    
+
+    
+
+
+		</div>
+
+		<!-- Footer -->
+<footer id="footer">
+	<ul class="icons">
+		
+		
+		
+		<li><a href="//twitter.com/spf13" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		
+		
+		<li><a href="//github.com/spf13" target="_blank" class="icon fa-github"><span class="label">Github</span></a></li>
+		
+		
+		
+		
+		
+		<li><a href="https://example.org/#contact-form" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+		
+		
+		<li><a href="https://example.org/tags/django/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		
+	</ul>
+
+	<ul class="copyright">
+		
+		<li>&copy; Lewis Jin</li>
+		
+		<li>Design: <a href="//html5up.net">Jin Tian</a></li>
+		
+		<li>Demo Images: <a href="//unsplash.com/">Unsplash</a></li>
+		
+	</ul>
+</footer>
+
+<!-- Scripts -->
+<script src="https://example.org/js/jquery.min.js"></script>
+<script src="https://example.org/js/jquery.poptrox.min.js"></script>
+<script src="https://example.org/js/skel.min.js"></script>
+<script src="https://example.org/js/util.js"></script>
+
+<script src="https://example.org/js/main.js"></script>
+
+
+
+
+
+	</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+
+<!-- 
+Strata by HTML5 UP
+html5up.net | @n33co
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Hexo博客更换电脑的正确姿势 &middot; Strata</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="金天(Lewis Jin)">
+		<meta name="description" content="一个独立思考着思索的地方">
+		<meta http-equiv="content-language" content="en-us" />
+
+		
+		<meta name="og:site_name" content="Strata">
+		<meta name="og:title" content="Hexo博客更换电脑的正确姿势">
+		<meta name="og:url" content="https://example.org/post/Hexo%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF/">
+		<meta name="og:image" content="https://example.org/images/avatar.jpg">
+		
+
+		<meta name="generator" content="Hugo 0.18.1" />
+
+		<!--[if lte IE 8]><script src='https://example.org/js/ie/html5shiv.js'></script><![endif]-->
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+		<link rel="stylesheet" href="https://example.org/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="https://example.org//css/ie8.css"><![endif]-->
+
+		
+		
+	</head>
+
+	<body id="top">
+		<!-- Header -->
+<header id="header">
+	<a href="https://example.org/" class="image avatar"><img src="https://example.org/images/avatar.jpg" alt="" /></a>
+	
+		<h1><strong>我是金天</strong>深度学习，人工智能爱好者<br>一个永远崇尚自由的思考者<br> 目前任职滴滴出行无人驾驶算法工程师.</h1>
+	
+
+	
+		<nav id="sidebar">
+			<ul>
+			
+				<li><a href="https://example.org/">Home</a></li>
+			
+				<li><a href="https://example.org/post/">Blog</a></li>
+			
+			</ul>
+		</nav>
+	
+</header>
+
+
+		<!-- Main -->
+		<div id="main">
+			
+	<span>
+		<h1>Hexo博客更换电脑的正确姿势</h1>
+
+		<i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2016-12-12 10:47:07 &#43;0000 UTC">2016-12-12</time>&nbsp;&nbsp;
+
+
+
+
+   
+	</span>
+
+	<p>
+	    
+
+<p>hexo指南
+<!-- more --></p>
+
+<blockquote>
+<p>本文由中南大学较为牛逼的研究生金天同学原创，欢迎转载，但是请保留这段版权信息，如果你对文章有任何疑问，欢迎微信联系我：jintianiloveu。牛逼大神一一为你解答！</p>
+</blockquote>
+
+<h3 id="hexo如何实现更换电脑继续写博客">Hexo如何实现更换电脑继续写博客</h3>
+
+<p>这个问题有点蛋疼，不是麻烦而是如果你不知道一些细节会有莫名其妙的错误。我现在不仅仅是实现了两台电脑更新博客，同时我的Mac笔记上甚至运行了两个不同的hexo博客，分别部署到了两个不同的github账号中。接下来就记录一下更新过程。
+首先是加入你有一台台式电脑，在实验室，那么哪一天你离开了实验室你就要把博客搬到自己的笔记本，我们接下来就处理这个问题。</p>
+
+<ul>
+<li><strong>首先把原来电脑的博客git推送到一个Hexo-Blog——Resources远程仓库中</strong></li>
+</ul>
+
+<p>ok这个步骤其实很简单，直接在实验室的台式电脑hexoblog目录下git init，然后在github新建一个放源文件的仓库，推送进去即可</p>
+
+<ul>
+<li><strong>将远程博客同步到自己笔记本</strong></li>
+</ul>
+
+<p>这个步骤也简单，直接克隆
+接下来是重点</p>
+
+<ul>
+<li><strong>初始化新的hexo</strong></li>
+</ul>
+
+<p>接下来你要把克隆的原来电脑的源文件重新安装hexo，但是实际上你不安装也是可以直接运行的，但是我发现如果什么都不处理，直接deploy会把所有源文件push上去，而不是生成的静态文件。
+正确的姿势应该是：
+首先把目录下的.deploygit这个文件夹删除，其他的db.json什么的也删除，什么public的也删除，然后重新安装</p>
+
+<pre><code>npm install hexo
+npm install hexo-deployer-git
+</code></pre>
+
+<p>最后记得执行hexo clean这个命令。一定要clean，然后再hexo d -g</p>
+
+<h3 id="hexo实现一台电脑两个git账号管理两个博客">hexo实现一台电脑两个git账号管理两个博客</h3>
+
+<p>实际上这个我也是一种尝试，有两个办法，一种是生成一个id_rsa密匙，然后再两个github账号中都添加这个密匙，这样直接就可以deploy了。
+不过这种办法并不好，另外一种办法是生成两个密匙，分别命名。然后再用一个config来管理：</p>
+
+<pre><code>cd ~/.ssh
+vi config
+</code></pre>
+
+<p>添加以下代码</p>
+
+<pre><code>Host github.com
+    HostName github.com
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/id_rsa
+
+Host coding.net
+    HostName coding.net
+    PreferredAuthentications pulickey
+    IdentityFile ~/.ssh/id_rsa_lewisjin
+</code></pre>
+
+<p>应该就可以了。
+<strong>更新ssh publickey 之后一定记得 ssh-add id_rsa,否则ssh依旧会提示登不上的！！！</strong></p>
+
+	</p>
+
+	<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'spf13';
+    var disqus_identifier = 'https:\/\/example.org\/post\/Hexo%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF\/';
+    var disqus_title = 'Hexo博客更换电脑的正确姿势';
+    var disqus_url = 'https:\/\/example.org\/post\/Hexo%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+		</div>
+
+		<!-- Footer -->
+<footer id="footer">
+	<ul class="icons">
+		
+		
+		
+		<li><a href="//twitter.com/spf13" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		
+		
+		<li><a href="//github.com/spf13" target="_blank" class="icon fa-github"><span class="label">Github</span></a></li>
+		
+		
+		
+		
+		
+		<li><a href="https://example.org/#contact-form" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+		
+		
+		<li><a href="https://example.org/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		
+	</ul>
+
+	<ul class="copyright">
+		
+		<li>&copy; Lewis Jin</li>
+		
+		<li>Design: <a href="//html5up.net">Jin Tian</a></li>
+		
+		<li>Demo Images: <a href="//unsplash.com/">Unsplash</a></li>
+		
+	</ul>
+</footer>
+
+<!-- Scripts -->
+<script src="https://example.org/js/jquery.min.js"></script>
+<script src="https://example.org/js/jquery.poptrox.min.js"></script>
+<script src="https://example.org/js/skel.min.js"></script>
+<script src="https://example.org/js/util.js"></script>
+
+<script src="https://example.org/js/main.js"></script>
+
+
+
+
+
+	</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE HTML>
+
+<!-- 
+Strata by HTML5 UP
+html5up.net | @n33co
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Ubuntu大手术-更换home的挂载分区获取更大空间 &middot; Strata</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="金天(Lewis Jin)">
+		<meta name="description" content="一个独立思考着思索的地方">
+		<meta http-equiv="content-language" content="en-us" />
+
+		
+		<meta name="og:site_name" content="Strata">
+		<meta name="og:title" content="Ubuntu大手术-更换home的挂载分区获取更大空间">
+		<meta name="og:url" content="https://example.org/post/Ubuntu%E5%A4%A7%E6%89%8B%E6%9C%AF-%E6%9B%B4%E6%8D%A2home%E7%9A%84%E6%8C%82%E8%BD%BD%E5%88%86%E5%8C%BA%E8%8E%B7%E5%8F%96%E6%9B%B4%E5%A4%A7%E7%A9%BA%E9%97%B4/">
+		<meta name="og:image" content="https://example.org/images/avatar.jpg">
+		
+
+		<meta name="generator" content="Hugo 0.18.1" />
+
+		<!--[if lte IE 8]><script src='https://example.org/js/ie/html5shiv.js'></script><![endif]-->
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+		<link rel="stylesheet" href="https://example.org/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="https://example.org//css/ie8.css"><![endif]-->
+
+		
+		
+	</head>
+
+	<body id="top">
+		<!-- Header -->
+<header id="header">
+	<a href="https://example.org/" class="image avatar"><img src="https://example.org/images/avatar.jpg" alt="" /></a>
+	
+		<h1><strong>我是金天</strong>深度学习，人工智能爱好者<br>一个永远崇尚自由的思考者<br> 目前任职滴滴出行无人驾驶算法工程师.</h1>
+	
+
+	
+		<nav id="sidebar">
+			<ul>
+			
+				<li><a href="https://example.org/">Home</a></li>
+			
+				<li><a href="https://example.org/post/">Blog</a></li>
+			
+			</ul>
+		</nav>
+	
+</header>
+
+
+		<!-- Main -->
+		<div id="main">
+			
+	<span>
+		<h1>Ubuntu大手术-更换home的挂载分区获取更大空间</h1>
+
+		<i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2016-12-03 09:48:43 &#43;0000 UTC">2016-12-03</time>&nbsp;&nbsp;
+
+
+
+
+   
+	</span>
+
+	<p>
+	    
+
+<p>Ubuntu系统安装时由于年少无知瞎几把设置分区，结果最后导致空间不够用，不过不用担心，本教程教你如何在不装系统的情况之下对分区进行修改
+<!-- more --></p>
+
+<blockquote>
+<p>本文由中南大学较为牛逼的研究生金天同学原创，欢迎转载，但是请保留这段版权信息，如果你对文章有任何疑问，欢迎微信联系我：jintianiloveu。牛逼大神一一为你解答！</p>
+</blockquote>
+
+<h4 id="准备一个更大的分区">准备一个更大的分区</h4>
+
+<p>首先当然最要紧的是准备一个更大的分区，这里我建议大家选择一个分区大小在50G以上的分区，作为开发人员是真的需要这么多空间，否则到后面又会不够用。（原则上当初安装系统的时候就应该root和home都设置为50G以上最好）
+更换分区大手术的思路是这样的：
+* <strong>将准备的新硬盘挂载到/media/home目录下</strong>
+* <strong>将原/home目录下的文件全部同步到/media/home目录下，这就相当于复制了一个home到新硬盘上</strong>
+* <strong>更改/media/home挂载为/home</strong>
+* <strong>(可选)备份/home到/old_home以防不测</strong>
+* <strong>重启系统进入新home</strong></p>
+
+<h4 id="开始备份工作">开始备份工作</h4>
+
+<p>接着我们打开/etc/fstab文件</p>
+
+<pre><code>sudo gedit /etc/fstab
+</code></pre>
+
+<p>这时候你会发现这些东西：</p>
+
+<pre><code># &lt;file system&gt; &lt;mount point&gt;   &lt;type&gt;  &lt;options&gt;       &lt;dump&gt;  &lt;pass&gt;
+# / was on /dev/sda11 during installation
+UUID=48d1bdc4-b4ab-4496-880c-0298135dbbf2 /               ext4    errors=remount-ro 0       1
+# /boot was on /dev/sda12 during installation
+UUID=6dbeefea-6ea4-4ab7-8a75-5a91e5e5a45c /boot           ext4    defaults        0       2
+# /boot/efi was on /dev/sda1 during installation
+UUID=0A0D-7DD0  /boot/efi       vfat    umask=0077      0       1
+# /home was on /dev/sda7 during installation
+#UUID=5d56eef4-8f46-40ab-8ace-50122eb0bc27 /home           ext4    defaults        0       2
+# change home mount to size80G disk
+UUID=b5a9ca3a-fba0-46aa-9249-4fe8c94e2f9a /home           ext4    defaults        0       2
+# swap was on /dev/sda6 during installation
+UUID=563897f4-5404-466d-953f-af78250e85d0 none            swap    sw              0       0
+</code></pre>
+
+<p>大家看我加粗的一行，这是我之前的home挂在分区，下面的是新的home分区，放到你的情况就应该先把原来的home分区设置注释掉，复制一行，以免出面出错忘记了初始设置，然后我们要查看一下自己硬盘的UUID，<strong>UUID查看方式，不能出错否则挂载就错了</strong>,新开一个terminal，输入以下代码来查看：</p>
+
+<pre><code>sudo blkid
+</code></pre>
+
+<p>这时候你就应该可以看到/dev/sda11之类的后面带着UUID，你要重新挂载的硬盘在哪个sda呢，你直接用ubuntu系统的disk软件来看，然后找到对应的UUID，复制以下，再回到刚才打开的fstab文件：</p>
+
+<pre><code># (identifier)  (location, eg sda5)   (format, eg ext3 or ext4)      (some settings)
+UUID=YOURUUID   /media/home    ext4          defaults       0       2
+</code></pre>
+
+<p>回到termminal，输入：</p>
+
+<pre><code>sudo mkdir /media/home
+sudo mount -a
+
+</code></pre>
+
+<p>然后关机重启以下，<strong>记住这里要重启以下</strong>.</p>
+
+<p>开机进入Ubuntu，这时候我们就把新硬盘挂载到了/media/home路径下，不信你可以去/media下面查看，是有一个home文件夹，这个对应的物理路径就是你的新硬盘或者新分区。</p>
+
+<p><strong>OK,我们完成了挂载工作，接下来把文件同步复制到新分区</strong></p>
+
+<pre><code>sudo rsync -aXS --progress --exclude='/*/.gvfs' /home/. /media/home/.
+</code></pre>
+
+<p>等待文件复制完成，需要蛮久。</p>
+
+<h4 id="更换为新的home挂载">更换为新的home挂载</h4>
+
+<p>修改fstab文件，到这你就差一步了：</p>
+
+<pre><code>sudo /etc/fstab
+</code></pre>
+
+<p>把之前我们加的/media/home修改为/home</p>
+
+<pre><code># (identifier)  (location, eg sda5)   (format, eg ext3 or ext4)      (some settings)
+UUID=YOURUUID   /home    ext4          defaults       0       2
+</code></pre>
+
+<p>OK,<strong>重启</strong>，进入ubuntu你会发现所有的<strong>一切还和原来一样</strong>，打开nautilus，查看以下home分区发现空间变大了！这就是linux，你可以尽情的做手术依旧保持着健壮的生命力。</p>
+
+	</p>
+
+	<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'spf13';
+    var disqus_identifier = 'https:\/\/example.org\/post\/Ubuntu%E5%A4%A7%E6%89%8B%E6%9C%AF-%E6%9B%B4%E6%8D%A2home%E7%9A%84%E6%8C%82%E8%BD%BD%E5%88%86%E5%8C%BA%E8%8E%B7%E5%8F%96%E6%9B%B4%E5%A4%A7%E7%A9%BA%E9%97%B4\/';
+    var disqus_title = 'Ubuntu大手术-更换home的挂载分区获取更大空间';
+    var disqus_url = 'https:\/\/example.org\/post\/Ubuntu%E5%A4%A7%E6%89%8B%E6%9C%AF-%E6%9B%B4%E6%8D%A2home%E7%9A%84%E6%8C%82%E8%BD%BD%E5%88%86%E5%8C%BA%E8%8E%B7%E5%8F%96%E6%9B%B4%E5%A4%A7%E7%A9%BA%E9%97%B4\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+		</div>
+
+		<!-- Footer -->
+<footer id="footer">
+	<ul class="icons">
+		
+		
+		
+		<li><a href="//twitter.com/spf13" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		
+		
+		<li><a href="//github.com/spf13" target="_blank" class="icon fa-github"><span class="label">Github</span></a></li>
+		
+		
+		
+		
+		
+		<li><a href="https://example.org/#contact-form" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+		
+		
+		<li><a href="https://example.org/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		
+	</ul>
+
+	<ul class="copyright">
+		
+		<li>&copy; Lewis Jin</li>
+		
+		<li>Design: <a href="//html5up.net">Jin Tian</a></li>
+		
+		<li>Demo Images: <a href="//unsplash.com/">Unsplash</a></li>
+		
+	</ul>
+</footer>
+
+<!-- Scripts -->
+<script src="https://example.org/js/jquery.min.js"></script>
+<script src="https://example.org/js/jquery.poptrox.min.js"></script>
+<script src="https://example.org/js/skel.min.js"></script>
+<script src="https://example.org/js/util.js"></script>
+
+<script src="https://example.org/js/main.js"></script>
+
+
+
+
+
+	</body>
+</html>

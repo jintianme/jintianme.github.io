@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javaweb开发 on Strata</title>
+    <link>https://example.org/tags/javaweb%E5%BC%80%E5%8F%91/index.xml</link>
+    <description>Recent content in Javaweb开发 on Strata</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://example.org/tags/javaweb%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>JavaWeb-搭建环境上传图片到后台并存储</title>
+      <link>https://example.org/post/JavaWeb-%E6%90%AD%E5%BB%BA%E7%8E%AF%E5%A2%83%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%88%B0%E5%90%8E%E5%8F%B0%E5%B9%B6%E5%AD%98%E5%82%A8/</link>
+      <pubDate>Tue, 29 Nov 2016 15:33:26 +0000</pubDate>
+      
+      <guid>https://example.org/post/JavaWeb-%E6%90%AD%E5%BB%BA%E7%8E%AF%E5%A2%83%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%88%B0%E5%90%8E%E5%8F%B0%E5%B9%B6%E5%AD%98%E5%82%A8/</guid>
+      <description>
+
+&lt;p&gt;介绍使用intelliJ idea搭建JavaWeb开发环境，以及实现简单的Servlet，从此你就可以建立自己的服务器，结合安卓或者IPhone实现任何你想通过云来完成的工作啦！
+&lt;!-- more --&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;本文由中南大学较为牛逼的研究生金天同学原创，欢迎转载，但是请保留这段版权信息，如果你对文章有任何疑问，欢迎微信联系我：jintianiloveu。牛逼大神一一为你解答！&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;intellij-idea-java-web环境的搭建&#34;&gt;intellij idea Java web环境的搭建&lt;/h3&gt;
+
+&lt;p&gt;很久以来，很多人用eclipse，什么都是eclipse，java是，安卓是，甚至连C++都有人用eclipse，然而作为一个对技术和审美有着强烈追求的男人，是不能忍受eclipse古老的界面的，这时候我们就应该使用intellij idea，地球表面以上3000米高空一下最牛逼的ide，是的你没有听错，就是它。闲话不多说，让我们看看人家idea的启动界面：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/EbuWOwE5PQn4GU8J.png&#34; alt=&#34;intellij idea启动界面&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;简直狂月酷炫有没有。好吧其实我知道你们很多人知道，我就不装逼了，直接说重点吧。&lt;/p&gt;
+
+&lt;p&gt;说先对于一个web项目来说，你的idea一定要是Ultramate版本，也就是旗舰版，不知道这个单词写错没有，大家将就看，实际上intellij全系的专业版ide都可以破解，在这里放一个破解链接，大家需要的就是获取个注册码：&lt;a href=&#34;http://idea.lanyus.com&#34;&gt;获取注册码通道&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;好了同志们要开车了，有了idea我们就要开始搭建开发环境了，请注意本次火箭即将开车。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;新建一个web工程&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;新建工程很简单，按照向导来，在选择页面我们选择webapp&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/8ojlFZmZ4eXniqVZ.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;然后给工程取一个名字，接下来我们可以看到idea已经帮我新建好了一个完成的web工程。这里我们还要新建两个文件夹，结构如图所示，先不要问为什么，等一下我会告诉大家。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/nnk0ezwtEVHwFUfm.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/Zf9Hed0OTO76m4W6.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;新建了一个classes一个lib文件夹，先建好，等一下我们再配置，建好了之后呢，我们在src文件夹下新建一个包：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/ZWCpALnd6rMKKAaC.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;包名自己取，最后我们在包下面新建一个Servlet，弹出菜单选中Servlet：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/ljYYqqHU9q4aMox7.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;是的，你没有看错我们这就新建好了servlet，但是你还得再web.xml中添加一下Servlet的映射：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/ua4KBGsEaws2e93e.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;来看看生成的sevlet：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/4L4H61xBRE5ypLki.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;配置java文件的输出路径和lib路径&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/Q8JZwUHn4OjMNj36.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;如图我们配置一下输出的路径，选择我们之前新建的classes和lib文件夹，classes和lib文件夹分别是我们java文件输出和jar依赖的文件夹。&lt;/p&gt;
+
+&lt;p&gt;然后切换到depencies选项卡，点击添加，添加一个jar的依赖路径：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/R6LhoUtL5FWPONJA.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;选择jar directory:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/G5KWmVXwiDqMoc3V.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;勾选然后确定：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/JYwlkbv6sU1BsICC.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;最后一步，我们就要配置tomcat服务器了&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;tomcat是什么猫我就不多说了，一个web容器，你的java web app就放在这个容器里面，web app运行依赖于我们的tomcat，那么配置的时候我们就需要点击右上角的这个地方：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/6EZVVTxxVV9Ds5d4.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;来配置，在这里选择local tomcat：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/mhkghnN7KdRixdX5.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;只需要给tomcat服务器娶一个名字，然后点击deployment下面的添加，添加artifact依赖：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/VP5Li9d6SWgG01n0.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;最后在旁边填写一个目录，写上工程的名字即可。哦忘了一步，在Server选项卡里面你要配置一下你的tomcat服务器，怎么配置很简单，只要configure选择你的tomcat文件夹就可以了，最外层的那个，idea自动识别。然后确定就OK。&lt;/p&gt;
+
+&lt;h3 id=&#34;开发小程序&#34;&gt;开发小程序&lt;/h3&gt;
+
+&lt;p&gt;好搭建好了我们来个开车小程序。对了，在这个时候你可能会遇到一个问题，就是servlet识别不了server包：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/A9dYfAvyqe7y3JTm.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这是因为我们还没有吧tomcat官方jar包放到lib文件夹下，就是我们刚才新建的那个依赖文件夹，在tomcat文件夹下的lib文件夹寻找：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/Flxq574wqsYzOrAh.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/jbnAqYzR4Hq8O2YU.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这个jar包，ok现在没有报错，我们在doPost方法里面写一段代码：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;response.setContentType(&amp;quot;text/html&amp;quot;);
+response.setCharacterEncoding(&amp;quot;utf-8&amp;quot;);
+PrintWriter out = response.getWriter();
+out.print(&amp;quot;我要毫不经意的打一个广告，是的，就是在这里，大家快使用PicBind图床神器写博客！！&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;好的我们运行一下这个web app，如果控制台显示这样说名运行了&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/JGbp4rOS98l8UThb.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;好，接下来激动人心的时刻到了，我们在浏览器中输入：（或者直接在弹出的浏览器中后面加上我们servlet的名字 /HelloServlet），见证奇迹的时刻到了！！！&lt;/p&gt;
+
+&lt;p&gt;！！！！！&lt;/p&gt;
+
+&lt;p&gt;………….好像并没有什么卵反应？我故意的，把上面那段代码拷贝到doGet方法中，在更新一下资源并重启服务器看一下：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/UeyoJFQfikwjddss.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;骚年，你没有看错！！！你成功学会了使用servlet！！！&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;感谢大家阅读我的博客，本文永久更新地址: jinfagang.coding.me&lt;/p&gt;
+
+&lt;p&gt;也欢迎大家积极留言，让我看到你的存在&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

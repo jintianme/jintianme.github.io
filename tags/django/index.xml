@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Django on Strata</title>
+    <link>https://example.org/tags/django/index.xml</link>
+    <description>Recent content in Django on Strata</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://example.org/tags/django/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Django之歌-Post 1 Django和mysql</title>
+      <link>https://example.org/post/Django%E4%B9%8B%E6%AD%8C-Post-1-Django-%E5%92%8C-mysql/</link>
+      <pubDate>Thu, 12 Jan 2017 20:31:45 +0000</pubDate>
+      
+      <guid>https://example.org/post/Django%E4%B9%8B%E6%AD%8C-Post-1-Django-%E5%92%8C-mysql/</guid>
+      <description>
+
+&lt;p&gt;这个post是讲述django和mysql的故事，记录django常用命令以及mysql的python接口安装方法，环境为python3.6。
+&lt;!-- more --&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;本文由作者金天原创，欢迎大家转载，不过请保留这段版权信息，多谢合作，如对本文有任何问题欢迎联系作者: jintianiloveu&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;django大法&#34;&gt;Django大法&lt;/h3&gt;
+
+&lt;p&gt;作为一位极客，不会点服务端还真不行，现在什么都离不开云啊，最近一直想建站，app接口也要用到云，本来打算用java，可是想了一下java即使使用框架访问数据库的效率还是有点低，而我呢，python玩得这么6，人生苦短啊为何不用python，反正都是事先一样的东西，我们做的也不是淘宝天猫，不需要考虑太多并发的东西，因此从某种意义上来讲，使用django是一个非常不错的选择。好了闲话不多说，这是一个&lt;strong&gt;django之歌&lt;/strong&gt;的系列，既然是歌那就得分乐章，不分逻辑了。&lt;/p&gt;
+
+&lt;h3 id=&#34;django命令&#34;&gt;Django命令&lt;/h3&gt;
+
+&lt;p&gt;Django的安装就不多说了，安装好python，比如mac下&lt;code&gt;brew install pyton3&lt;/code&gt;就ok了，再次必须说明一下，我不太喜欢过时的东西，但是太新意味着踩坑，所以大家要做好踩坑的准备。Django安装好之后就可以直接用了，这里我收集一下django入门会用到的命令吧：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;django-admin startproject deepx
+python3 manage.py startapp article
+python3 manage.py runserver
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;第一个命令是新建项目，第二个新建一个app，这里一个app其实就是项目中的一个功能模块，在我看来。
+新建好的django一般是这样的工程目录：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.
+├── article
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   └── __init__.cpython-36.pyc
+│   ├── admin.py
+│   ├── apps.py
+│   ├── migrations
+│   │   └── __init__.py
+│   ├── models.py
+│   ├── tests.py
+│   └── views.py
+├── lewisblog
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-36.pyc
+│   │   └── settings.cpython-36.pyc
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+└── manage.py
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这里article就是app，lewisblog是整个工程的名字。&lt;/p&gt;
+
+&lt;h3 id=&#34;django和mysql&#34;&gt;Django和mysql&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;UPDATE&lt;/strong&gt;
+这里增加一下，很多人说python3.6 安装mysql报错，解决方法是python3安装&lt;strong&gt;mysqlclient&lt;/strong&gt;，网上很多方法都是过时，其他mysql的驱动并不适用python3，大家注意了啊！
+可以说这是一对好拍档，很多人说django自带的sqlite就很不错啊，使得sqlite很方便不用安装不用配置，数据库文件就在工程的目录下，访问简单快捷，但是呢，sqlite并太轻了，我们还是使用mysql吧，毕竟比较流行，而且一些语句也是我们常用的语句，因此可以说mysql是非常合适不过的啦。在配置mysql的时候要在上面的&lt;code&gt;settings.py&lt;/code&gt;中设置：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;DATABASES = {
+    &#39;default&#39;: {
+        &#39;ENGINE&#39;: &#39;django.db.backends.mysql&#39;,
+        &#39;NAME&#39;: &#39;lewisblog&#39;,
+        &#39;USER&#39;: &#39;root&#39;,
+        &#39;PASSWORD&#39;: &#39;root&#39;,
+        &#39;HOST&#39;: &#39;127.0.0.1&#39;,
+        &#39;PORT&#39;: &#39;3306&#39;,
+    }
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ok,在这里我们就设置好了数据库引擎以及数据库的名字和密码之类的东西，当然要想链接上数据库还得再mysql中新建则个数据库，数据库名字随便取罗。然后我们要干啥？对了这个settings，在你新建了一个app之后记得在这里登记一下，这里可以控制是哪些app有效。&lt;/p&gt;
+
+&lt;h3 id=&#34;django和model&#34;&gt;Django和Model&lt;/h3&gt;
+
+&lt;p&gt;很多人都说DJango是一个template，为什么这么说，思考一下，很多其他库做后台操作数据库都免不了要写一些数据库查询语句，增删改查都要连接数据库查询有没有然后增删改，但是这样做的效率其实是非常低的。很多不必要的操作都是在这里产生的。
+而Django在这个地方就不同，它自己实现一个很强大的基类，就是model，这就是一个数据库模型，在model里面你可以找到数据库里面的各种数据类型，甚至在时间的操作上比数据库还简单。比如我们要写一个article的表，我们不用再数据库里面建了，建好了然后在写一个数据类，这在java里面你就得干这个脏活，但是在django里你就不需要重复无意义的事情了，&lt;strong&gt;你只需要建一个model&lt;/strong&gt;，然后migrate一下，你就可以在mysql中看到你新建的表了。怎么样方便吧，哎写了这么多肚子有饿了。看来明天得好好吃一顿了。
+贴一个model新建的类的代码：(在上面的app下面的models.py中)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;from django.db import models
+
+
+# Create your models here.
+class Article(models.Model):
+    title = models.CharField(max_length=100, blank=True)
+    category = models.CharField(max_length=50, blank=True)
+    author = models.CharField(max_length=50, blank=True)
+    date_time = models.DateTimeField(auto_now_add=True)
+    content = models.TextField(blank=True, null=True)
+
+    def __unicode__(self):
+        return self.title
+
+    class Meta:
+        ordering = [&#39;-date_time&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;看看，所见即所得，你一旦实现了这个model之后你就不用管mysql了，以后插入数据什么的只需要实现这个类就行了，简直是方便的有点蛋疼啊！
+新建了这个model之后，你要把这个应用到mysql需要下面两条啊语句：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;python3 manage.py makemigrations
+python3 manage,py migrate
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;第一条意思是我把model在本地生成一个migrations文件夹，里面要记录你对数据的操作，而第二个命令就是你对这个操作施加到数据库中。两条命令按顺序执行才能deploy到数据库里面，这时候打开mysql就可以看到我们的表了：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mysql&amp;gt; USE lewisblog;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql&amp;gt; SHOW TABLES;
++----------------------------+
+| Tables_in_lewisblog        |
++----------------------------+
+| article_article            |
+| auth_group                 |
+| auth_group_permissions     |
+| auth_permission            |
+| auth_user                  |
+| auth_user_groups           |
+| auth_user_user_permissions |
+| django_admin_log           |
+| django_content_type        |
+| django_migrations          |
+| django_session             |
++----------------------------+
+11 rows in set (0.00 sec)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;看到没，我们的模型已经转换成表了。6不6！！！&lt;/p&gt;
+
+&lt;h3 id=&#34;django的mysql-shell&#34;&gt;Django的mysql shell&lt;/h3&gt;
+
+&lt;p&gt;其实Django内置了一个shell，在这个shell里面你可以模拟mysql对数据库进行增删改查，但是呢，要进入这个shell还是得默默的进入，不要让任何人知道：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;python3 manage.py shell
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;进入shell，这是一个神奇的地方，我们执行以下这个命令：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; from article.models import Article
+&amp;gt;&amp;gt;&amp;gt; Article.objects.create(title = &#39;hello world.&#39;, category = &#39;django&#39;, author = &#39;Lewis Jin&#39;, content = &#39;Today I leared Django and it is very nice!&#39;)                                                                                         
+&amp;lt;Article: Article object&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;接着你甚至不用migrate就可以直接在mysql中查看到我们已经成功地添加了一条记录在数据库中！你就说6不6！！&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mysql&amp;gt; mysql&amp;gt; SELECT * FROM article_article;
++----+--------------+----------+-----------+----------------------------+--------------------------------------------+
+| id | title        | category | author    | date_time                  | content                                    |
++----+--------------+----------+-----------+----------------------------+--------------------------------------------+
+|  1 | hello world. | django   | Lewis Jin | 2017-01-12 13:25:13.273888 | Today I leared Django and it is very nice! |
++----+--------------+----------+-----------+----------------------------+--------------------------------------------+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这是增，改和删也很简单：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; a = Article.objects.get(id=1)
+&amp;gt;&amp;gt;&amp;gt; a.title
+&#39;hello world.&#39;
+&amp;gt;&amp;gt;&amp;gt; a.title = &#39;Hello World&#39;
+&amp;gt;&amp;gt;&amp;gt; a.title
+&#39;Hello World&#39;
+&amp;gt;&amp;gt;&amp;gt; a.delete()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;本篇章结语&#34;&gt;本篇章结语&lt;/h3&gt;
+
+&lt;p&gt;基本上看完这些就可以入门了，接下来我们更加深入的剖析django，我们要充分利用这个利器，来实现我们想要的web程序，让云变的触手可及！！&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+
+<!-- 
+Strata by HTML5 UP
+html5up.net | @n33co
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Ubuntu下设置AndroidStudio的启动快捷方式 &middot; Strata</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="金天(Lewis Jin)">
+		<meta name="description" content="一个独立思考着思索的地方">
+		<meta http-equiv="content-language" content="en-us" />
+
+		
+		<meta name="og:site_name" content="Strata">
+		<meta name="og:title" content="Ubuntu下设置AndroidStudio的启动快捷方式">
+		<meta name="og:url" content="https://example.org/post/Ubuntu%E4%B8%8B%E8%AE%BE%E7%BD%AEAndroidStudio%E7%9A%84%E5%90%AF%E5%8A%A8%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/">
+		<meta name="og:image" content="https://example.org/images/avatar.jpg">
+		
+
+		<meta name="generator" content="Hugo 0.18.1" />
+
+		<!--[if lte IE 8]><script src='https://example.org/js/ie/html5shiv.js'></script><![endif]-->
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+		<link rel="stylesheet" href="https://example.org/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="https://example.org//css/ie8.css"><![endif]-->
+
+		
+		
+	</head>
+
+	<body id="top">
+		<!-- Header -->
+<header id="header">
+	<a href="https://example.org/" class="image avatar"><img src="https://example.org/images/avatar.jpg" alt="" /></a>
+	
+		<h1><strong>我是金天</strong>深度学习，人工智能爱好者<br>一个永远崇尚自由的思考者<br> 目前任职滴滴出行无人驾驶算法工程师.</h1>
+	
+
+	
+		<nav id="sidebar">
+			<ul>
+			
+				<li><a href="https://example.org/">Home</a></li>
+			
+				<li><a href="https://example.org/post/">Blog</a></li>
+			
+			</ul>
+		</nav>
+	
+</header>
+
+
+		<!-- Main -->
+		<div id="main">
+			
+	<span>
+		<h1>Ubuntu下设置AndroidStudio的启动快捷方式</h1>
+
+		<i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2016-12-02 20:52:03 &#43;0000 UTC">2016-12-02</time>&nbsp;&nbsp;
+
+
+
+
+   
+	</span>
+
+	<p>
+	    
+
+<p>Ubuntu下设置AndroidStudio的快捷方式
+<!-- more --></p>
+
+<blockquote>
+<p>本文由作者金天原创，欢迎大家转载，不过请保留这段版权信息，多谢合作，如对本文有任何问题欢迎联系作者: jintianiloveu</p>
+</blockquote>
+
+<h4 id="ubuntu下设置androidstudio快捷方式">Ubuntu下设置AndroidStudio快捷方式</h4>
+
+<p>Ubuntu下安装AndroidStudio不需要多讲，直接下载deb包，然后安装，一般安装在/opt/文件夹下，但是有个问题无法生成快捷方式，这就非常蛋疼了。
+不过莫慌，这个问题也好解决，就是新建一个Desktop文件，具体操作如下：</p>
+
+<pre><code>sudo gedit /usr/share/applications/AndroidStudio.desktop
+</code></pre>
+
+<p>打开这个文件拷贝下面的配置信息进去：</p>
+
+<pre><code>[Desktop Entry]  
+Name = Studio  
+comment= android studio  
+Exec=/opt/android-studio/bin/studio.sh  
+Icon=/opt/android-studio/bin/studio.png  
+Terminal=false  
+Type=Application  
+</code></pre>
+
+<p>这里，opt/下就是我的AndroidStudio安装路径。保存，然后：</p>
+
+<pre><code>nautilus /usr/share/applications
+</code></pre>
+
+<p>打开这个文件夹，找到AndroidStudio快捷方式，拖入到侧边栏即可。</p>
+
+	</p>
+
+	<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'spf13';
+    var disqus_identifier = 'https:\/\/example.org\/post\/Ubuntu%E4%B8%8B%E8%AE%BE%E7%BD%AEAndroidStudio%E7%9A%84%E5%90%AF%E5%8A%A8%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F\/';
+    var disqus_title = 'Ubuntu下设置AndroidStudio的启动快捷方式';
+    var disqus_url = 'https:\/\/example.org\/post\/Ubuntu%E4%B8%8B%E8%AE%BE%E7%BD%AEAndroidStudio%E7%9A%84%E5%90%AF%E5%8A%A8%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+		</div>
+
+		<!-- Footer -->
+<footer id="footer">
+	<ul class="icons">
+		
+		
+		
+		<li><a href="//twitter.com/spf13" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		
+		
+		<li><a href="//github.com/spf13" target="_blank" class="icon fa-github"><span class="label">Github</span></a></li>
+		
+		
+		
+		
+		
+		<li><a href="https://example.org/#contact-form" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+		
+		
+		<li><a href="https://example.org/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		
+	</ul>
+
+	<ul class="copyright">
+		
+		<li>&copy; Lewis Jin</li>
+		
+		<li>Design: <a href="//html5up.net">Jin Tian</a></li>
+		
+		<li>Demo Images: <a href="//unsplash.com/">Unsplash</a></li>
+		
+	</ul>
+</footer>
+
+<!-- Scripts -->
+<script src="https://example.org/js/jquery.min.js"></script>
+<script src="https://example.org/js/jquery.poptrox.min.js"></script>
+<script src="https://example.org/js/skel.min.js"></script>
+<script src="https://example.org/js/util.js"></script>
+
+<script src="https://example.org/js/main.js"></script>
+
+
+
+
+
+	</body>
+</html>

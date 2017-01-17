@@ -1,0 +1,341 @@
+<!DOCTYPE HTML>
+
+<!-- 
+Strata by HTML5 UP
+html5up.net | @n33co
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Django 3 分分钟搭建一个RESTful API &middot; Strata</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="金天(Lewis Jin)">
+		<meta name="description" content="一个独立思考着思索的地方">
+		<meta http-equiv="content-language" content="en-us" />
+
+		
+		<meta name="og:site_name" content="Strata">
+		<meta name="og:title" content="Django 3 分分钟搭建一个RESTful API">
+		<meta name="og:url" content="https://example.org/post/Django-3-%E5%88%86%E5%88%86%E9%92%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AARESTful-API/">
+		<meta name="og:image" content="https://example.org/images/avatar.jpg">
+		
+
+		<meta name="generator" content="Hugo 0.18.1" />
+
+		<!--[if lte IE 8]><script src='https://example.org/js/ie/html5shiv.js'></script><![endif]-->
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+		<link rel="stylesheet" href="https://example.org/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="https://example.org//css/ie8.css"><![endif]-->
+
+		
+		
+	</head>
+
+	<body id="top">
+		<!-- Header -->
+<header id="header">
+	<a href="https://example.org/" class="image avatar"><img src="https://example.org/images/avatar.jpg" alt="" /></a>
+	
+		<h1><strong>我是金天</strong>深度学习，人工智能爱好者<br>一个永远崇尚自由的思考者<br> 目前任职滴滴出行无人驾驶算法工程师.</h1>
+	
+
+	
+		<nav id="sidebar">
+			<ul>
+			
+				<li><a href="https://example.org/">Home</a></li>
+			
+				<li><a href="https://example.org/post/">Blog</a></li>
+			
+			</ul>
+		</nav>
+	
+</header>
+
+
+		<!-- Main -->
+		<div id="main">
+			
+	<span>
+		<h1>Django 3 分分钟搭建一个RESTful API</h1>
+
+		<i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2017-01-16 23:31:58 &#43;0000 UTC">2017-01-16</time>&nbsp;&nbsp;
+
+
+
+
+   
+	</span>
+
+	<p>
+	    
+
+<h3 id="django-restframework-简介">Django restframework 简介</h3>
+
+<p>时间过得好快，不知不觉这就是Django系列教程的第三部分了，这部分我们将在一分钟之内用django的一个第三方框架-Django restframework搭建我们的第一个api。首先闲话不多说让我们先安装一下这个框架：</p>
+
+<pre><code>sudo pip3 install django-restframework
+</code></pre>
+
+<p>ok，安装完之后能让我们新建一个project吧</p>
+
+<pre><code>django-admin startproject ara
+</code></pre>
+
+<p>接着新建一个app：</p>
+
+<pre><code>python3 manage.py startapp users
+</code></pre>
+
+<p>ok这时候我们的项目结构应该是这样的：</p>
+
+<pre><code>.
+├── ara
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+└── users
+    ├── __init__.py
+    ├── admin.py
+    ├── apps.py
+    ├── models.py
+    ├── tests.py
+    └── views.py
+
+</code></pre>
+
+<p>ok，简单易懂，接着还是我们配置一下restframework吧</p>
+
+<h3 id="restframework配置">Restframework配置</h3>
+
+<p>配置这个框架请依照这个步骤来，缺一不可：
+- <strong>在settings.py中我们install一下</strong></p>
+
+<pre><code>INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'users',
+    'rest_framework'
+]
+</code></pre>
+
+<ul>
+<li><p><strong>在settings.py中添加这个</strong></p>
+
+<pre><code># using rest_framework setting this line
+REST_FRAMEWORK = {
+# Use Django's standard `django.contrib.auth` permissions,
+# or allow read-only access for unauthenticated users.
+'DEFAULT_PERMISSION_CLASSES': [
+    'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+]
+}
+</code></pre>
+
+<p>ok，经过这个配置之后，我们就可以在项目中import restframework了。接下来我要向同志们展示一下这个东西到底有多么吊炸天！</p></li>
+</ul>
+
+<h3 id="三步搞定一套api-增删改查">三步搞定一套API，增删改查！</h3>
+
+<p>我说过只用三步，那我们就分三步来。
+- <strong>第1步：</strong> 当然是新建一个models</p>
+
+<p>二话不多说直接复制粘贴代码：</p>
+
+<pre><code># -*- coding: utf-8 -*-
+from django.db import models
+
+
+# Create your models here.
+class User(models.Model):
+    &quot;&quot;&quot;
+    name: name of user,
+    gender: user's gender
+    wechat: user's wechat
+    &quot;&quot;&quot;
+    name = models.CharField(max_length=100, blank=False)
+    gender = models.CharField(max_length=4, blank=True)
+    birthday = models.DateField(blank=True)
+    portrait_url = models.CharField(max_length=100, blank=True)
+    home = models.CharField(max_length=20, blank=True)
+    phone = models.CharField(max_length=17, blank=True)
+    email = models.CharField(max_length=20, blank=True)
+    wechat = models.CharField(max_length=20, blank=True)
+    company = models.CharField(max_length=20, blank=True)
+    occupation = models.CharField(max_length=20, blank=True)
+    living_city = models.CharField(max_length=20, blank=True)
+
+    def __str__(self):
+        return self.name
+</code></pre>
+
+<ul>
+<li><strong>第2步：</strong> 在app下新建serializers.py，写入这些代码</li>
+</ul>
+
+<p>二话不多说直接复制粘贴代码：</p>
+
+<pre><code>from rest_framework import serializers, viewsets
+from users.models import User
+
+
+class UsersSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = User
+        fields = '__all__'
+
+
+# ViewSets define the view behavior.
+class UsersViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UsersSerializer
+
+</code></pre>
+
+<p>在这里我们实现一个UsersSerializers以及一个UsersViewSet这两个类，这个序列化函数暂且不知道是干毛的，但是很显然这个函数的作用是把从数据库中查询的结果序列化为字符串。不过重点是这个ViewSet，这个东西就这么几行代码它就帮你实现好了增、删、改、查的所有功能。不是吹牛逼等一下我们来验证看看是不是。
+你会惊奇的发现，有了这个ViewSet之后我们都不用写view.py了！！！！！</p>
+
+<ul>
+<li><strong>第3步：</strong> 配置urls
+二话不多说直接复制粘贴代码：
+```
+from django.conf.urls import url, include
+from django.contrib import admin
+from users.serializers import UsersViewSet
+from rest_framework import routers</li>
+</ul>
+
+<p>router = routers.DefaultRouter()
+router.register(r&rsquo;api/v1/users&rsquo;, UsersViewSet)</p>
+
+<p>urlpatterns = [
+    url(r&rsquo;^admin/&lsquo;, admin.site.urls),
+    url(r&rsquo;^api-auth/&lsquo;, include(&lsquo;rest_framework.urls&rsquo;, namespace=&lsquo;rest_framework&rsquo;)),
+    url(r&rsquo;^&lsquo;, include(router.urls))
+]</p>
+
+<pre><code>配置urls要用到restframework中的router这个类，这个是一个路由器，或者说是分发器，request的网址分发过来我发给哪个view处理就有他来决定，但是很显然这里并没有发给任何一个view，而是直接发给了一个ViewSet，这个ViewSet结合我们的serializer就可以实现我们的返回json或者接受json的全套功能！就是这么的屌！屌的爆炸！！
+好吧，最后说一下urlpatterns里面的几个pattern，第一个是admin不需要多说，重点是最后一个我们include了router的urls，所以说你只需要按照router的网址来写即可，不过重点是router还实现了一个隐士查询也就是你可以加具体数字查询具体的detail。
+
+### Django restframework测试！
+说了这么多来测试一下呗！！我们输入：
+</code></pre>
+
+<p><a href="http://127.0.0.1:8000/api/v1/users">http://127.0.0.1:8000/api/v1/users</a></p>
+
+<pre><code>看看返回的结果：
+</code></pre>
+
+<p>HTTP 200 OK
+Allow: GET, POST, OPTIONS
+Content-Type: application/json
+Vary: Accept</p>
+
+<p>[
+    {
+        &ldquo;id&rdquo;: 1,
+        &ldquo;name&rdquo;: &ldquo;金天&rdquo;,
+        &ldquo;gender&rdquo;: &ldquo;男&rdquo;,
+        &ldquo;birthday&rdquo;: &ldquo;1993-12-11&rdquo;,
+        &ldquo;portrait_url&rdquo;: &ldquo;<a href="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1593523098,2479335990&amp;fm=116&amp;gp=0.jpg&quot;">https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1593523098,2479335990&amp;fm=116&amp;gp=0.jpg&quot;</a>,
+        &ldquo;home&rdquo;: &ldquo;江西南昌&rdquo;,
+        &ldquo;phone&rdquo;: &ldquo;15116123160&rdquo;,
+        &ldquo;email&rdquo;: &ldquo;1195889656@qq.com&rdquo;,
+        &ldquo;wechat&rdquo;: &ldquo;jintianilveu&rdquo;,
+        &ldquo;company&rdquo;: &ldquo;&rdquo;,
+        &ldquo;occupation&rdquo;: &ldquo;&rdquo;,
+        &ldquo;living_city&rdquo;: &ldquo;&rdquo;
+    },
+    {
+        &ldquo;id&rdquo;: 2,
+        &ldquo;name&rdquo;: &ldquo;Elgins&rdquo;,
+        &ldquo;gender&rdquo;: &ldquo;男&rdquo;,
+        &ldquo;birthday&rdquo;: &ldquo;1994-11-02&rdquo;,
+        &ldquo;portrait_url&rdquo;: &ldquo;&rdquo;,
+        &ldquo;home&rdquo;: &ldquo;&rdquo;,
+        &ldquo;phone&rdquo;: &ldquo;&rdquo;,
+        &ldquo;email&rdquo;: &ldquo;&rdquo;,
+        &ldquo;wechat&rdquo;: &ldquo;&rdquo;,
+        &ldquo;company&rdquo;: &ldquo;&rdquo;,
+        &ldquo;occupation&rdquo;: &ldquo;&rdquo;,
+        &ldquo;living_city&rdquo;: &ldquo;&rdquo;
+    }
+]
+```
+在网页中你可以直接测试POST PUT GET等方法，总是很牛逼有没有！！分分钟做一套API啊！！比java web快出了不知道多少倍！！！明天我们继续深入探测这个东西！！！！！</p>
+
+	</p>
+
+	<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'spf13';
+    var disqus_identifier = 'https:\/\/example.org\/post\/Django-3-%E5%88%86%E5%88%86%E9%92%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AARESTful-API\/';
+    var disqus_title = 'Django 3 分分钟搭建一个RESTful API';
+    var disqus_url = 'https:\/\/example.org\/post\/Django-3-%E5%88%86%E5%88%86%E9%92%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AARESTful-API\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+		</div>
+
+		<!-- Footer -->
+<footer id="footer">
+	<ul class="icons">
+		
+		
+		
+		<li><a href="//twitter.com/spf13" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		
+		
+		<li><a href="//github.com/spf13" target="_blank" class="icon fa-github"><span class="label">Github</span></a></li>
+		
+		
+		
+		
+		
+		<li><a href="https://example.org/#contact-form" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+		
+		
+		<li><a href="https://example.org/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		
+	</ul>
+
+	<ul class="copyright">
+		
+		<li>&copy; Lewis Jin</li>
+		
+		<li>Design: <a href="//html5up.net">Jin Tian</a></li>
+		
+		<li>Demo Images: <a href="//unsplash.com/">Unsplash</a></li>
+		
+	</ul>
+</footer>
+
+<!-- Scripts -->
+<script src="https://example.org/js/jquery.min.js"></script>
+<script src="https://example.org/js/jquery.poptrox.min.js"></script>
+<script src="https://example.org/js/skel.min.js"></script>
+<script src="https://example.org/js/util.js"></script>
+
+<script src="https://example.org/js/main.js"></script>
+
+
+
+
+
+	</body>
+</html>

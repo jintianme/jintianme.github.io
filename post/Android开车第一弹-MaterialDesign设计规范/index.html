@@ -1,0 +1,297 @@
+<!DOCTYPE HTML>
+
+<!-- 
+Strata by HTML5 UP
+html5up.net | @n33co
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Android开车第一弹-MaterialDesign设计规范 &middot; Strata</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="金天(Lewis Jin)">
+		<meta name="description" content="一个独立思考着思索的地方">
+		<meta http-equiv="content-language" content="en-us" />
+
+		
+		<meta name="og:site_name" content="Strata">
+		<meta name="og:title" content="Android开车第一弹-MaterialDesign设计规范">
+		<meta name="og:url" content="https://example.org/post/Android%E5%BC%80%E8%BD%A6%E7%AC%AC%E4%B8%80%E5%BC%B9-MaterialDesign%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83/">
+		<meta name="og:image" content="https://example.org/images/avatar.jpg">
+		
+
+		<meta name="generator" content="Hugo 0.18.1" />
+
+		<!--[if lte IE 8]><script src='https://example.org/js/ie/html5shiv.js'></script><![endif]-->
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+		<link rel="stylesheet" href="https://example.org/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="https://example.org//css/ie8.css"><![endif]-->
+
+		
+		
+	</head>
+
+	<body id="top">
+		<!-- Header -->
+<header id="header">
+	<a href="https://example.org/" class="image avatar"><img src="https://example.org/images/avatar.jpg" alt="" /></a>
+	
+		<h1><strong>我是金天</strong>深度学习，人工智能爱好者<br>一个永远崇尚自由的思考者<br> 目前任职滴滴出行无人驾驶算法工程师.</h1>
+	
+
+	
+		<nav id="sidebar">
+			<ul>
+			
+				<li><a href="https://example.org/">Home</a></li>
+			
+				<li><a href="https://example.org/post/">Blog</a></li>
+			
+			</ul>
+		</nav>
+	
+</header>
+
+
+		<!-- Main -->
+		<div id="main">
+			
+	<span>
+		<h1>Android开车第一弹-MaterialDesign设计规范</h1>
+
+		<i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2016-12-04 22:10:02 &#43;0000 UTC">2016-12-04</time>&nbsp;&nbsp;
+
+
+
+
+   
+	</span>
+
+	<p>
+	    
+
+<p>本文是Android学的一个随笔
+<!-- more --></p>
+
+<p>会iOS再来学Android，一切就像行云流水一样融会贯通，从某种意义上来讲，Android比iOS简单，iOS能够实现更精细的布局，但是也更复杂。Android大条随意，这也是为什么我想学习它的原因。</p>
+
+<blockquote>
+<p>本文由中南大学较为牛逼的研究生金天同学原创，欢迎转载，但是请保留这段版权信息，如果你对文章有任何疑问，欢迎微信联系我：jintianiloveu。牛逼大神一一为你解答！</p>
+
+<h3 id="自定义toolbar">自定义ToolBar</h3>
+</blockquote>
+
+<p>学习Android一个很重要的问题就是自定义一个美观的toolbar，而很多人不懂得设计规范，各种直接拖按钮上toolbar，太猥琐了。人家google明明有标准的规范为什么不用，非得自作聪明的乱加。
+好了不多说了，自顶一个一个toolbar步骤如下：
+* <strong>更改主题为NoActionBar</strong>
+这是第一步，也是最重要的一步，要用toolbar，首先把Actionbar去掉。去掉的方法也很简单，直接设置styles.xml：</p>
+
+<pre><code>&lt;style name=&quot;AppTheme&quot; parent=&quot;Theme.AppCompat.Light.NoActionBar&quot;&gt;
+    &lt;!-- Customize your theme here. --&gt;
+    &lt;item name=&quot;colorPrimary&quot;&gt;@color/colorPrimary&lt;/item&gt;
+    &lt;item name=&quot;colorPrimaryDark&quot;&gt;@color/colorPrimaryDark&lt;/item&gt;
+    &lt;item name=&quot;colorAccent&quot;&gt;@color/colorAccent&lt;/item&gt;
+    &lt;item name=&quot;android:actionMenuTextColor&quot;&gt;@color/colorWhite&lt;/item&gt;
+&lt;/style&gt;
+</code></pre>
+
+<p>这样以来又有个问题，这里设置了主题是light，那么toolbar的文字就会变成黑色，我们进一步定义一个toolbar的theme:</p>
+
+<pre><code>&lt;style name=&quot;ToolbarTheme&quot; parent=&quot;@style/ThemeOverlay.AppCompat.ActionBar&quot;&gt;
+    &lt;item name=&quot;actionMenuTextColor&quot;&gt;@android:color/white&lt;/item&gt;
+    &lt;item name=&quot;android:textColorPrimary&quot;&gt;@android:color/white&lt;/item&gt;
+    &lt;item name=&quot;android:popupMenuStyle&quot;&gt;@style/Platform.ThemeOverlay.AppCompat.Light&lt;/item&gt;
+&lt;/style&gt;
+</code></pre>
+
+<p>这里定义了toolbar主题的文字颜色。你设置了NoActionbar之后，实际上在AndroidStudio上的designer就没有ActionBar了，还需要从空间中拖入一个toolbar到actiivity_main.xml，这样的话我们就实现了，toolbar。但是只是一个toolbar我们还没有加入menu</p>
+
+<ul>
+<li><strong>添加menu</strong>
+添加menu，先不管代码，新建一个menu的布局文件，直接拖入menu即可，如果你要想menu在toolbar显示呢就设置
+<code>
+app:showAsAction=&quot;always&quot;
+</code>
+AndroidStudio现在有个好处就是都可以直接在界面上设置了，甚至不用写代码。
+然后我们在activity java文件中写代码：
+<code>
+Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+setSupportActionBar(toolbar);
+</code>
+这两行代码就设置了我们的toolbar为actionbar了。接着处理menu事件，首先导入包：
+<code>
+import android.view.Menu;
+import android.view.MenuItem;
+</code>
+不导入包，ide不会提示你重写哪几个方法。所以还是导入一下比较好。接着我们就可以开车了：
+<code>
+public boolean onCreateOptionsMenu(Menu menu){
+getMenuInflater().inflate(R.menu.toolbar_menu, menu);
+return true;
+}
+public boolean onOptionsItemSelected(MenuItem item){
+switch (item.getItemId()){
+    case R.id.settings:
+        System.out.println(&quot;====&gt;settings&quot;);
+        break;
+    case R.id.more:
+        System.out.println(&quot;=====&gt;more&quot;);
+        break;
+    case R.id.about:
+        System.out.println(&quot;====&gt;about&quot;);
+        break;
+    default: break;
+}
+return true;
+}
+</code>
+这两个方法就可以实现那啥了。</li>
+</ul>
+
+<h3 id="使用recyclerview">使用recyclerview</h3>
+
+<p>学习一个移动操作系统必须得学习list的使用，在安卓中就是recyclerview，在iOS中就是tableview和collectionview。扯远了，安卓使用recyclerview其实也是很简单的。
+* <strong>在主界面中拖入一个recyclerview</strong>
+这个不需要多说，有手的人都能托，而且大家的手又都这么健壮&hellip;</p>
+
+<ul>
+<li><p><strong>新建一个recyclerview item的布局文件</strong>
+我不得不说一下安卓跟iOS开发的巨大不同啊，iOS讲究的是精细，美观，所以布局是个很头疼的问题，而安卓就不一样，不管你怎么拖好像它都能帮你自动适配，不过安卓也很难做出iOS那样精细的页面，不过没有关系，好在我们的安卓手机屏幕都很大，加上我们的material design还是非常美观的，也非常符合这种设计语言和风格。、
+布局文件随便拖入几个控件或者textview，接下来我们就写控制器来控制他们。</p></li>
+
+<li><p><strong>写适配器，类似于iOS中的tableviewcellcontroller</strong>
+适配器也很简单，首先你要导入包，否则不会提示你重写的方法。</p>
+
+<pre><code>import android.content.Context;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.RecyclerView.*;
+import android.view.LayoutInflater;
+</code></pre>
+
+<p>貌似这些包都要用到。没有关系，接下来我们就重写方法了，一个完整的适配器例子如下：</p>
+
+<pre><code>public class RecyclerViewAdapter extends RecyclerView.Adapter&lt;RecyclerViewAdapter.MyViewHolder&gt; {
+
+private Context context;
+private List&lt;String&gt; data;
+
+public RecyclerViewAdapter(Context context, List&lt;String&gt; data){
+    this.context = context;
+    this.data = data;
+}
+
+public RecyclerViewAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
+    View view = LayoutInflater.from(context).inflate(R.layout.list_item_layout, null);
+    return new MyViewHolder(view);
+}
+
+public void onBindViewHolder(RecyclerViewAdapter.MyViewHolder holder, int position){
+    String res = data.get(position);
+    holder.tv1.setText(&quot;nihao&quot;);
+}
+public int getItemCount(){
+    return 20;
+}
+
+
+
+class MyViewHolder extends ViewHolder{
+    TextView tv1;
+    public MyViewHolder(View view){
+        super(view);
+        tv1 = (TextView) view.findViewById(R.id.textView);
+    }
+
+}
+}
+</code></pre></li>
+
+<li><p><strong>最后一部，找到recyclerview，设置适配器</strong>
+最后一步很简单，直接贴代码了
+```
+RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);</p></li>
+</ul>
+
+<p>ArrayList<String> dataArray = new ArrayList<String>();
+for (int i = 1; i&lt;50; i++){
+    dataArray.add(&ldquo;hello&rdquo;);
+}</p>
+
+<p>LinearLayoutManager manager = new LinearLayoutManager(this);
+manager.setOrientation(LinearLayoutManager.VERTICAL);
+recyclerView.setLayoutManager(manager);
+recyclerView.setItemAnimator(new DefaultItemAnimator());</p>
+
+<p>RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, dataArray);
+recyclerView.setAdapter(adapter);
+```</p>
+
+	</p>
+
+	<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'spf13';
+    var disqus_identifier = 'https:\/\/example.org\/post\/Android%E5%BC%80%E8%BD%A6%E7%AC%AC%E4%B8%80%E5%BC%B9-MaterialDesign%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83\/';
+    var disqus_title = 'Android开车第一弹-MaterialDesign设计规范';
+    var disqus_url = 'https:\/\/example.org\/post\/Android%E5%BC%80%E8%BD%A6%E7%AC%AC%E4%B8%80%E5%BC%B9-MaterialDesign%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+		</div>
+
+		<!-- Footer -->
+<footer id="footer">
+	<ul class="icons">
+		
+		
+		
+		<li><a href="//twitter.com/spf13" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		
+		
+		<li><a href="//github.com/spf13" target="_blank" class="icon fa-github"><span class="label">Github</span></a></li>
+		
+		
+		
+		
+		
+		<li><a href="https://example.org/#contact-form" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+		
+		
+		<li><a href="https://example.org/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		
+	</ul>
+
+	<ul class="copyright">
+		
+		<li>&copy; Lewis Jin</li>
+		
+		<li>Design: <a href="//html5up.net">Jin Tian</a></li>
+		
+		<li>Demo Images: <a href="//unsplash.com/">Unsplash</a></li>
+		
+	</ul>
+</footer>
+
+<!-- Scripts -->
+<script src="https://example.org/js/jquery.min.js"></script>
+<script src="https://example.org/js/jquery.poptrox.min.js"></script>
+<script src="https://example.org/js/skel.min.js"></script>
+<script src="https://example.org/js/util.js"></script>
+
+<script src="https://example.org/js/main.js"></script>
+
+
+
+
+
+	</body>
+</html>

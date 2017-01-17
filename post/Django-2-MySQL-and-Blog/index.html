@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+
+<!-- 
+Strata by HTML5 UP
+html5up.net | @n33co
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Django 2 MySQL and Blog &middot; Strata</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="金天(Lewis Jin)">
+		<meta name="description" content="一个独立思考着思索的地方">
+		<meta http-equiv="content-language" content="en-us" />
+
+		
+		<meta name="og:site_name" content="Strata">
+		<meta name="og:title" content="Django 2 MySQL and Blog">
+		<meta name="og:url" content="https://example.org/post/Django-2-MySQL-and-Blog/">
+		<meta name="og:image" content="https://example.org/images/avatar.jpg">
+		
+
+		<meta name="generator" content="Hugo 0.18.1" />
+
+		<!--[if lte IE 8]><script src='https://example.org/js/ie/html5shiv.js'></script><![endif]-->
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+		<link rel="stylesheet" href="https://example.org/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="https://example.org//css/ie8.css"><![endif]-->
+
+		
+		
+	</head>
+
+	<body id="top">
+		<!-- Header -->
+<header id="header">
+	<a href="https://example.org/" class="image avatar"><img src="https://example.org/images/avatar.jpg" alt="" /></a>
+	
+		<h1><strong>我是金天</strong>深度学习，人工智能爱好者<br>一个永远崇尚自由的思考者<br> 目前任职滴滴出行无人驾驶算法工程师.</h1>
+	
+
+	
+		<nav id="sidebar">
+			<ul>
+			
+				<li><a href="https://example.org/">Home</a></li>
+			
+				<li><a href="https://example.org/post/">Blog</a></li>
+			
+			</ul>
+		</nav>
+	
+</header>
+
+
+		<!-- Main -->
+		<div id="main">
+			
+	<span>
+		<h1>Django 2 MySQL and Blog</h1>
+
+		<i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2017-01-15 18:14:45 &#43;0000 UTC">2017-01-15</time>&nbsp;&nbsp;
+
+
+
+
+   
+	</span>
+
+	<p>
+	    
+
+<h3 id="mysql-usage">mysql usage</h3>
+
+<p>In this post I am going writting some useful commonds of mysql, hand this you can operate Database as cake.
+1. <strong>Change specific database encode</strong></p>
+
+<pre><code>ALTER DATABASE ara CHARACTER SET utf8;
+</code></pre>
+
+<ol>
+<li><strong>Change all database encode</strong>
+```
+SET CHARACTER_SET_CONNECTTION=utf8;
+SET CHARACTER_SET_DATABASE=utf8;
+SET CHARACTER_SET_SERVER=utf8;
+SET CHARACTER_SET_CLIENT=utf8;</li>
+</ol>
+
+<pre><code>
+3. **Ultimate method to change encode of mysql**
+ok, I have to admmit that above method you cannot really change mysql's encode, it still be latin1 for character_database and character_server. But using this you can change the encode method forever. First of all, please make sure you have stop mysql.
+**Step 1**
+copy `my-default.cnf` to `/etc/my.cnf`, using:
+</code></pre>
+
+<p>cp /usr/local/mysql/support-files/my-default.cnf /etc/my.cnf</p>
+
+<pre><code>
+**Step 2**
+changing a exactly right to that file, make sure only you can write and read it, using:
+</code></pre>
+
+<p>sudo chmod 644 my.cnf</p>
+
+<pre><code>**Step 3**
+add this lines to the file:
+</code></pre>
+
+<p>sudo vim my.cnf</p>
+
+<pre><code></code></pre>
+
+<p>[client]
+default-character-set=utf8</p>
+
+<pre><code>under `[mysqld]` adding this:
+</code></pre>
+
+<p>default-storage-engine=INNODB
+character-set-server=utf8
+collation-server=utf8_general_ci</p>
+
+<pre><code>ok, then save and quit, start mysql, and you will find:
+</code></pre>
+
+<p>mysql&gt; show variables like &ldquo;%char%&rdquo;;
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;+
+| Variable_name            | Value                                                   |
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;+
+| character_set_client     | utf8                                                    |
+| character_set_connection | utf8                                                    |
+| character_set_database   | utf8                                                    |
+| character_set_filesystem | binary                                                  |
+| character_set_results    | utf8                                                    |
+| character_set_server     | utf8                                                    |
+| character_set_system     | utf8                                                    |
+| character_sets_dir       | /usr/local/mysql-5.7.16-osx10.11-x86_64/share/charsets/ |
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;+
+8 rows in set (0.01 sec)
+```</p>
+
+	</p>
+
+	<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'spf13';
+    var disqus_identifier = 'https:\/\/example.org\/post\/Django-2-MySQL-and-Blog\/';
+    var disqus_title = 'Django 2 MySQL and Blog';
+    var disqus_url = 'https:\/\/example.org\/post\/Django-2-MySQL-and-Blog\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+		</div>
+
+		<!-- Footer -->
+<footer id="footer">
+	<ul class="icons">
+		
+		
+		
+		<li><a href="//twitter.com/spf13" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		
+		
+		<li><a href="//github.com/spf13" target="_blank" class="icon fa-github"><span class="label">Github</span></a></li>
+		
+		
+		
+		
+		
+		<li><a href="https://example.org/#contact-form" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+		
+		
+		<li><a href="https://example.org/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		
+	</ul>
+
+	<ul class="copyright">
+		
+		<li>&copy; Lewis Jin</li>
+		
+		<li>Design: <a href="//html5up.net">Jin Tian</a></li>
+		
+		<li>Demo Images: <a href="//unsplash.com/">Unsplash</a></li>
+		
+	</ul>
+</footer>
+
+<!-- Scripts -->
+<script src="https://example.org/js/jquery.min.js"></script>
+<script src="https://example.org/js/jquery.poptrox.min.js"></script>
+<script src="https://example.org/js/skel.min.js"></script>
+<script src="https://example.org/js/util.js"></script>
+
+<script src="https://example.org/js/main.js"></script>
+
+
+
+
+
+	</body>
+</html>

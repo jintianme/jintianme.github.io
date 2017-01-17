@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+
+<!-- 
+Strata by HTML5 UP
+html5up.net | @n33co
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Web后台 &middot; Strata</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="金天(Lewis Jin)">
+		<meta name="description" content="一个独立思考着思索的地方">
+		<meta http-equiv="content-language" content="en-us" />
+
+		
+		<meta name="og:site_name" content="Strata">
+		<meta name="og:title" content="Web后台">
+		<meta name="og:url" content="https://example.org/tags/web%E5%90%8E%E5%8F%B0/">
+		<meta name="og:image" content="https://example.org/images/avatar.jpg">
+		
+
+		<meta name="generator" content="Hugo 0.18.1" />
+
+		<!--[if lte IE 8]><script src='https://example.org/js/ie/html5shiv.js'></script><![endif]-->
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+		<link rel="stylesheet" href="https://example.org/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="https://example.org//css/ie8.css"><![endif]-->
+
+		
+		<link href="https://example.org/tags/web%E5%90%8E%E5%8F%B0/index.xml" rel="alternate" type="application/rss+xml" title="Strata" />
+		<link href="https://example.org/tags/web%E5%90%8E%E5%8F%B0/index.xml" rel="feed" type="application/rss+xml" title="Strata" />
+		
+		
+	</head>
+
+	<body id="top">
+		<!-- Header -->
+<header id="header">
+	<a href="https://example.org/" class="image avatar"><img src="https://example.org/images/avatar.jpg" alt="" /></a>
+	
+		<h1><strong>我是金天</strong>深度学习，人工智能爱好者<br>一个永远崇尚自由的思考者<br> 目前任职滴滴出行无人驾驶算法工程师.</h1>
+	
+
+	
+		<nav id="sidebar">
+			<ul>
+			
+				<li><a href="https://example.org/">Home</a></li>
+			
+				<li><a href="https://example.org/post/">Blog</a></li>
+			
+			</ul>
+		</nav>
+	
+</header>
+
+
+		<!-- Main -->
+		<div id="main">
+			
+    
+    
+        <span>
+    <h1>
+        <a href="https://example.org/post/Mac-mysql-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E4%BB%A5%E5%8F%8A%E5%BF%98%E8%AE%B0%E5%88%9D%E5%A7%8B%E5%AF%86%E7%A0%81%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">Mac mysql 安装配置以及忘记初始密码的解决方法</a>
+    </h1>
+
+    <i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2016-11-30 12:04:10 &#43;0000 UTC">2016-11-30</time>&nbsp;&nbsp;
+
+
+
+
+   
+   
+       &nbsp;&nbsp;<i class="fa fa-tags"></i>&nbsp;&nbsp;
+       
+</span>
+
+<p> 本文详细说明了mac下mysql的安装和配置，现在mysql出于安全考虑安装时会默认初始化一个随机密码，如果忘记了需要重置也可以从本文找到答案。  本文由作者金天原创，欢迎大家转载，不过请保留这段版权信息，多谢合作，如对本文有任何问题欢迎联系作者: jintianiloveu
+ Mac下mysql的安装（推荐使用dmg安装，避免不必要的麻烦） Mac下安装mysql可以直接去官网下载dmg安装包，但是速度实在是慢，如果大家需要下载链接可以在下面回复邮箱我会第一时间打给大家，当然也可以加入我们的欧曼开发者联盟QQ群：373987228，中国新一代计算机高手聚集地。好了闲话不多说我们直接看看如何安装。
+首先这个mysql如果用dmg安装的话就是傻瓜一键式安装了，非常方便简单快捷。dmg安装包默认安装sql在了/usr/local文件目录下：
+要重启或者停止mysql服务在设置中有：
+可以说非常的简单方便快捷。好了接下来我们该干啥？安装好了对不对？我们在终端输入mysql发现并没有什么卵用啊。同志们莫慌，这是因为，你还没有吧mysql加入环境变量，怎么加也很简单。
+Mysql加入环境变量 我们在终端输入
+vim ~/.bash_profile  我们在里面增加一行：
+export PATH=$PATH:/usr/local/mysql/bin  这就把mysql添加进了环境变量，后面我们就可以用这个目录下的命令了。
+MySQL搭建好后忘记初始密码 这是很多人遇到的问题，mysql安装时生成的密码又臭又长在终端输入根本看不到，很容易输错，而且很多时候我们搭建mysql的时候有妹子在旁边，跟妹子说话时就会忘记保存，这个时候我们就要重置密码了，在终端输入一下命令（先关闭mysql）：
+sudo mysqld_safe --skip-grant-tables  这里mysqld_safe的意思是让mysql进入安全模式（麻瓜也知道），后面—skip-grant-tables意思是不需要密码进入，很容易理解吧，可以说这行命令很重要，大家在必要的时候可以记住，（如果你第二次忘记密码，那么你用这个命令的时候要关闭mysqld服务，怎么关闭Google一下）接着：
+mysql -u root  然后就用SQL语句修改密码：
+UPDATE mysql.user SET password=PASSWORD('yourpassword') WHERE User='root'  OK!确定之后/c，然后exit退出，在开一个终端输入
+mysql -u root -p  接着输入新密码就可以进入mysql啦~
+ 感谢大家阅读我的博客，本文永久更新地址: jinfagang.coding.me
+也欢迎大家积极留言，让我看到你的存在
+ </p>
+<hr>
+
+    
+
+    
+
+
+		</div>
+
+		<!-- Footer -->
+<footer id="footer">
+	<ul class="icons">
+		
+		
+		
+		<li><a href="//twitter.com/spf13" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		
+		
+		<li><a href="//github.com/spf13" target="_blank" class="icon fa-github"><span class="label">Github</span></a></li>
+		
+		
+		
+		
+		
+		<li><a href="https://example.org/#contact-form" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+		
+		
+		<li><a href="https://example.org/tags/web%E5%90%8E%E5%8F%B0/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		
+	</ul>
+
+	<ul class="copyright">
+		
+		<li>&copy; Lewis Jin</li>
+		
+		<li>Design: <a href="//html5up.net">Jin Tian</a></li>
+		
+		<li>Demo Images: <a href="//unsplash.com/">Unsplash</a></li>
+		
+	</ul>
+</footer>
+
+<!-- Scripts -->
+<script src="https://example.org/js/jquery.min.js"></script>
+<script src="https://example.org/js/jquery.poptrox.min.js"></script>
+<script src="https://example.org/js/skel.min.js"></script>
+<script src="https://example.org/js/util.js"></script>
+
+<script src="https://example.org/js/main.js"></script>
+
+
+
+
+
+	</body>
+</html>

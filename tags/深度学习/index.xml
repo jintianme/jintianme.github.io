@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>深度学习 on Strata</title>
+    <link>https://example.org/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/index.xml</link>
+    <description>Recent content in 深度学习 on Strata</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://example.org/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Ubuntu16.04搭建Mxnet惊天地泣鬼神完整教程,深度学习起航</title>
+      <link>https://example.org/post/Ubuntu16-04%E6%90%AD%E5%BB%BAMxnet%E6%83%8A%E5%A4%A9%E5%9C%B0%E6%B3%A3%E9%AC%BC%E7%A5%9E%E5%AE%8C%E6%95%B4%E6%95%99%E7%A8%8B-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%B5%B7%E8%88%AA/</link>
+      <pubDate>Thu, 01 Dec 2016 12:26:32 +0000</pubDate>
+      
+      <guid>https://example.org/post/Ubuntu16-04%E6%90%AD%E5%BB%BAMxnet%E6%83%8A%E5%A4%A9%E5%9C%B0%E6%B3%A3%E9%AC%BC%E7%A5%9E%E5%AE%8C%E6%95%B4%E6%95%99%E7%A8%8B-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%B5%B7%E8%88%AA/</guid>
+      <description>
+
+&lt;p&gt;本文将详细介绍Ubuntu16.04下使用CUDA和CUDNN搭建Mxnet的深度学习框架教程，其中最重要的还是CUDA和CUDNN的安装，通过本教程你可以节约很多时间，如果有什么不懂的在下面留下评论，我可以给予帮助
+&lt;!-- more --&gt;
+&amp;gt; 本文由中南大学较为牛逼的研究生金天同学原创，欢迎转载，但是请保留这段版权信息，如果你对文章有任何疑问，欢迎微信联系我：jintianiloveu。牛逼大神一一为你解答！&lt;/p&gt;
+
+&lt;h4 id=&#34;前言&#34;&gt;前言&lt;/h4&gt;
+
+&lt;p&gt;在写这篇文章之前，我有必要吐一下草，没有错说的就是windows，JB太麻烦了，可能是我不是搞C++的吧，之前也没有搭建过caffe所以觉得非常麻烦。一直以来都是python和java，感觉就单单opencv搭建来说python下和C++相比，python就简单很多，当然也可能是因为我不熟悉visual studio的缘故，总之就整体步骤来说，我明白了一个道理，珍爱生命原理windows，如果你是搞技术的话。&lt;/p&gt;
+
+&lt;h4 id=&#34;ubuntu16-04-cuda8-cudnn-for-cuda8-mxnet&#34;&gt;Ubuntu16.04 CUDA8 CUDNN for CUDA8 Mxnet&lt;/h4&gt;
+
+&lt;p&gt;好闲话不多说让我们直接开始，如前所述，在进行我们伟大的革命事业之前，请原理windows，windows作为日常办公使用不可或缺，但是就开发来讲我拒绝它，太麻烦了，还是喜欢我们伟大的Linux，所有事情一个命令行轻松搞定，当然如果读者对Linux不熟悉的话，你可以把它当成Mac OS，毕竟Unix和Linux五八年前本是一家，慢慢你就会对Ubuntu系统的简单便捷所折服，Ubuntu已经为你准备好了一切，接下来你直接进行你伟大的创造即可。
+所以说我们在进行革命之前，先安装Ubuntu系统，追求个性的你不需要安装最新版本，因为我就是踩着坑过来的，新版本对中文输出法支持不好有很多莫名其妙的bug，所以还是推荐现在比较稳定的16.04.当然很多人更加追求个性，直接使用其他发行版本，比如国产的深度，Solus，Elementory OS，听老夫一言，我是踩着坑过来的，这些系统即使界面在花骚，在Ubuntu面前还是图样图森破，散木谈慕斯奈一福。哎呀这废话有点多了，相信你已经按装好了Ubuntu。接下来就是显卡。
+就显卡这一快我又有必要吐槽一下了，NVIDIA尼玛把显卡买那么贵真的好吗，真的不是炒作起来的吗，我有点愤青了，这让我们这些想搞点事情的年轻人情何以堪。不过不重要相信各位土豪手里都已经有了New TITAN X，如果你手里只有一块入门级的显卡，不过也没有关系，本文使用的显卡就是入门级的，丝毫不妨碍我们继续我们改变世界的伟大计划，当然以后升级是必然的，我们先吧我们的理论知识打好。
+接下来你要安装的就是CUDA和CUDNN。在这里我详细介绍一下，因为CUDA和CUDNN有没有安装好决定了后面Mxnet GPU版本能不能使用。&lt;/p&gt;
+
+&lt;h4 id=&#34;cuda8安装教程&#34;&gt;CUDA8安装教程&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;前往官网下载CUDA&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;这里我放出一个CUDA的下载链接，但是机智的我为了骗取评论数决定采取大家评论私发的方式，嘿嘿嘿～&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;CUDA8安装&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;接下来相信你已经在/Downloads文件接下有了一个文件，我们安装它&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo dpkg -i cuda-repo-ubuntu1604-8-0-rc_8.0.27-1_amd64.deb
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;后面使我们下载好的文件的名字。
+然而我们在从apt中安装cuda：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt update
+sudo install cuda
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;最后最重要的一部，得配置环境变量，如果在这一步没有配置环境变量的话，极有可能会出错。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;export CUDA_HOME=/usr/local/cuda
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;其实这样很简单，export是手动导入变量，如果接下来安装出错的话，首先输入命令：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;echo $CUDA_HOME
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;看看是不是环境变量配置出错了。这里我们刚才install cuda的时候实际上会在/usr/local/目录下生成cuda 和cuda-8.0两个文件夹，后面这个只是让我们知道cuda的版本，因为后面cudnn要和cuda版本配套，实际使用我们只是用cuda这个文件中的库。导入了cuda环境变量之后，我们还要手动导入cuda library的环境变量：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;然后我们echo一下$LD_LIBRARY_PATH,看看是否导入成功。
+OK，进行到这里我们就安装好了CUDA了，我们在terminal里面输入：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;nvcc --version
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;看看CUDA是否安装成功，如果出来了版本说明安装好了。
+* CUDNN安装&lt;/p&gt;
+
+&lt;p&gt;接下来安装CUDNN，这是加速卷积运算的库，最好安装一下，大家要去Nvidia官网下载，注册一个Nvidia的账号，不得不说，Nvidia的官网还是很有设计感的，这里我也放出一个下载链接，因为官网下载其实有点慢，猥琐的而又机智的我希望大家评论一下然后来上链接，嘿嘿嘿
+CUDNN安装就是直接解压，&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tar zxvf cudnn8.0-linux64-amd.tar.gz
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;后面那个是你下载的文件的名字，接着你要复制这些文件到cuda的目录里面去：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo cp cuda/include/* /usr/local/cuda/include/
+sudo cp cuda/lib64/* /usr/local/cuda/lib64/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这个意思就是把cudnn下面的文件复制到cuda相应的文件夹之下。这样我们就安装好了吧，是的如果还报什么错就贴出来，应该这里的问题很好解决。&lt;/p&gt;
+
+&lt;h4 id=&#34;安装mxnet&#34;&gt;安装Mxnet&lt;/h4&gt;
+
+&lt;p&gt;接下来我们要安装Mxnet了，首先大家直接去github克隆最新的代码&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git clone --recursive https://github.com/dmlc/Mxnet
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;那个&amp;ndash;recursive命令前往别忘记了，因为mxnet有一些依赖，一起下载下来，这个时候我们会在home目录下看到mxnet，我们cd进去：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd ~/mxnet
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这里就是mxnet，接下来我们要编译它，编译生成我们相应的python、R、Scala库。但是编译之前我们安装一下opencv，以防万一，安装opencv很简单直接在apt中安装即可。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt install opencv
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果安装不成功，可以直接百度一下，我这里就不详细说了。
+重点来了，接下来我们要编译mxnet，我们把mxnet/make文件夹下的config.mk文件拷贝到mxnet根目录，&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo cp ~/mxnet/make/config.mk ~/mxnet
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这段代码我们在mxnet文件目录执行，然后我们sudo gedit config.mk
+对文件进行一个编辑。把USE_CUDA改为1，这里更改方式参考网上一些教程，同时USE_CUDNN也改为1，因为我们要安装GPU版本，所以这些都使用上，如果你是安装CPU版本的话那juice非常简单了你不需要编译直接下来官方的库即可。
+然后我们开始编译：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;make -j8
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这里8指的是CPU的核心数，你可以查看一下你的CPU的核心数，我的是8核的。等待编译完成
+接下来重点来了，我们进入到python目录&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd /usr/bin/python
+python3 setup.py install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这里就是直接用setup工具来安装我们编译好的python mxnet库，至于为什么是python3是因为我安装了python3.5，如果你用的是2.7直接python就好了。&lt;/p&gt;
+
+&lt;h4 id=&#34;开始深度学习之旅&#34;&gt;开始深度学习之旅&lt;/h4&gt;
+
+&lt;p&gt;一切准备就绪，开始开车！我们进入mxnet的example文件夹，来跑一个简单的mnist看看速度如何：
+&lt;img src=&#34;https://example.org/home/geekspace/Pictures&#34; alt=&#34;pic&#34; /&gt;
+可以说速度非常之快啊！现在我们只是开车，等一下就是真正你比吊炸天的深度学习教程了！
+&amp;gt; 感谢大家阅读我的博客，本文永久更新地址: jinfagang.coding.me 也欢迎大家积极留言，让我看到你的存在&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,222 @@
+<!DOCTYPE HTML>
+
+<!-- 
+Strata by HTML5 UP
+html5up.net | @n33co
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Ubuntu下编译opencv并生成python链接库详细教程-吐血编译系列 &middot; Strata</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="金天(Lewis Jin)">
+		<meta name="description" content="一个独立思考着思索的地方">
+		<meta http-equiv="content-language" content="en-us" />
+
+		
+		<meta name="og:site_name" content="Strata">
+		<meta name="og:title" content="Ubuntu下编译opencv并生成python链接库详细教程-吐血编译系列">
+		<meta name="og:url" content="https://example.org/post/Ubuntu%E4%B8%8B%E7%BC%96%E8%AF%91opencv%E5%B9%B6%E7%94%9F%E6%88%90python%E9%93%BE%E6%8E%A5%E5%BA%93%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B-%E5%90%90%E8%A1%80%E7%BC%96%E8%AF%91%E7%B3%BB%E5%88%97/">
+		<meta name="og:image" content="https://example.org/images/avatar.jpg">
+		
+
+		<meta name="generator" content="Hugo 0.18.1" />
+
+		<!--[if lte IE 8]><script src='https://example.org/js/ie/html5shiv.js'></script><![endif]-->
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+		<link rel="stylesheet" href="https://example.org/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="https://example.org//css/ie8.css"><![endif]-->
+
+		
+		
+	</head>
+
+	<body id="top">
+		<!-- Header -->
+<header id="header">
+	<a href="https://example.org/" class="image avatar"><img src="https://example.org/images/avatar.jpg" alt="" /></a>
+	
+		<h1><strong>我是金天</strong>深度学习，人工智能爱好者<br>一个永远崇尚自由的思考者<br> 目前任职滴滴出行无人驾驶算法工程师.</h1>
+	
+
+	
+		<nav id="sidebar">
+			<ul>
+			
+				<li><a href="https://example.org/">Home</a></li>
+			
+				<li><a href="https://example.org/post/">Blog</a></li>
+			
+			</ul>
+		</nav>
+	
+</header>
+
+
+		<!-- Main -->
+		<div id="main">
+			
+	<span>
+		<h1>Ubuntu下编译opencv并生成python链接库详细教程-吐血编译系列</h1>
+
+		<i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2016-12-03 10:20:47 &#43;0000 UTC">2016-12-03</time>&nbsp;&nbsp;
+
+
+
+
+   
+	</span>
+
+	<p>
+	    
+
+<p>本文将解决的是opencv这个洪水猛兽，opencv功能强大，但是无论在ubuntu下还是在windows下编译都非常麻烦，本文将编译它，并生成python调用库。哥搞了好几天才搞定，shit！
+<!-- more --></p>
+
+<blockquote>
+<p>本文由中南大学较为牛逼的研究生金天同学原创，欢迎转载，但是请保留这段版权信息，如果你对文章有任何疑问，欢迎微信联系我：jintianiloveu。牛逼大神一一为你解答！</p>
+</blockquote>
+
+<h4 id="前言">前言</h4>
+
+<p>opencv3.1 Ubuntu16.04 python3.5 编译完成，python下可以直接调用。先说一下，编译源码并生成python可以调用的库，检查方法是看看是否在/usr/local/lib/python3.5/dist-packages下有cv2.python-35m-x86_64-linux-gnu.so的库，如果编译生成了，说明可以在python中调用使用了，其他语言应该也差不多，但是网上的一些教程要么过时要么没有提醒你注意重要步骤甚至有些教程还是啥鸡巴扯淡的，蛋疼，我把我配置编译的过程记录一些，让后来者少走一些弯路，如果一些地方你不注意真的很容易浪费时间在各种编译错误上。首先致谢这篇英文文章，人家外国人写博客说的很清楚，不像国人写个博客妈的缺胳膊少腿。</p>
+
+<h4 id="先说几句">先说几句</h4>
+
+<p>本教程主要是教大家在ubuntu16.04 上编译python3.5版本的opencv3.1，如果你要是其他系统或者python版本步骤应该差不多，但是一定要小心修改，多尝试。整个过程容易出错以及将会导致的错误我都会粗体警示，毕竟我是踩着坑过来的。<strong>在编译python版本的opencv库之前一定要安装numpy，特此提示，后面的步骤不包含这一步</strong></p>
+
+<h4 id="安装过程">安装过程</h4>
+
+<h5 id="step1-各种apt先get一下-安装需要的依赖">Step1 各种apt先get一下，安装需要的依赖</h5>
+
+<pre><code>sudo apt update
+sudo apt install build-essential cmake pkg-config
+</code></pre>
+
+<p>其中cmake是一定要安装的，apt是最简单的安装方式，pkg-config一般系统会自带，我们不管狂安装就是</p>
+
+<h5 id="step2-安装opencv需要的图片编码库-视频编码库等库">Step2 安装opencv需要的图片编码库、视频编码库等库</h5>
+
+<pre><code>sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+sudo apt-get install libxvidcore-dev libx264-dev
+sudo apt-get install libatlas-base-dev gfortran
+</code></pre>
+
+<p>前面两句是安装以来的编码库，包括图片和视频，最后一行是安装优化算法库atlas。</p>
+
+<h5 id="step3-极其重要的一步-安装python开发库-如果缺少这个步骤无法生成python的调用链接">Step3 <strong>极其重要的一步，安装python开发库，如果缺少这个步骤无法生成python的调用链接</strong></h5>
+
+<pre><code>sudo apt-get install python2.7-dev python3.5-dev
+</code></pre>
+
+<p>这里python2.7和3.5一起安装了，防止后面有人要安装2.7的版本。</p>
+
+<h5 id="step4-下载opencv源码文件">Step4 下载opencv源码文件</h5>
+
+<pre><code>cd ~
+git clone https://github.com/opencv/opencv.git
+</code></pre>
+
+<p>从这里下载最新的opencv版本，然后我们就会在home目录下看到opencv源代码文件了。</p>
+
+<h5 id="step5-开始编译和安装">Step5 开始编译和安装</h5>
+
+<pre><code>cd opencv
+mkdir build
+cd build
+cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_PYTHON_EXAMPLES=ON -D PYTHON_EXECUTABLE=/usr/bin/python -D WITH_CUDA=OFF -D BUILD_EXAMPLES=ON  ..
+</code></pre>
+
+<p>在这里我要解释一下，cmake后面的参数非常重要，决定了编译是否可以成功，其中比较重要的两个参数：<strong>PYTHON_EXECUTABLE</strong> <strong>WITH_CUDA</strong>,前者是告诉编译程序你的pyton解释器的路径，这个路径默认就是你在terminal输入which python弹出的路径，不管是python2.7还是3.5都是这个路径，后面这个是说你编译的时候要不要用CUDA加速，反正我是没有编译成功，所以直接放弃了，如果你有CUDA配置好了，可以参考下面这条命令：</p>
+
+<pre><code>cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_PYTHON_EXAMPLES=ON -D PYTHON_EXECUTABLE=/usr/bin/python -D CUDA_GENERATION=Auto -D BUILD_EXAMPLES=ON ..
+</code></pre>
+
+<p>参数CMAKE_BUILD_TYPE CMAKE_INSTALL_PREFIX是说你的cmake的安装路径，cmake默认是安装在/usr/local下的。ok，然后enter
+先cmake一下。在这个过程中你可能会遇到一些问题，一般可以百度到解决方案，比如可能会遇到一个问题就是提示没有ippicv文件，说是文件校验码不对，这个时候莫慌，直接从网上搜索ippicv这个文件放到opencv/3rdparty/ippicv下即可，同时build文件夹下也复制一个（build文件夹和opencv下的目录结果一样的），然后在cmake就没有问题了。
+OK，接着我们make</p>
+
+<pre><code>make -j8
+</code></pre>
+
+<p>这个时候有问题就百度一下，都能解决，一般情况下不会遇到问题，只要你的cmake参数设置没有写错。
+完成之后在install</p>
+
+<pre><code>sudo make install
+</code></pre>
+
+<p>OK，我们这就编译好了opencv的库。</p>
+
+<h4 id="来玩一玩opencv">来玩一玩opencv</h4>
+
+<p>千辛万苦终于编译好了，得好好玩玩这个opencv，这里哥带领大家玩一个牛逼点的例子：</p>
+
+	</p>
+
+	<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'spf13';
+    var disqus_identifier = 'https:\/\/example.org\/post\/Ubuntu%E4%B8%8B%E7%BC%96%E8%AF%91opencv%E5%B9%B6%E7%94%9F%E6%88%90python%E9%93%BE%E6%8E%A5%E5%BA%93%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B-%E5%90%90%E8%A1%80%E7%BC%96%E8%AF%91%E7%B3%BB%E5%88%97\/';
+    var disqus_title = 'Ubuntu下编译opencv并生成python链接库详细教程-吐血编译系列';
+    var disqus_url = 'https:\/\/example.org\/post\/Ubuntu%E4%B8%8B%E7%BC%96%E8%AF%91opencv%E5%B9%B6%E7%94%9F%E6%88%90python%E9%93%BE%E6%8E%A5%E5%BA%93%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B-%E5%90%90%E8%A1%80%E7%BC%96%E8%AF%91%E7%B3%BB%E5%88%97\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+		</div>
+
+		<!-- Footer -->
+<footer id="footer">
+	<ul class="icons">
+		
+		
+		
+		<li><a href="//twitter.com/spf13" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		
+		
+		<li><a href="//github.com/spf13" target="_blank" class="icon fa-github"><span class="label">Github</span></a></li>
+		
+		
+		
+		
+		
+		<li><a href="https://example.org/#contact-form" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+		
+		
+		<li><a href="https://example.org/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		
+	</ul>
+
+	<ul class="copyright">
+		
+		<li>&copy; Lewis Jin</li>
+		
+		<li>Design: <a href="//html5up.net">Jin Tian</a></li>
+		
+		<li>Demo Images: <a href="//unsplash.com/">Unsplash</a></li>
+		
+	</ul>
+</footer>
+
+<!-- Scripts -->
+<script src="https://example.org/js/jquery.min.js"></script>
+<script src="https://example.org/js/jquery.poptrox.min.js"></script>
+<script src="https://example.org/js/skel.min.js"></script>
+<script src="https://example.org/js/util.js"></script>
+
+<script src="https://example.org/js/main.js"></script>
+
+
+
+
+
+	</body>
+</html>

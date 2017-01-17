@@ -1,0 +1,257 @@
+<!DOCTYPE HTML>
+
+<!-- 
+Strata by HTML5 UP
+html5up.net | @n33co
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Yolo训练自己的数据集教程 Newest(2016-12-23) &middot; Strata</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="金天(Lewis Jin)">
+		<meta name="description" content="一个独立思考着思索的地方">
+		<meta http-equiv="content-language" content="en-us" />
+
+		
+		<meta name="og:site_name" content="Strata">
+		<meta name="og:title" content="Yolo训练自己的数据集教程 Newest(2016-12-23)">
+		<meta name="og:url" content="https://example.org/post/Yolo%E8%AE%AD%E7%BB%83%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86%E6%95%99%E7%A8%8B-Newest-2016-12-23/">
+		<meta name="og:image" content="https://example.org/images/avatar.jpg">
+		
+
+		<meta name="generator" content="Hugo 0.18.1" />
+
+		<!--[if lte IE 8]><script src='https://example.org/js/ie/html5shiv.js'></script><![endif]-->
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+		<link rel="stylesheet" href="https://example.org/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="https://example.org//css/ie8.css"><![endif]-->
+
+		
+		
+	</head>
+
+	<body id="top">
+		<!-- Header -->
+<header id="header">
+	<a href="https://example.org/" class="image avatar"><img src="https://example.org/images/avatar.jpg" alt="" /></a>
+	
+		<h1><strong>我是金天</strong>深度学习，人工智能爱好者<br>一个永远崇尚自由的思考者<br> 目前任职滴滴出行无人驾驶算法工程师.</h1>
+	
+
+	
+		<nav id="sidebar">
+			<ul>
+			
+				<li><a href="https://example.org/">Home</a></li>
+			
+				<li><a href="https://example.org/post/">Blog</a></li>
+			
+			</ul>
+		</nav>
+	
+</header>
+
+
+		<!-- Main -->
+		<div id="main">
+			
+	<span>
+		<h1>Yolo训练自己的数据集教程 Newest(2016-12-23)</h1>
+
+		<i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2016-12-22 18:27:38 &#43;0000 UTC">2016-12-22</time>&nbsp;&nbsp;
+
+
+
+
+   
+	</span>
+
+	<p>
+	    
+
+<h2 id="yolo-darknet训练自己的数据集教程-newest-2016-12-23">Yolo darknet训练自己的数据集教程(Newest 2016.12.23)</h2>
+
+<blockquote>
+<p>经过两天的折腾终于搞定了Yolo训练自己的数据集的过程，整个过程其实并不繁琐，只是网上一些过时的教程已经不适用了，依照那个反而让大家各种出出错，加之Yolo中文教程过少，因此本大神再次放一个，如果大家有任何问题直接在文章后面评论即可，笔者看到之后给予第一时间回复。</p>
+</blockquote>
+
+<p><strong>先插一句，Atom中文不能跟随窗口wrap文字的同学，打开settingview，设置soft wrap即可，百度上的答案真的是渣</strong></p>
+
+<h3 id="yolo简介">Yolo简介</h3>
+
+<p>在训练数据集之前，相信大家对yolo应该有一些了解，本文所采用的测试环境为：Ubuntu 16.04 + opencv2.4 + cuda8 + cudnn5.1 PLUS GTX1080，当然这个硬件不是必须，在下只是偶尔装一下逼。Yolo基于darknet编写，而编译draknet的时候最好安装一下opencv，因为没有opencv图不会自动弹出，没有那种快感，你懂得，不知道如何安装opencv的同学去我之前写的几个博客中搜寻。均能够找到最新的答案。</p>
+
+<p>yolo之所以快，是因为它的方法和fastrcnn以及其他detect算法不同，而采用了很多ssd的思想，在最新的更新中，yolo也改进了他们的算法，在pascal voc数据集上取得了不错的结果。本文将主要利用yolo来做realtime detect，对自己的数据进行训练和预测。</p>
+
+<h3 id="开始开车">开始开车</h3>
+
+<p>OK，闲话不多说，让我们直接上车，这次是无人驾驶，速度比较快，大家系好安全带。</p>
+
+<p><strong>Step 1 编译darknet，并熟悉目录结构</strong></p>
+
+<p>第一部分没有什么说的，很简单其实，首先clone代码到本地~目录：</p>
+
+<pre><code>cd ~
+git clone https://github.com/pjreddie/darknet
+cd darknet
+make
+</code></pre>
+
+<p>这个时候我们在home根目录就有了darknet了。直接编译，不需要修改任何参数，当然如何你是土豪，你有GTX1080,像我一样（手动装比）。可以编译一下Makefile里面的参数。为了防止大家出错我还是说一下，直接改标志为：</p>
+
+<pre><code>GPU=1
+CUDNN=1
+OPENCV=0
+DEBUG=0
+</code></pre>
+
+<p>如果你的cuda没有设置环境变量，nvcc的路径也设置一下：</p>
+
+<pre><code>NVCC=/usr/local/cuda/bin/nvcc
+</code></pre>
+
+<p>不要想的很复杂其实很简单。ok，现在直接make，编译就可以了。</p>
+
+<p>**Step 2 准备自己的数据集 **</p>
+
+<p>好了我们现在有了darktnet，但是我要那个匡出物体的掉炸天的图怎么搞？莫慌，我们先用darknet自带的测试数据来测试一下。
+首先呢，yolo这个网络是训练VOC数据集得来的，20中物体都能识别出来，我们直接下载已经训练好的权重然后来预测一张图片看看：</p>
+
+<pre><code>wget http://pjreddie.com/media/files/yolo.weights
+</code></pre>
+
+<p>这时候我们就下载好了yolo.weights，在darknet目录下。然后我们就可以用这个权重来预测啦！</p>
+
+<pre><code>./darknet detect cfg/yolo.cfg yolo.weights data/dog.jpg
+</code></pre>
+
+<p>detect命令意思是，检测，后面还有i一个命令是detector train，后者是训练的命令，预测用detect，cfg/yolo.cfg就是yolo这个网络的结构文件，后面是权重，最后后面是图片。
+ok，enter你就可以看到狗和自行车了！～
+这就搞定了darknet，那么问题来了。自己的数据集怎么准备呢？
+重点来了重点来了：
+* images 准备</p>
+
+<p>首先，把你的图片放到一个/images 文件夹下面，文件名的名字要有规律，比如0001.jpg,0002.jpg&hellip;.0100.jpg;</p>
+
+<ul>
+<li>xml 准备</li>
+</ul>
+
+<p>我相信很多人都需要用图片标注工具来对图片生成标注信息来训练，但是图片标注工具生成的多半是xml的标签信息。darknet需要的label并不是xml格式，而是一张图片一个txt的形式，txt中是你标注的物体方框坐标。后面我会放出几个脚本来处理。</p>
+
+<ul>
+<li>xml 转 darknet label</li>
+</ul>
+
+<p>xml转为darknet需要的label形式，一张图片一个标注信息。</p>
+
+<ul>
+<li>生成图片路径
+最后一部我们要生成两个txt文件，一个是train.txt,一个是valid.txt，train.txt包含了你训练图片需要的图片路径，没一行都是一张图片的路径，为了防止出错，后面我放出一个统一的脚本生成这个train.txt。</li>
+</ul>
+
+<p><strong>Step 3 训练之前修改darknet参数</strong></p>
+
+<p>接下来就要修改darknet的参数了，只要修改/cfg/voc.data 文件，因为yolo是为了voc而存在的，为了不修改源代码的情况下来训练我们的数据，建议直接修改voc.data而不是修改voc.data文件名。修改内容如下：</p>
+
+<pre><code>classes= 20
+train  = /home/pjreddie/data/voc/train.txt
+valid  = /home/pjreddie/data/voc/2007_test.txt
+names = data/voc.names
+backup = /home/pjreddie/backup/
+
+</code></pre>
+
+<p>这里，classes就是你数据集的类别，names你的新建一个，在data下面，然后在这里指向它，仿照voc.names 新建即可。
+修改train.txt valid.txt的路径，用绝对路径哦，防止出错，因为你darknet和数据可能不再一个目录。
+ok，这就setup完了，接着直接训练。
+不过训练之前获取一个预处理的权重：</p>
+
+<pre><code>curl -O http://pjreddie.com/media/files/darknet19_448.conv.23
+</code></pre>
+
+<p>然后，train：</p>
+
+<pre><code>./darknet detector train cfg/voc.data cfg/yolo-voc.cfg darknet19_448.conv.23
+</code></pre>
+
+<p>对了，如果你上面改了voc.data的文件名，这里也要改，所以说其实改也是可以的。然后yolo-voc.cfg就可以不改了。</p>
+
+<p><strong>Step 4 yolo训练出的模型预测</strong></p>
+
+<pre><code>./darknet detect cfg/yolo-voc.cfg /backup/voc.weights data/sample.jpg
+</code></pre>
+
+<p>这里不要和直接copy我的代码，cfg/yolo-voc.cfg就是我们训练的网络。后面是训练保存的权重，最后是你要预测的图片。
+OK，看看结果咋么样～</p>
+
+	</p>
+
+	<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'spf13';
+    var disqus_identifier = 'https:\/\/example.org\/post\/Yolo%E8%AE%AD%E7%BB%83%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86%E6%95%99%E7%A8%8B-Newest-2016-12-23\/';
+    var disqus_title = 'Yolo训练自己的数据集教程 Newest(2016-12-23)';
+    var disqus_url = 'https:\/\/example.org\/post\/Yolo%E8%AE%AD%E7%BB%83%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86%E6%95%99%E7%A8%8B-Newest-2016-12-23\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+		</div>
+
+		<!-- Footer -->
+<footer id="footer">
+	<ul class="icons">
+		
+		
+		
+		<li><a href="//twitter.com/spf13" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		
+		
+		<li><a href="//github.com/spf13" target="_blank" class="icon fa-github"><span class="label">Github</span></a></li>
+		
+		
+		
+		
+		
+		<li><a href="https://example.org/#contact-form" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+		
+		
+		<li><a href="https://example.org/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		
+	</ul>
+
+	<ul class="copyright">
+		
+		<li>&copy; Lewis Jin</li>
+		
+		<li>Design: <a href="//html5up.net">Jin Tian</a></li>
+		
+		<li>Demo Images: <a href="//unsplash.com/">Unsplash</a></li>
+		
+	</ul>
+</footer>
+
+<!-- Scripts -->
+<script src="https://example.org/js/jquery.min.js"></script>
+<script src="https://example.org/js/jquery.poptrox.min.js"></script>
+<script src="https://example.org/js/skel.min.js"></script>
+<script src="https://example.org/js/util.js"></script>
+
+<script src="https://example.org/js/main.js"></script>
+
+
+
+
+
+	</body>
+</html>
