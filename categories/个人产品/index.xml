@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>个人产品 on Strata</title>
-    <link>https://example.org/categories/%E4%B8%AA%E4%BA%BA%E4%BA%A7%E5%93%81/index.xml</link>
-    <description>Recent content in 个人产品 on Strata</description>
+    <title>个人产品 on Lewis Jin</title>
+    <link>http://lewisjin.coding.me/lewisjin/categories/%E4%B8%AA%E4%BA%BA%E4%BA%A7%E5%93%81/index.xml</link>
+    <description>Recent content in 个人产品 on Lewis Jin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://example.org/categories/%E4%B8%AA%E4%BA%BA%E4%BA%A7%E5%93%81/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://lewisjin.coding.me/lewisjin/categories/%E4%B8%AA%E4%BA%BA%E4%BA%A7%E5%93%81/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>PicBind--新一代图床神器</title>
-      <link>https://example.org/post/PicBind-%E6%96%B0%E4%B8%80%E4%BB%A3%E5%9B%BE%E5%BA%8A%E7%A5%9E%E5%99%A8/</link>
+      <link>http://lewisjin.coding.me/lewisjin/post/PicBind-%E6%96%B0%E4%B8%80%E4%BB%A3%E5%9B%BE%E5%BA%8A%E7%A5%9E%E5%99%A8/</link>
       <pubDate>Sat, 05 Nov 2016 20:56:22 +0000</pubDate>
       
-      <guid>https://example.org/post/PicBind-%E6%96%B0%E4%B8%80%E4%BB%A3%E5%9B%BE%E5%BA%8A%E7%A5%9E%E5%99%A8/</guid>
+      <guid>http://lewisjin.coding.me/lewisjin/post/PicBind-%E6%96%B0%E4%B8%80%E4%BB%A3%E5%9B%BE%E5%BA%8A%E7%A5%9E%E5%99%A8/</guid>
       <description>
 
 &lt;p&gt;本文介绍一个界面设计美观，自由度非常高的图床软件，写博客必备小助手—PicBind，一键拖拽上传图片，生成永久外链或Markdown格式优化外链，妈妈再也不担心你的博客图裂问题了。
