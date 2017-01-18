@@ -1,150 +1,178 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content=" ">
+    <meta name="description" content="一个独立思考着思索的地方">
+    <meta name="generator" content="Hugo 0.18.1" />
 
-<!-- 
-Strata by HTML5 UP
-html5up.net | @n33co
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Posts &middot; Lewis Jin</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="author" content="金天(Lewis Jin)">
-		<meta name="description" content="一个独立思考着思索的地方">
-		<meta http-equiv="content-language" content="en-us" />
+    
+    <title>Posts &middot; @’s Lewis Jin</title>
 
-		
-		<meta name="og:site_name" content="Lewis Jin">
-		<meta name="og:title" content="Posts">
-		<meta name="og:url" content="http://lewisjin.coding.me/lewisjin/post/">
-		<meta name="og:image" content="http://lewisjin.coding.me/lewisjinimages/avatar.jpg">
-		
+    <link rel="stylesheet" href="http://lewisjin.coding.me/lewisjincss/weblog.css" media="screen" charset="utf-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.14/css/lightgallery.min.css" type="text/css" />
+    
 
-		<meta name="generator" content="Hugo 0.18.1" />
 
-		<!--[if lte IE 8]><script src='http://lewisjin.coding.me/lewisjinjs/ie/html5shiv.js'></script><![endif]-->
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
-		<link rel="stylesheet" href="http://lewisjin.coding.me/lewisjincss/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="http://lewisjin.coding.me/lewisjin/css/ie8.css"><![endif]-->
+    
+  </head>
+  <body class="site">
 
-		
-		<link href="http://lewisjin.coding.me/lewisjin/post/index.xml" rel="alternate" type="application/rss+xml" title="Lewis Jin" />
-		<link href="http://lewisjin.coding.me/lewisjin/post/index.xml" rel="feed" type="application/rss+xml" title="Lewis Jin" />
-		
-		
-	</head>
-
-	<body id="top">
-		<!-- Header -->
-<header id="header">
-	<a href="http://lewisjin.coding.me/lewisjin" class="image avatar"><img src="http://lewisjin.coding.me/lewisjinimages/avatar.jpg" alt="" /></a>
-	
-		<h1><strong>我是金天</strong>深度学习，人工智能爱好者<br>一个永远崇尚自由的思考者<br> 目前任职滴滴出行无人驾驶算法工程师.</h1>
-	
-
-	
-		<nav id="sidebar">
-			<ul>
-			
-				<li><a href="http://lewisjin.coding.me/lewisjin/">Home</a></li>
-			
-				<li><a href="http://lewisjin.coding.me/lewisjin/post/">Blog</a></li>
-			
-			</ul>
-		</nav>
-	
+<header>
+  <nav>
+    <h1><a href="/">@</a>’s Lewis Jin.</h1>
+    <div class="menu">
+      
+      <ul>
+        
+            <li>
+              <a href="/lewisjin/">Home</a>
+              
+            </li>
+        
+            <li>
+              <a href="post/">Blog</a>
+              
+            </li>
+        
+        
+      </ul>
+    </div>
+  </nav>
 </header>
 
 
-		<!-- Main -->
-		<div id="main">
-			
+  <main class="content">
     
+
+  
+
+  
+
+  
+
+  
+    <article class="post">
+  
+    <h2><a rel="full-article" href="http://lewisjin.coding.me/lewisjin/post/Django-3-%E5%88%86%E5%88%86%E9%92%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AARESTful-API/">Django 3 分分钟搭建一个RESTful API</a></h2>
+  
+
+  <div class="postmeta">Posted on <time datetime="2017-01-16 23:31:58 &#43;0000 UTC" pubdate="">January 16, 2017</time>
     
-        <span>
-    <h1>
-        <a href="http://lewisjin.coding.me/lewisjin/post/Django-3-%E5%88%86%E5%88%86%E9%92%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AARESTful-API/">Django 3 分分钟搭建一个RESTful API</a>
-    </h1>
+  </div>
 
-    <i class="fa fa-calendar"></i>&nbsp;&nbsp;
-<time datetime="2017-01-16 23:31:58 &#43;0000 UTC">2017-01-16</time>&nbsp;&nbsp;
-
-
-
-
-   
-</span>
-
-<p>Django restframework 简介 时间过得好快，不知不觉这就是Django系列教程的第三部分了，这部分我们将在一分钟之内用django的一个第三方框架-Django restframework搭建我们的第一个api。首先闲话不多说让我们先安装一下这个框架：
+  <p>
+    
+      Django restframework 简介 时间过得好快，不知不觉这就是Django系列教程的第三部分了，这部分我们将在一分钟之内用django的一个第三方框架-Django restframework搭建我们的第一个api。首先闲话不多说让我们先安装一下这个框架：
 sudo pip3 install django-restframework  ok，安装完之后能让我们新建一个project吧
 django-admin startproject ara  接着新建一个app：
 python3 manage.py startapp users  ok这时候我们的项目结构应该是这样的：
 . ├── ara │ ├── __init__.py │ ├── settings.py │ ├── urls.py │ └── wsgi.py └── users ├── __init__.py ├── admin.py ├── apps.py ├── models.py ├── tests.py └── views.py  ok，简单易懂，接着还是我们配置一下restframework吧
 Restframework配置 配置这个框架请依照这个步骤来，缺一不可： - 在settings.py中我们install一下
-INSTALLED_APPS = [ 'django.contrib.admin', 'django.contrib.auth', 'django.contrib.contenttypes', 'django.contrib.sessions', 'django.contrib.messages', 'django.contrib.staticfiles', 'users', 'rest_framework' ]   在settings.</p>
-<hr>
-
+INSTALLED_APPS = [ 'django.contrib.admin', 'django.contrib.auth', 'django.contrib.contenttypes', 'django.contrib.sessions', 'django.contrib.messages', 'django.contrib.staticfiles', 'users', 'rest_framework' ]   在settings.
     
-        <span>
-    <h1>
-        <a href="http://lewisjin.coding.me/lewisjin/post/Django-2-MySQL-and-Blog/">Django 2 MySQL and Blog</a>
-    </h1>
+  </p>
 
-    <i class="fa fa-calendar"></i>&nbsp;&nbsp;
-<time datetime="2017-01-15 18:14:45 &#43;0000 UTC">2017-01-15</time>&nbsp;&nbsp;
-
-
-
-
-   
-</span>
-
-<p>mysql usage In this post I am going writting some useful commonds of mysql, hand this you can operate Database as cake. 1. Change specific database encode
-ALTER DATABASE ara CHARACTER SET utf8;   Change all database encode ``` SET CHARACTER_SET_CONNECTTION=utf8; SET CHARACTER_SET_DATABASE=utf8; SET CHARACTER_SET_SERVER=utf8; SET CHARACTER_SET_CLIENT=utf8;   3. **Ultimate method to change encode of mysql** ok, I have to admmit that above method you cannot really change mysql's encode, it still be latin1 for character_database and character_server.</p>
-<hr>
-
+  
     
-        <span>
-    <h1>
-        <a href="http://lewisjin.coding.me/lewisjin/post/Django%E4%B9%8B%E6%AD%8C-Post-1-Django-%E5%92%8C-mysql/">Django之歌-Post 1 Django和mysql</a>
-    </h1>
+      <a class="continue" rel="full-article" href="http://lewisjin.coding.me/lewisjin/post/Django-3-%E5%88%86%E5%88%86%E9%92%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AARESTful-API/">Continue Reading »</a>
+    
+  
+</article>
 
-    <i class="fa fa-calendar"></i>&nbsp;&nbsp;
-<time datetime="2017-01-12 20:31:45 &#43;0000 UTC">2017-01-12</time>&nbsp;&nbsp;
-
+  
 
 
+  
 
-   
-   
-       &nbsp;&nbsp;<i class="fa fa-tags"></i>&nbsp;&nbsp;
-       
-</span>
+  
 
-<p>这个post是讲述django和mysql的故事，记录django常用命令以及mysql的python接口安装方法，环境为python3.6。  本文由作者金天原创，欢迎大家转载，不过请保留这段版权信息，多谢合作，如对本文有任何问题欢迎联系作者: jintianiloveu
+  
+
+  
+    <article class="post">
+  
+    <h2><a rel="full-article" href="http://lewisjin.coding.me/lewisjin/post/Django-2-MySQL-and-Blog/">Django 2 MySQL and Blog</a></h2>
+  
+
+  <div class="postmeta">Posted on <time datetime="2017-01-15 18:14:45 &#43;0000 UTC" pubdate="">January 15, 2017</time>
+    
+  </div>
+
+  <p>
+    
+      mysql usage In this post I am going writting some useful commonds of mysql, hand this you can operate Database as cake. 1. Change specific database encode
+ALTER DATABASE ara CHARACTER SET utf8;   Change all database encode ``` SET CHARACTER_SET_CONNECTTION=utf8; SET CHARACTER_SET_DATABASE=utf8; SET CHARACTER_SET_SERVER=utf8; SET CHARACTER_SET_CLIENT=utf8;   3. **Ultimate method to change encode of mysql** ok, I have to admmit that above method you cannot really change mysql's encode, it still be latin1 for character_database and character_server.
+    
+  </p>
+
+  
+    
+      <a class="continue" rel="full-article" href="http://lewisjin.coding.me/lewisjin/post/Django-2-MySQL-and-Blog/">Continue Reading »</a>
+    
+  
+</article>
+
+  
+
+
+  
+
+  
+
+  
+
+  
+    <article class="post">
+  
+    <h2><a rel="full-article" href="http://lewisjin.coding.me/lewisjin/post/Django%E4%B9%8B%E6%AD%8C-Post-1-Django-%E5%92%8C-mysql/">Django之歌-Post 1 Django和mysql</a></h2>
+  
+
+  <div class="postmeta">Posted on <time datetime="2017-01-12 20:31:45 &#43;0000 UTC" pubdate="">January 12, 2017</time>
+    
+  </div>
+
+  <p>
+    
+      这个post是讲述django和mysql的故事，记录django常用命令以及mysql的python接口安装方法，环境为python3.6。  本文由作者金天原创，欢迎大家转载，不过请保留这段版权信息，多谢合作，如对本文有任何问题欢迎联系作者: jintianiloveu
  Django大法 作为一位极客，不会点服务端还真不行，现在什么都离不开云啊，最近一直想建站，app接口也要用到云，本来打算用java，可是想了一下java即使使用框架访问数据库的效率还是有点低，而我呢，python玩得这么6，人生苦短啊为何不用python，反正都是事先一样的东西，我们做的也不是淘宝天猫，不需要考虑太多并发的东西，因此从某种意义上来讲，使用django是一个非常不错的选择。好了闲话不多说，这是一个django之歌的系列，既然是歌那就得分乐章，不分逻辑了。
 Django命令 Django的安装就不多说了，安装好python，比如mac下brew install pyton3就ok了，再次必须说明一下，我不太喜欢过时的东西，但是太新意味着踩坑，所以大家要做好踩坑的准备。Django安装好之后就可以直接用了，这里我收集一下django入门会用到的命令吧：
 django-admin startproject deepx python3 manage.py startapp article python3 manage.py runserver  第一个命令是新建项目，第二个新建一个app，这里一个app其实就是项目中的一个功能模块，在我看来。 新建好的django一般是这样的工程目录：
-. ├── article │ ├── __init__.py │ ├── __pycache__ │ │ └── __init__.cpython-36.pyc │ ├── admin.py │ ├── apps.py │ ├── migrations │ │ └── __init__.py │ ├── models.py │ ├── tests.py │ └── views.py ├── lewisblog │ ├── __init__.py │ ├── __pycache__ │ │ ├── __init__.</p>
-<hr>
-
+. ├── article │ ├── __init__.py │ ├── __pycache__ │ │ └── __init__.cpython-36.pyc │ ├── admin.py │ ├── apps.py │ ├── migrations │ │ └── __init__.py │ ├── models.py │ ├── tests.py │ └── views.py ├── lewisblog │ ├── __init__.py │ ├── __pycache__ │ │ ├── __init__.
     
-        <span>
-    <h1>
-        <a href="http://lewisjin.coding.me/lewisjin/post/Yolo%E8%AE%AD%E7%BB%83%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86%E6%95%99%E7%A8%8B-Newest-2016-12-23/">Yolo训练自己的数据集教程 Newest(2016-12-23)</a>
-    </h1>
+  </p>
 
-    <i class="fa fa-calendar"></i>&nbsp;&nbsp;
-<time datetime="2016-12-22 18:27:38 &#43;0000 UTC">2016-12-22</time>&nbsp;&nbsp;
+  
+    
+      <a class="continue" rel="full-article" href="http://lewisjin.coding.me/lewisjin/post/Django%E4%B9%8B%E6%AD%8C-Post-1-Django-%E5%92%8C-mysql/">Continue Reading »</a>
+    
+  
+</article>
+
+  
 
 
+  
 
+  
 
-   
-</span>
+  
 
-<p>Yolo darknet训练自己的数据集教程(Newest 2016.12.23)  经过两天的折腾终于搞定了Yolo训练自己的数据集的过程，整个过程其实并不繁琐，只是网上一些过时的教程已经不适用了，依照那个反而让大家各种出出错，加之Yolo中文教程过少，因此本大神再次放一个，如果大家有任何问题直接在文章后面评论即可，笔者看到之后给予第一时间回复。
+  
+    <article class="post">
+  
+    <h2><a rel="full-article" href="http://lewisjin.coding.me/lewisjin/post/Yolo%E8%AE%AD%E7%BB%83%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86%E6%95%99%E7%A8%8B-Newest-2016-12-23/">Yolo训练自己的数据集教程 Newest(2016-12-23)</a></h2>
+  
+
+  <div class="postmeta">Posted on <time datetime="2016-12-22 18:27:38 &#43;0000 UTC" pubdate="">December 22, 2016</time>
+    
+  </div>
+
+  <p>
+    
+      Yolo darknet训练自己的数据集教程(Newest 2016.12.23)  经过两天的折腾终于搞定了Yolo训练自己的数据集的过程，整个过程其实并不繁琐，只是网上一些过时的教程已经不适用了，依照那个反而让大家各种出出错，加之Yolo中文教程过少，因此本大神再次放一个，如果大家有任何问题直接在文章后面评论即可，笔者看到之后给予第一时间回复。
  先插一句，Atom中文不能跟随窗口wrap文字的同学，打开settingview，设置soft wrap即可，百度上的答案真的是渣
 Yolo简介 在训练数据集之前，相信大家对yolo应该有一些了解，本文所采用的测试环境为：Ubuntu 16.04 + opencv2.4 + cuda8 + cudnn5.1 PLUS GTX1080，当然这个硬件不是必须，在下只是偶尔装一下逼。Yolo基于darknet编写，而编译draknet的时候最好安装一下opencv，因为没有opencv图不会自动弹出，没有那种快感，你懂得，不知道如何安装opencv的同学去我之前写的几个博客中搜寻。均能够找到最新的答案。
 yolo之所以快，是因为它的方法和fastrcnn以及其他detect算法不同，而采用了很多ssd的思想，在最新的更新中，yolo也改进了他们的算法，在pascal voc数据集上取得了不错的结果。本文将主要利用yolo来做realtime detect，对自己的数据进行训练和预测。
@@ -157,84 +185,132 @@ NVCC=/usr/local/cuda/bin/nvcc  不要想的很复杂其实很简单。ok，现�
 **Step 2 准备自己的数据集 **
 好了我们现在有了darktnet，但是我要那个匡出物体的掉炸天的图怎么搞？莫慌，我们先用darknet自带的测试数据来测试一下。 首先呢，yolo这个网络是训练VOC数据集得来的，20中物体都能识别出来，我们直接下载已经训练好的权重然后来预测一张图片看看：
 wget http://pjreddie.com/media/files/yolo.weights  这时候我们就下载好了yolo.weights，在darknet目录下。然后我们就可以用这个权重来预测啦！
-./darknet detect cfg/yolo.cfg yolo.weights data/dog.jpg  detect命令意思是，检测，后面还有i一个命令是detector train，后者是训练的命令，预测用detect，cfg/yolo.cfg就是yolo这个网络的结构文件，后面是权重，最后后面是图片。 ok，enter你就可以看到狗和自行车了！～ 这就搞定了darknet，那么问题来了。自己的数据集怎么准备呢？ 重点来了重点来了： * images 准备</p>
-<hr>
-
+./darknet detect cfg/yolo.cfg yolo.weights data/dog.jpg  detect命令意思是，检测，后面还有i一个命令是detector train，后者是训练的命令，预测用detect，cfg/yolo.cfg就是yolo这个网络的结构文件，后面是权重，最后后面是图片。 ok，enter你就可以看到狗和自行车了！～ 这就搞定了darknet，那么问题来了。自己的数据集怎么准备呢？ 重点来了重点来了： * images 准备
     
-        <span>
-    <h1>
-        <a href="http://lewisjin.coding.me/lewisjin/post/Ubuntu14-04-or-16-04-Nvidia-GTX1080-%E6%90%AD%E5%BB%BACUDA%E8%BF%87%E7%A8%8B/">Ubuntu14.04 or 16.04 Nvidia GTX1080 搭建CUDA过程</a>
-    </h1>
+  </p>
 
-    <i class="fa fa-calendar"></i>&nbsp;&nbsp;
-<time datetime="2016-12-17 11:02:30 &#43;0000 UTC">2016-12-17</time>&nbsp;&nbsp;
+  
+    
+      <a class="continue" rel="full-article" href="http://lewisjin.coding.me/lewisjin/post/Yolo%E8%AE%AD%E7%BB%83%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86%E6%95%99%E7%A8%8B-Newest-2016-12-23/">Continue Reading »</a>
+    
+  
+</article>
+
+  
 
 
+  
 
+  
 
-   
-</span>
+  
 
-<p>一定要ssh远程登录 关闭开启图形界面
+  
+    <article class="post">
+  
+    <h2><a rel="full-article" href="http://lewisjin.coding.me/lewisjin/post/Ubuntu14-04-or-16-04-Nvidia-GTX1080-%E6%90%AD%E5%BB%BACUDA%E8%BF%87%E7%A8%8B/">Ubuntu14.04 or 16.04 Nvidia GTX1080 搭建CUDA过程</a></h2>
+  
+
+  <div class="postmeta">Posted on <time datetime="2016-12-17 11:02:30 &#43;0000 UTC" pubdate="">December 17, 2016</time>
+    
+  </div>
+
+  <p>
+    
+      一定要ssh远程登录 关闭开启图形界面
 sudo service lightdm start  到后面可能换会出现 NVIDIA driver install - Error: Unable to find the kernel source tree的错误，解决办法 sudo update-grub uname -r 会显示当前内核
 cd /usr/src 会有kernel的位置
-卸载Nvidia驱动 sudo nvidia-uninstall</p>
-<hr>
-
+卸载Nvidia驱动 sudo nvidia-uninstall
     
-        <span>
-    <h1>
-        <a href="http://lewisjin.coding.me/lewisjin/post/Auto-Drive-Series-2-YOLO-state-of-arts-algrithm-learn-and-Pascal-VOC/">Auto Drive Series 2-YOLO state-of-arts algrithm learn and Pascal VOC</a>
-    </h1>
+  </p>
 
-    <i class="fa fa-calendar"></i>&nbsp;&nbsp;
-<time datetime="2016-12-16 14:22:12 &#43;0000 UTC">2016-12-16</time>&nbsp;&nbsp;
+  
+</article>
 
+  
 
 
+  
 
-   
-</span>
+  
 
-<p>This post about YOLO algrithm: you only look once. These days I am search on the auto drive things, here is the recording of the rearch process. &gt; 本文由中南大学较为牛逼的研究生金天同学原创，欢迎转载，但是请保留这段版权信息，如果你对文章有任何疑问，欢迎微信联系我：jintianiloveu。牛逼大神一一为你解答！
-YOLO-you only look Once yolo Pascal VOC coco test-dev</p>
-<hr>
+  
 
+  
+    <article class="post">
+  
+    <h2><a rel="full-article" href="http://lewisjin.coding.me/lewisjin/post/Auto-Drive-Series-2-YOLO-state-of-arts-algrithm-learn-and-Pascal-VOC/">Auto Drive Series 2-YOLO state-of-arts algrithm learn and Pascal VOC</a></h2>
+  
+
+  <div class="postmeta">Posted on <time datetime="2016-12-16 14:22:12 &#43;0000 UTC" pubdate="">December 16, 2016</time>
     
-        <span>
-    <h1>
-        <a href="http://lewisjin.coding.me/lewisjin/post/Autodrive-Series-1-kitti-dataset-search/">Autodrive Series 1-kitti dataset search</a>
-    </h1>
+  </div>
 
-    <i class="fa fa-calendar"></i>&nbsp;&nbsp;
-<time datetime="2016-12-16 13:08:17 &#43;0000 UTC">2016-12-16</time>&nbsp;&nbsp;
-
-
-
-
-   
-</span>
-
-<p>This post about auto drive These days I am search on the auto drive things, here is the recording of the rearch process. &gt; 本文由中南大学较为牛逼的研究生金天同学原创，欢迎转载，但是请保留这段版权信息，如果你对文章有任何疑问，欢迎微信联系我：jintianiloveu。牛逼大神一一为你解答！
-kitti Dataset Intro kitti dataset include a lot of data, such as flow and object detection and tracking. This part mainly about object detect. First we work on the data of object tracking. This data have lots of stereo images. Lots of orginaization have benchmark on the data.</p>
-<hr>
-
+  <p>
     
-        <span>
-    <h1>
-        <a href="http://lewisjin.coding.me/lewisjin/post/Hexo%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF/">Hexo博客更换电脑的正确姿势</a>
-    </h1>
+      This post about YOLO algrithm: you only look once. These days I am search on the auto drive things, here is the recording of the rearch process. &gt; 本文由中南大学较为牛逼的研究生金天同学原创，欢迎转载，但是请保留这段版权信息，如果你对文章有任何疑问，欢迎微信联系我：jintianiloveu。牛逼大神一一为你解答！
+YOLO-you only look Once yolo Pascal VOC coco test-dev
+    
+  </p>
 
-    <i class="fa fa-calendar"></i>&nbsp;&nbsp;
-<time datetime="2016-12-12 10:47:07 &#43;0000 UTC">2016-12-12</time>&nbsp;&nbsp;
+  
+</article>
+
+  
 
 
+  
+
+  
+
+  
+
+  
+    <article class="post">
+  
+    <h2><a rel="full-article" href="http://lewisjin.coding.me/lewisjin/post/Autodrive-Series-1-kitti-dataset-search/">Autodrive Series 1-kitti dataset search</a></h2>
+  
+
+  <div class="postmeta">Posted on <time datetime="2016-12-16 13:08:17 &#43;0000 UTC" pubdate="">December 16, 2016</time>
+    
+  </div>
+
+  <p>
+    
+      This post about auto drive These days I am search on the auto drive things, here is the recording of the rearch process. &gt; 本文由中南大学较为牛逼的研究生金天同学原创，欢迎转载，但是请保留这段版权信息，如果你对文章有任何疑问，欢迎微信联系我：jintianiloveu。牛逼大神一一为你解答！
+kitti Dataset Intro kitti dataset include a lot of data, such as flow and object detection and tracking. This part mainly about object detect. First we work on the data of object tracking. This data have lots of stereo images. Lots of orginaization have benchmark on the data.
+    
+  </p>
+
+  
+    
+      <a class="continue" rel="full-article" href="http://lewisjin.coding.me/lewisjin/post/Autodrive-Series-1-kitti-dataset-search/">Continue Reading »</a>
+    
+  
+</article>
+
+  
 
 
-   
-</span>
+  
 
-<p>hexo指南  本文由中南大学较为牛逼的研究生金天同学原创，欢迎转载，但是请保留这段版权信息，如果你对文章有任何疑问，欢迎微信联系我：jintianiloveu。牛逼大神一一为你解答！
+  
+
+  
+
+  
+    <article class="post">
+  
+    <h2><a rel="full-article" href="http://lewisjin.coding.me/lewisjin/post/Hexo%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF/">Hexo博客更换电脑的正确姿势</a></h2>
+  
+
+  <div class="postmeta">Posted on <time datetime="2016-12-12 10:47:07 &#43;0000 UTC" pubdate="">December 12, 2016</time>
+    
+  </div>
+
+  <p>
+    
+      hexo指南  本文由中南大学较为牛逼的研究生金天同学原创，欢迎转载，但是请保留这段版权信息，如果你对文章有任何疑问，欢迎微信联系我：jintianiloveu。牛逼大神一一为你解答！
  Hexo如何实现更换电脑继续写博客 这个问题有点蛋疼，不是麻烦而是如果你不知道一些细节会有莫名其妙的错误。我现在不仅仅是实现了两台电脑更新博客，同时我的Mac笔记上甚至运行了两个不同的hexo博客，分别部署到了两个不同的github账号中。接下来就记录一下更新过程。 首先是加入你有一台台式电脑，在实验室，那么哪一天你离开了实验室你就要把博客搬到自己的笔记本，我们接下来就处理这个问题。
  首先把原来电脑的博客git推送到一个Hexo-Blog——Resources远程仓库中  ok这个步骤其实很简单，直接在实验室的台式电脑hexoblog目录下git init，然后在github新建一个放源文件的仓库，推送进去即可
  将远程博客同步到自己笔记本  这个步骤也简单，直接克隆 接下来是重点
@@ -242,111 +318,125 @@ kitti Dataset Intro kitti dataset include a lot of data, such as flow and object
 npm install hexo npm install hexo-deployer-git  最后记得执行hexo clean这个命令。一定要clean，然后再hexo d -g
 hexo实现一台电脑两个git账号管理两个博客 实际上这个我也是一种尝试，有两个办法，一种是生成一个id_rsa密匙，然后再两个github账号中都添加这个密匙，这样直接就可以deploy了。 不过这种办法并不好，另外一种办法是生成两个密匙，分别命名。然后再用一个config来管理：
 cd ~/.ssh vi config  添加以下代码
-Host github.com HostName github.com PreferredAuthentications publickey IdentityFile ~/.ssh/id_rsa Host coding.net HostName coding.net PreferredAuthentications pulickey IdentityFile ~/.ssh/id_rsa_lewisjin  应该就可以了。 更新ssh publickey 之后一定记得 ssh-add id_rsa,否则ssh依旧会提示登不上的！！！</p>
-<hr>
-
+Host github.com HostName github.com PreferredAuthentications publickey IdentityFile ~/.ssh/id_rsa Host coding.net HostName coding.net PreferredAuthentications pulickey IdentityFile ~/.ssh/id_rsa_lewisjin  应该就可以了。 更新ssh publickey 之后一定记得 ssh-add id_rsa,否则ssh依旧会提示登不上的！！！
     
-        <span>
-    <h1>
-        <a href="http://lewisjin.coding.me/lewisjin/post/%E5%A4%9C%E6%9C%89%E6%89%80%E6%80%9D/">夜有所思</a>
-    </h1>
+  </p>
 
-    <i class="fa fa-calendar"></i>&nbsp;&nbsp;
-<time datetime="2016-12-11 23:35:30 &#43;0000 UTC">2016-12-11</time>&nbsp;&nbsp;
+  
+</article>
 
+  
 
 
+  
 
-   
-</span>
+  
 
-<p>本文是我的一个随笔 &gt; 你有过思念的感觉吗？
-桃花谢了春红，太匆匆，却是朝来风雨晚来风 岁月悄然流淌，我们也在成长，可是在成长的岁月里那些留给我们的感动我们还记得多少呢？以前只有离别家乡的时候才会与依依不舍之情，现在离开的这个地方不是家乡，却有着跟家乡一样的感觉，有着牵挂的人，这也许就是一种魂牵梦绕的情愫吧。 今天把博客从实验室搬到了自己的笔记本，宾至如归，所有的事情我都想好好的握在手里，不至于等到失去之后我才后悔莫及。 好吧这其实是一个测试，测试一下博客有没有迁移成功，也不能太伤感了，哎。</p>
-<hr>
+  
 
+  
+    <article class="post">
+  
+    <h2><a rel="full-article" href="http://lewisjin.coding.me/lewisjin/post/%E5%A4%9C%E6%9C%89%E6%89%80%E6%80%9D/">夜有所思</a></h2>
+  
+
+  <div class="postmeta">Posted on <time datetime="2016-12-11 23:35:30 &#43;0000 UTC" pubdate="">December 11, 2016</time>
     
-        <span>
-    <h1>
-        <a href="http://lewisjin.coding.me/lewisjin/post/git%E5%91%BD%E4%BB%A4%E5%88%A0%E9%99%A4%E5%BD%93%E5%89%8D%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E4%BE%9D%E8%B5%96/">git命令删除当前远程仓库依赖</a>
-    </h1>
+  </div>
 
-    <i class="fa fa-calendar"></i>&nbsp;&nbsp;
-<time datetime="2016-12-11 21:51:12 &#43;0000 UTC">2016-12-11</time>&nbsp;&nbsp;
+  <p>
+    
+      本文是我的一个随笔 &gt; 你有过思念的感觉吗？
+桃花谢了春红，太匆匆，却是朝来风雨晚来风 岁月悄然流淌，我们也在成长，可是在成长的岁月里那些留给我们的感动我们还记得多少呢？以前只有离别家乡的时候才会与依依不舍之情，现在离开的这个地方不是家乡，却有着跟家乡一样的感觉，有着牵挂的人，这也许就是一种魂牵梦绕的情愫吧。 今天把博客从实验室搬到了自己的笔记本，宾至如归，所有的事情我都想好好的握在手里，不至于等到失去之后我才后悔莫及。 好吧这其实是一个测试，测试一下博客有没有迁移成功，也不能太伤感了，哎。
+    
+  </p>
+
+  
+</article>
+
+  
 
 
+  
 
+  
 
-   
-</span>
+  
 
-<p>git命令简介 学会使用git命令，不仅仅可以远程操控一切，还可以节省很多体力劳动，比如插优盘拔优盘.. &gt; 本文由中南大学较为牛逼的研究生金天同学原创，欢迎转载，但是请保留这段版权信息，如果你对文章有任何疑问，欢迎微信联系我：jintianiloveu。牛逼大神一一为你解答！
+  
+    <article class="post">
+  
+    <h2><a rel="full-article" href="http://lewisjin.coding.me/lewisjin/post/git%E5%91%BD%E4%BB%A4%E5%88%A0%E9%99%A4%E5%BD%93%E5%89%8D%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E4%BE%9D%E8%B5%96/">git命令删除当前远程仓库依赖</a></h2>
+  
+
+  <div class="postmeta">Posted on <time datetime="2016-12-11 21:51:12 &#43;0000 UTC" pubdate="">December 11, 2016</time>
+    
+  </div>
+
+  <p>
+    
+      git命令简介 学会使用git命令，不仅仅可以远程操控一切，还可以节省很多体力劳动，比如插优盘拔优盘.. &gt; 本文由中南大学较为牛逼的研究生金天同学原创，欢迎转载，但是请保留这段版权信息，如果你对文章有任何疑问，欢迎微信联系我：jintianiloveu。牛逼大神一一为你解答！
 git命令使用简介 git命令其实非常简单，但是网上的教程大多数都是乱七八糟，误人子弟，其实要我来讲，只需要记住一个概念：git是将本地仓库对接远程仓库的工具，这里记住有两个名词，一个本地仓库一个远程仓库，那么必然是两个仓库，很多人在后面遇到很多问题都是不明白这两个概念造成的。 使用之前首先第一步用git初始化，然后把所有文件添加到本地仓库，注意一定要添加之本地仓库，而在添加本地仓库的时候，如果你的代码有修改，那么就得commit，所谓commit就是执行，确保执行，加上你的注解，防止后面你不知道改了哪个地方。 然后才是git remote add origin http://github.com/.. 最后才是push 所以说一般的git使用套路是这样的：
 git init git add . git commit -a -m &quot;first commit&quot; git remote add origin http://github.com/jinfagang/Morph.git git push origin master  注意这里为什么要添加到origin而不是brigin或者其他名字，其实是可以的，只是我们习惯拔本地仓库明明为origin。
 git修改远程仓库 有时候我们需要修改一下远程仓库的依赖，很简单
-git remote remove origin  直接拔本地的remote仓库删除即可。</p>
-<hr>
-
+git remote remove origin  直接拔本地的remote仓库删除即可。
     
+  </p>
 
-    
-    
+  
+</article>
 
-    
-
-    
-        <a class="button" rel="next" href="http://lewisjin.coding.me/lewisjin/lewisjin/post/page/2/">
-            Older »
-        </a>
-    
+  
 
 
 
-		</div>
+<div class="pagination">
+  
 
-		<!-- Footer -->
-<footer id="footer">
-	<ul class="icons">
-		
-		
-		
-		<li><a href="//twitter.com/spf13" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-		
-		
-		<li><a href="//github.com/spf13" target="_blank" class="icon fa-github"><span class="label">Github</span></a></li>
-		
-		
-		
-		
-		
-		<li><a href="http://lewisjin.coding.me/lewisjin#contact-form" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
-		
-		
-		<li><a href="http://lewisjin.coding.me/lewisjin/post/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
-		
-	</ul>
+  
 
-	<ul class="copyright">
-		
-		<li>&copy; Lewis Jin</li>
-		
-		<li>Design: <a href="//html5up.net">Jin Tian</a></li>
-		
-		<li>Demo Images: <a href="//unsplash.com/">Unsplash</a></li>
-		
-	</ul>
+  
+    <a href="/lewisjin/post/page/2/">Older »</a>
+  
+</div>
+
+
+  </main>
+
+<footer>
+  <div class="footer_text">
+      <div>
+        <h3>Hi, <a href="">I'm </a></h3>
+        <p>
+          Here you can place a short bio about yourself. Place a `bio.html` file in your
+project directory under `layout/partials`. That will override this message.
+
+        </p>
+      </div>
+      
+  </div>
+
+  
 </footer>
 
-<!-- Scripts -->
-<script src="http://lewisjin.coding.me/lewisjinjs/jquery.min.js"></script>
-<script src="http://lewisjin.coding.me/lewisjinjs/jquery.poptrox.min.js"></script>
-<script src="http://lewisjin.coding.me/lewisjinjs/skel.min.js"></script>
-<script src="http://lewisjin.coding.me/lewisjinjs/util.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/2.2.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.14/js/lightgallery-all.min.js" charset="utf-8"></script>
+    <script src="/js/weblog.js" charset="utf-8"></script>
+    
 
-<script src="http://lewisjin.coding.me/lewisjinjs/main.js"></script>
+    <script type="text/javascript">
 
+  
+  $(function() {
+    
+    $.getJSON("https://api.flickr.com/services/feeds/photos_public.gne?id=&format=json&jsoncallback=?", function(data) {
+      iweblog.application.displayImages(data, 8);
+    });
+  });
 
+</script>
 
-
-
-	</body>
+    
+  </body>
 </html>
+

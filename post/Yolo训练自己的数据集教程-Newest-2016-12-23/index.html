@@ -1,76 +1,91 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yolo训练自己的数据集教程 Newest(2016-12-23)</title>
+<meta name="description" content="Jin Tian&#39;s blog about everything, artifical intelligence, Android, Web, iOS, you name it..">
+<meta name="generator" content="Hugo 0.18.1" />
+<meta property="og:title" content="Yolo训练自己的数据集教程 Newest(2016-12-23)" />
+<meta property="og:description" content="Yolo darknet训练自己的数据集教程(Newest 2016.12.23)  经过两天的折腾终于搞定了Yolo训练自己的数据集的过程，整个过程其实并不繁琐，只是网上一些过时的教程已经不适用了，依照那个反而让大家各种出出错，加之Yolo中文教程过少，因此本大神再次放一个，如果大家有任何问题直接在文章后面评论即可，笔者看到之后给予第一时间回复。
+ 先插一句，Atom中文不能跟随窗口wrap文字的同学，打开settingview，设置soft wrap即可，百度上的答案真的是渣
+Yolo简介 在训练数据集之前，相信大家对yolo应该有一些了解，本文所采用的测试环境为：Ubuntu 16.04 &#43; opencv2.4 &#43; cuda8 &#43; cudnn5.1 PLUS GTX1080，当然这个硬件不是必须，在下只是偶尔装一下逼。Yolo基于darknet编写，而编译draknet的时候最好安装一下opencv，因为没有opencv图不会自动弹出，没有那种快感，你懂得，不知道如何安装opencv的同学去我之前写的几个博客中搜寻。均能够找到最新的答案。
+yolo之所以快，是因为它的方法和fastrcnn以及其他detect算法不同，而采用了很多ssd的思想，在最新的更新中，yolo也改进了他们的算法，在pascal voc数据集上取得了不错的结果。本文将主要利用yolo来做realtime detect，对自己的数据进行训练和预测。
+开始开车 OK，闲话不多说，让我们直接上车，这次是无人驾驶，速度比较快，大家系好安全带。
+Step 1 编译darknet，并熟悉目录结构
+第一部分没有什么说的，很简单其实，首先clone代码到本地~目录：
+cd ~ git clone https://github.com/pjreddie/darknet cd darknet make  这个时候我们在home根目录就有了darknet了。直接编译，不需要修改任何参数，当然如何你是土豪，你有GTX1080,像我一样（手动装比）。可以编译一下Makefile里面的参数。为了防止大家出错我还是说一下，直接改标志为：
+GPU=1 CUDNN=1 OPENCV=0 DEBUG=0  如果你的cuda没有设置环境变量，nvcc的路径也设置一下：
+NVCC=/usr/local/cuda/bin/nvcc  不要想的很复杂其实很简单。ok，现在直接make，编译就可以了。
+**Step 2 准备自己的数据集 **
+好了我们现在有了darktnet，但是我要那个匡出物体的掉炸天的图怎么搞？莫慌，我们先用darknet自带的测试数据来测试一下。 首先呢，yolo这个网络是训练VOC数据集得来的，20中物体都能识别出来，我们直接下载已经训练好的权重然后来预测一张图片看看：
+wget http://pjreddie.com/media/files/yolo.weights  这时候我们就下载好了yolo.weights，在darknet目录下。然后我们就可以用这个权重来预测啦！
+./darknet detect cfg/yolo.cfg yolo.weights data/dog.jpg  detect命令意思是，检测，后面还有i一个命令是detector train，后者是训练的命令，预测用detect，cfg/yolo.cfg就是yolo这个网络的结构文件，后面是权重，最后后面是图片。 ok，enter你就可以看到狗和自行车了！～ 这就搞定了darknet，那么问题来了。自己的数据集怎么准备呢？ 重点来了重点来了： * images 准备" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://jintianme.github.io/post/Yolo%E8%AE%AD%E7%BB%83%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86%E6%95%99%E7%A8%8B-Newest-2016-12-23/" />
 
-<!-- 
-Strata by HTML5 UP
-html5up.net | @n33co
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Yolo训练自己的数据集教程 Newest(2016-12-23) &middot; Lewis Jin</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="author" content="金天(Lewis Jin)">
-		<meta name="description" content="一个独立思考着思索的地方">
-		<meta http-equiv="content-language" content="en-us" />
 
+<meta property="og:updated_time" content="2016-12-22T18:27:38&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,600" type="text/css" media="all" />
+<link rel="stylesheet" href="http://jintianme.github.iocss/style.css" type="text/css" media="all" />
+<script type="text/javascript" src="http://jintianme.github.iojs/scripts.js"></script>
+<!--[if lt IE 9]>
+	<script src="http://jintianme.github.iojs/css3-mediaqueries.js"></script>
+<![endif]-->
+</head>
+<body class="home blog mr-right-sb mr-mobile" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+	<div class="mr-container mr-container-outer">
+		<div class="mr-header-mobile-nav clearfix"></div>
+			<header class="mr-header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+				<div class="mr-container mr-container-inner mr-row clearfix">
+					<div class="mr-custom-header clearfix">
+						<div class="mr-site-identity">
+							<div class="mr-site-logo" role="banner" itemscope="itemscope" itemtype="http://schema.org/Brand">
+								<div class="mr-header-text">
+									<a class="mr-header-text-link" href="http://jintianme.github.io" title="Lewis Jin" rel="home">
+										<h1 class="mr-header-title">Lewis Jin</h1>
+										<h2 class="mr-header-tagline">Just another site</h2>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="mr-main-nav-wrap">
+					<nav class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+	<ul class="menu__list">
 		
-		<meta name="og:site_name" content="Lewis Jin">
-		<meta name="og:title" content="Yolo训练自己的数据集教程 Newest(2016-12-23)">
-		<meta name="og:url" content="http://lewisjin.coding.me/lewisjin/post/Yolo%E8%AE%AD%E7%BB%83%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86%E6%95%99%E7%A8%8B-Newest-2016-12-23/">
-		<meta name="og:image" content="http://lewisjin.coding.me/lewisjinimages/avatar.jpg">
-		
+	</ul>
+</nav>
+				</div>
+			</header>
+		<div class="mr-wrapper clearfix">
 
-		<meta name="generator" content="Hugo 0.18.1" />
 
-		<!--[if lte IE 8]><script src='http://lewisjin.coding.me/lewisjinjs/ie/html5shiv.js'></script><![endif]-->
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
-		<link rel="stylesheet" href="http://lewisjin.coding.me/lewisjincss/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="http://lewisjin.coding.me/lewisjin/css/ie8.css"><![endif]-->
-
-		
-		
-	</head>
-
-	<body id="top">
-		<!-- Header -->
-<header id="header">
-	<a href="http://lewisjin.coding.me/lewisjin" class="image avatar"><img src="http://lewisjin.coding.me/lewisjinimages/avatar.jpg" alt="" /></a>
-	
-		<h1><strong>我是金天</strong>深度学习，人工智能爱好者<br>一个永远崇尚自由的思考者<br> 目前任职滴滴出行无人驾驶算法工程师.</h1>
-	
-
-	
-		<nav id="sidebar">
-			<ul>
+<div class="main-content mr-content" role="main" itemprop="mainContentOfPage">
+	<article class="post">
+		<header class="entry-header clearfix">
+			<h1 class="entry-title">Yolo训练自己的数据集教程 Newest(2016-12-23)</h1>
+			<p class="mr-meta entry-meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="entry-meta-date updated" datetime="2016-12-22 18:27:38 &#43;0000 UTC">December 22, 2016</time>
+			</p>
+		</header>
+		<div class="entry-content clearfix">
 			
-				<li><a href="http://lewisjin.coding.me/lewisjin/">Home</a></li>
 			
-				<li><a href="http://lewisjin.coding.me/lewisjin/post/">Blog</a></li>
-			
-			</ul>
-		</nav>
-	
-</header>
-
-
-		<!-- Main -->
-		<div id="main">
-			
-	<span>
-		<h1>Yolo训练自己的数据集教程 Newest(2016-12-23)</h1>
-
-		<i class="fa fa-calendar"></i>&nbsp;&nbsp;
-<time datetime="2016-12-22 18:27:38 &#43;0000 UTC">2016-12-22</time>&nbsp;&nbsp;
-
-
-
-
-   
-	</span>
-
-	<p>
-	    
 
 <h2 id="yolo-darknet训练自己的数据集教程-newest-2016-12-23">Yolo darknet训练自己的数据集教程(Newest 2016.12.23)</h2>
 
@@ -188,14 +203,46 @@ ok，这就setup完了，接着直接训练。
 <p>这里不要和直接copy我的代码，cfg/yolo-voc.cfg就是我们训练的网络。后面是训练保存的权重，最后是你要预测的图片。
 OK，看看结果咋么样～</p>
 
-	</p>
+		</div>
+		
+	</article>
+	
+<div class="mr-author-box clearfix">
+	<figure class="mr-author-box-avatar">
+		<img alt="Lewis Jin avatar" src="http://jintianme.github.io/img/avatar.jpg" class="avatar avatar-90 photo" height="90" width="90">
+	</figure>
+	<div class="mr-author-box-header">
+		<span class="mr-author-box-name">About Lewis Jin</span>
+	</div>
+	<div class="mr-author-box-bio">
+		Lewis Jin is a intelligent scientist, maybe he loves make funny AI program.
+	</div>
+</div>
 
+	
+
+	<nav class="mr-post-nav mr-row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+		
+		<div class="mr-col-1-2 mr-post-nav-item mr-post-nav-prev">
+			<a href="http://jintianme.github.io/post/Django%E4%B9%8B%E6%AD%8C-Post-1-Django-%E5%92%8C-mysql/" rel="prev"><span>«Previous</span><p>Django之歌-Post 1 Django和mysql</p></a>
+		</div>
+		
+		
+		<div class="mr-col-1-2 mr-post-nav-item mr-post-nav-next">
+			<a href="http://jintianme.github.io/post/Ubuntu14-04-or-16-04-Nvidia-GTX1080-%E6%90%AD%E5%BB%BACUDA%E8%BF%87%E7%A8%8B/" rel="next"><span>Next»</span><p>Ubuntu14.04 or 16.04 Nvidia GTX1080 搭建CUDA过程</p></a>
+		</div>
+		
+	</nav>
+
+
+	
+<div id="mr-comments" class="mr-comments-wrap">
 	<div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'spf13';
-    var disqus_identifier = 'http:\/\/lewisjin.coding.me\/lewisjin\/post\/Yolo%E8%AE%AD%E7%BB%83%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86%E6%95%99%E7%A8%8B-Newest-2016-12-23\/';
+    var disqus_identifier = 'http:\/\/jintianme.github.io\/post\/Yolo%E8%AE%AD%E7%BB%83%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86%E6%95%99%E7%A8%8B-Newest-2016-12-23\/';
     var disqus_title = 'Yolo训练自己的数据集教程 Newest(2016-12-23)';
-    var disqus_url = 'http:\/\/lewisjin.coding.me\/lewisjin\/post\/Yolo%E8%AE%AD%E7%BB%83%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86%E6%95%99%E7%A8%8B-Newest-2016-12-23\/';
+    var disqus_url = 'http:\/\/jintianme.github.io\/post\/Yolo%E8%AE%AD%E7%BB%83%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86%E6%95%99%E7%A8%8B-Newest-2016-12-23\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -205,53 +252,106 @@ OK，看看结果咋么样～</p>
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
 
+</div>
+
+<aside class="mr-sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+	
+<div class="mr-widget widget_search">
+	<form class="search-form" role="search" method="get" action="//google.com/search">
+		<label>
+			<span class="screen-reader-text">Search for:</span>
+			<input type="search" class="search-field" placeholder="SEARCH..." value="" name="q">
+		</label>
+		<input class="search-submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="http://jintianme.github.io" />
+	</form>
+</div>
+
+	
+<div class="mr-widget widget_recent_entries">
+	<h4 class="mr-widget-title"><span class="mr-widget-title-inner">Recent Posts</span></h4>
+	<ul>
+		
+		<li><a href="/post/Django-3-%E5%88%86%E5%88%86%E9%92%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AARESTful-API/">Django 3 分分钟搭建一个RESTful API</a></li>
+		
+		<li><a href="/post/Django-2-MySQL-and-Blog/">Django 2 MySQL and Blog</a></li>
+		
+		<li><a href="/post/Django%E4%B9%8B%E6%AD%8C-Post-1-Django-%E5%92%8C-mysql/">Django之歌-Post 1 Django和mysql</a></li>
+		
+		<li><a href="/post/Yolo%E8%AE%AD%E7%BB%83%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86%E6%95%99%E7%A8%8B-Newest-2016-12-23/">Yolo训练自己的数据集教程 Newest(2016-12-23)</a></li>
+		
+		<li><a href="/post/Ubuntu14-04-or-16-04-Nvidia-GTX1080-%E6%90%AD%E5%BB%BACUDA%E8%BF%87%E7%A8%8B/">Ubuntu14.04 or 16.04 Nvidia GTX1080 搭建CUDA过程</a></li>
+		
+		<li><a href="/post/Auto-Drive-Series-2-YOLO-state-of-arts-algrithm-learn-and-Pascal-VOC/">Auto Drive Series 2-YOLO state-of-arts algrithm learn and Pascal VOC</a></li>
+		
+		<li><a href="/post/Autodrive-Series-1-kitti-dataset-search/">Autodrive Series 1-kitti dataset search</a></li>
+		
+		<li><a href="/post/Hexo%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF/">Hexo博客更换电脑的正确姿势</a></li>
+		
+		<li><a href="/post/%E5%A4%9C%E6%9C%89%E6%89%80%E6%80%9D/">夜有所思</a></li>
+		
+		<li><a href="/post/git%E5%91%BD%E4%BB%A4%E5%88%A0%E9%99%A4%E5%BD%93%E5%89%8D%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E4%BE%9D%E8%B5%96/">git命令删除当前远程仓库依赖</a></li>
+		
+	</ul>
+</div>
+
+
+	
+
+
+<div class="mr-widget widget_categories">
+	<h4 class="mr-widget-title"><span class="mr-widget-title-inner">Categories</span></h4>
+	<ul>
+		
+		<li class="cat-item"><a href="http://jintianme.github.iocategories/%e4%b8%aa%e4%ba%ba%e4%ba%a7%e5%93%81">个人产品</a></li>
+		
+	</ul>
+</div>
+
+
+
+	
+
+
+<div class="mr-widget widget_tag_cloud">
+	<h4 class="mr-widget-title"><span class="mr-widget-title-inner">Tags</span></h4>
+	<div class="tagcloud">
+		
+			<a href="http://jintianme.github.iotags/django" class="tag-link" title="django" style="font-size: 12px;">django</a>
+		
+			<a href="http://jintianme.github.iotags/hexo" class="tag-link" title="hexo" style="font-size: 12px;">hexo</a>
+		
+			<a href="http://jintianme.github.iotags/javaweb%e5%bc%80%e5%8f%91" class="tag-link" title="javaweb开发" style="font-size: 12px;">javaweb开发</a>
+		
+			<a href="http://jintianme.github.iotags/linux" class="tag-link" title="linux" style="font-size: 12px;">linux</a>
+		
+			<a href="http://jintianme.github.iotags/web%e5%90%8e%e5%8f%b0" class="tag-link" title="web后台" style="font-size: 12px;">web后台</a>
+		
+			<a href="http://jintianme.github.iotags/%e4%b8%aa%e4%ba%ba%e4%ba%a7%e5%93%81" class="tag-link" title="个人产品" style="font-size: 12px;">个人产品</a>
+		
+			<a href="http://jintianme.github.iotags/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0" class="tag-link" title="深度学习" style="font-size: 12px;">深度学习</a>
+		
+	</div>
+</div>
+
+
+
+</aside>
+	</div>
+		<div class="mr-copyright-wrap">
+			<div class="mr-container mr-container-inner clearfix">
+				<p class="mr-copyright">&copy; 2017 Lewis Jin. Based on <a href="//wordpress.org/themes/mh-magazine-lite/" target="_blank" rel="nofollow noopener noreferrer">MH Magazine lite</a>.</p>
+			</div>
 		</div>
+	</div>
 
-		<!-- Footer -->
-<footer id="footer">
-	<ul class="icons">
-		
-		
-		
-		<li><a href="//twitter.com/spf13" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-		
-		
-		<li><a href="//github.com/spf13" target="_blank" class="icon fa-github"><span class="label">Github</span></a></li>
-		
-		
-		
-		
-		
-		<li><a href="http://lewisjin.coding.me/lewisjin#contact-form" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
-		
-		
-		<li><a href="http://lewisjin.coding.me/lewisjin/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
-		
-	</ul>
+<script>
+	var navigation = responsiveNav(".menu", {
+		navClass: "menu--collapse",
+	});
+</script>
 
-	<ul class="copyright">
-		
-		<li>&copy; Lewis Jin</li>
-		
-		<li>Design: <a href="//html5up.net">Jin Tian</a></li>
-		
-		<li>Demo Images: <a href="//unsplash.com/">Unsplash</a></li>
-		
-	</ul>
-</footer>
-
-<!-- Scripts -->
-<script src="http://lewisjin.coding.me/lewisjinjs/jquery.min.js"></script>
-<script src="http://lewisjin.coding.me/lewisjinjs/jquery.poptrox.min.js"></script>
-<script src="http://lewisjin.coding.me/lewisjinjs/skel.min.js"></script>
-<script src="http://lewisjin.coding.me/lewisjinjs/util.js"></script>
-
-<script src="http://lewisjin.coding.me/lewisjinjs/main.js"></script>
-
-
-
-
-
-	</body>
+</body>
 </html>
