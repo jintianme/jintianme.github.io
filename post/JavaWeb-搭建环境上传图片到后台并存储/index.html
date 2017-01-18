@@ -1,53 +1,107 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content=" ">
-    <meta name="description" content="一个独立思考着思索的地方">
-    <meta name="generator" content="Hugo 0.18.1" />
-
-    
-    <title>JavaWeb-搭建环境上传图片到后台并存储 &middot; @’s Lewis Jin</title>
-
-    <link rel="stylesheet" href="http://lewisjin.coding.me/lewisjincss/weblog.css" media="screen" charset="utf-8" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.14/css/lightgallery.min.css" type="text/css" />
-    
-
-
-    
-  </head>
-  <body class="site">
-
-<header>
-  <nav>
-    <h1><a href="/">@</a>’s Lewis Jin.</h1>
-    <div class="menu">
-      
-      <ul>
-        
-            <li>
-              <a href="/lewisjin/">Home</a>
-              
-            </li>
-        
-            <li>
-              <a href="post/">Blog</a>
-              
-            </li>
-        
-        
-      </ul>
-    </div>
-  </nav>
-</header>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaWeb-搭建环境上传图片到后台并存储</title>
+<meta name="description" content="Jin Tian&#39;s blog about everything, artifical intelligence, Android, Web, iOS, you name it..">
+<meta name="generator" content="Hugo 0.18.1" />
+<meta property="og:title" content="JavaWeb-搭建环境上传图片到后台并存储" />
+<meta property="og:description" content=" 介绍使用intelliJ idea搭建JavaWeb开发环境，以及实现简单的Servlet，从此你就可以建立自己的服务器，结合安卓或者IPhone实现任何你想通过云来完成的工作啦！  本文由中南大学较为牛逼的研究生金天同学原创，欢迎转载，但是请保留这段版权信息，如果你对文章有任何疑问，欢迎微信联系我：jintianiloveu。牛逼大神一一为你解答！
+ intellij idea Java web环境的搭建 很久以来，很多人用eclipse，什么都是eclipse，java是，安卓是，甚至连C&#43;&#43;都有人用eclipse，然而作为一个对技术和审美有着强烈追求的男人，是不能忍受eclipse古老的界面的，这时候我们就应该使用intellij idea，地球表面以上3000米高空一下最牛逼的ide，是的你没有听错，就是它。闲话不多说，让我们看看人家idea的启动界面：
+简直狂月酷炫有没有。好吧其实我知道你们很多人知道，我就不装逼了，直接说重点吧。
+说先对于一个web项目来说，你的idea一定要是Ultramate版本，也就是旗舰版，不知道这个单词写错没有，大家将就看，实际上intellij全系的专业版ide都可以破解，在这里放一个破解链接，大家需要的就是获取个注册码：获取注册码通道
+好了同志们要开车了，有了idea我们就要开始搭建开发环境了，请注意本次火箭即将开车。
+ 新建一个web工程  新建工程很简单，按照向导来，在选择页面我们选择webapp
+然后给工程取一个名字，接下来我们可以看到idea已经帮我新建好了一个完成的web工程。这里我们还要新建两个文件夹，结构如图所示，先不要问为什么，等一下我会告诉大家。
+新建了一个classes一个lib文件夹，先建好，等一下我们再配置，建好了之后呢，我们在src文件夹下新建一个包：
+包名自己取，最后我们在包下面新建一个Servlet，弹出菜单选中Servlet：
+是的，你没有看错我们这就新建好了servlet，但是你还得再web.xml中添加一下Servlet的映射：
+来看看生成的sevlet：
+ 配置java文件的输出路径和lib路径  如图我们配置一下输出的路径，选择我们之前新建的classes和lib文件夹，classes和lib文件夹分别是我们java文件输出和jar依赖的文件夹。
+然后切换到depencies选项卡，点击添加，添加一个jar的依赖路径：
+选择jar directory:
+勾选然后确定：
+ 最后一步，我们就要配置tomcat服务器了  tomcat是什么猫我就不多说了，一个web容器，你的java web app就放在这个容器里面，web app运行依赖于我们的tomcat，那么配置的时候我们就需要点击右上角的这个地方：
+来配置，在这里选择local tomcat：
+只需要给tomcat服务器娶一个名字，然后点击deployment下面的添加，添加artifact依赖：
+最后在旁边填写一个目录，写上工程的名字即可。哦忘了一步，在Server选项卡里面你要配置一下你的tomcat服务器，怎么配置很简单，只要configure选择你的tomcat文件夹就可以了，最外层的那个，idea自动识别。然后确定就OK。
+开发小程序 好搭建好了我们来个开车小程序。对了，在这个时候你可能会遇到一个问题，就是servlet识别不了server包：
+这是因为我们还没有吧tomcat官方jar包放到lib文件夹下，就是我们刚才新建的那个依赖文件夹，在tomcat文件夹下的lib文件夹寻找：
+这个jar包，ok现在没有报错，我们在doPost方法里面写一段代码：
+response.setContentType(&quot;text/html&quot;); response.setCharacterEncoding(&quot;utf-8&quot;); PrintWriter out = response.getWriter(); out.print(&quot;我要毫不经意的打一个广告，是的，就是在这里，大家快使用PicBind图床神器写博客！！&quot;);  好的我们运行一下这个web app，如果控制台显示这样说名运行了
+好，接下来激动人心的时刻到了，我们在浏览器中输入：（或者直接在弹出的浏览器中后面加上我们servlet的名字 /HelloServlet），见证奇迹的时刻到了！！！
+！！！！！
+………….好像并没有什么卵反应？我故意的，把上面那段代码拷贝到doGet方法中，在更新一下资源并重启服务器看一下：
+骚年，你没有看错！！！你成功学会了使用servlet！！！
+ 感谢大家阅读我的博客，本文永久更新地址: jinfagang.coding.me
+也欢迎大家积极留言，让我看到你的存在
+ " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://jintianme.github.io/lewisjin/post/JavaWeb-%E6%90%AD%E5%BB%BA%E7%8E%AF%E5%A2%83%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%88%B0%E5%90%8E%E5%8F%B0%E5%B9%B6%E5%AD%98%E5%82%A8/" />
 
 
-  <main class="content">
-    <article class="page">
-      <p>
-        
+<meta property="og:updated_time" content="2016-11-29T15:33:26&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,600" type="text/css" media="all" />
+<link rel="stylesheet" href="http://jintianme.github.io/lewisjincss/style.css" type="text/css" media="all" />
+<script type="text/javascript" src="http://jintianme.github.io/lewisjinjs/scripts.js"></script>
+<!--[if lt IE 9]>
+	<script src="http://jintianme.github.io/lewisjinjs/css3-mediaqueries.js"></script>
+<![endif]-->
+</head>
+<body class="home blog mr-right-sb mr-mobile" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+	<div class="mr-container mr-container-outer">
+		<div class="mr-header-mobile-nav clearfix"></div>
+			<header class="mr-header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+				<div class="mr-container mr-container-inner mr-row clearfix">
+					<div class="mr-custom-header clearfix">
+						<div class="mr-site-identity">
+							<div class="mr-site-logo" role="banner" itemscope="itemscope" itemtype="http://schema.org/Brand">
+								<div class="mr-header-text">
+									<a class="mr-header-text-link" href="http://jintianme.github.io/lewisjin" title="Lewis Jin" rel="home">
+										<h1 class="mr-header-title">Lewis Jin</h1>
+										<h2 class="mr-header-tagline">Just another site</h2>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="mr-main-nav-wrap">
+					<nav class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+	<ul class="menu__list">
+		
+	</ul>
+</nav>
+				</div>
+			</header>
+		<div class="mr-wrapper clearfix">
+
+
+<div class="main-content mr-content" role="main" itemprop="mainContentOfPage">
+	<article class="post">
+		<header class="entry-header clearfix">
+			<h1 class="entry-title">JavaWeb-搭建环境上传图片到后台并存储</h1>
+			<p class="mr-meta entry-meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="entry-meta-date updated" datetime="2016-11-29 15:33:26 &#43;0000 UTC">November 29, 2016</time>
+			</p>
+		</header>
+		<div class="entry-content clearfix">
+			
+			
 
 <p>介绍使用intelliJ idea搭建JavaWeb开发环境，以及实现简单的Servlet，从此你就可以建立自己的服务器，结合安卓或者IPhone实现任何你想通过云来完成的工作啦！
 <!-- more --></p>
@@ -176,44 +230,148 @@ out.print(&quot;我要毫不经意的打一个广告，是的，就是在这里�
 <p>也欢迎大家积极留言，让我看到你的存在</p>
 </blockquote>
 
-      </p>
-    </article>
-  </main>
+		</div>
+		
+<div class="entry-tags clearfix">
+	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
+	<ul>
+		
+	</article>
+	
+<div class="mr-author-box clearfix">
+	<figure class="mr-author-box-avatar">
+		<img alt="Lewis Jin avatar" src="http://jintianme.github.io/lewisjin/img/avatar.jpg" class="avatar avatar-90 photo" height="90" width="90">
+	</figure>
+	<div class="mr-author-box-header">
+		<span class="mr-author-box-name">About Lewis Jin</span>
+	</div>
+	<div class="mr-author-box-bio">
+		Lewis Jin is a intelligent scientist, maybe he loves make funny AI program.
+	</div>
+</div>
 
-<footer>
-  <div class="footer_text">
-      <div>
-        <h3>Hi, <a href="">I'm </a></h3>
-        <p>
-          Here you can place a short bio about yourself. Place a `bio.html` file in your
-project directory under `layout/partials`. That will override this message.
+	
 
-        </p>
-      </div>
-      
-  </div>
+	<nav class="mr-post-nav mr-row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+		
+		<div class="mr-col-1-2 mr-post-nav-item mr-post-nav-prev">
+			<a href="http://jintianme.github.io/lewisjin/post/Hexo%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%A4%E5%8F%B0%E7%94%B5%E8%84%91%E4%B8%8A%E6%9B%B4%E6%96%B0%E5%8D%9A%E5%AE%A2/" rel="prev"><span>«Previous</span><p>Hexo如何在两台电脑上更新博客</p></a>
+		</div>
+		
+		
+		<div class="mr-col-1-2 mr-post-nav-item mr-post-nav-next">
+			<a href="http://jintianme.github.io/lewisjin/post/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%89%8D%E6%99%AF/" rel="next"><span>Next»</span><p>深度学习的前景</p></a>
+		</div>
+		
+	</nav>
 
-  
-</footer>
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/2.2.0/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.14/js/lightgallery-all.min.js" charset="utf-8"></script>
-    <script src="/js/weblog.js" charset="utf-8"></script>
-    
+	
+<div id="mr-comments" class="mr-comments-wrap">
+	<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'spf13';
+    var disqus_identifier = 'http:\/\/jintianme.github.io\/lewisjin\/post\/JavaWeb-%E6%90%AD%E5%BB%BA%E7%8E%AF%E5%A2%83%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%88%B0%E5%90%8E%E5%8F%B0%E5%B9%B6%E5%AD%98%E5%82%A8\/';
+    var disqus_title = 'JavaWeb-搭建环境上传图片到后台并存储';
+    var disqus_url = 'http:\/\/jintianme.github.io\/lewisjin\/post\/JavaWeb-%E6%90%AD%E5%BB%BA%E7%8E%AF%E5%A2%83%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%88%B0%E5%90%8E%E5%8F%B0%E5%B9%B6%E5%AD%98%E5%82%A8\/';
 
-    <script type="text/javascript">
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
 
-  
-  $(function() {
-    
-    $.getJSON("https://api.flickr.com/services/feeds/photos_public.gne?id=&format=json&jsoncallback=?", function(data) {
-      iweblog.application.displayImages(data, 8);
-    });
-  });
+</div>
 
+<aside class="mr-sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+	
+<div class="mr-widget widget_search">
+	<form class="search-form" role="search" method="get" action="//google.com/search">
+		<label>
+			<span class="screen-reader-text">Search for:</span>
+			<input type="search" class="search-field" placeholder="SEARCH..." value="" name="q">
+		</label>
+		<input class="search-submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="http://jintianme.github.io/lewisjin" />
+	</form>
+</div>
+
+	
+<div class="mr-widget widget_recent_entries">
+	<h4 class="mr-widget-title"><span class="mr-widget-title-inner">Recent Posts</span></h4>
+	<ul>
+		
+		<li><a href="/lewisjin/post/Django-3-%E5%88%86%E5%88%86%E9%92%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AARESTful-API/">Django 3 分分钟搭建一个RESTful API</a></li>
+		
+		<li><a href="/lewisjin/post/Django-2-MySQL-and-Blog/">Django 2 MySQL and Blog</a></li>
+		
+		<li><a href="/lewisjin/post/Django%E4%B9%8B%E6%AD%8C-Post-1-Django-%E5%92%8C-mysql/">Django之歌-Post 1 Django和mysql</a></li>
+		
+		<li><a href="/lewisjin/post/Yolo%E8%AE%AD%E7%BB%83%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86%E6%95%99%E7%A8%8B-Newest-2016-12-23/">Yolo训练自己的数据集教程 Newest(2016-12-23)</a></li>
+		
+		<li><a href="/lewisjin/post/Ubuntu14-04-or-16-04-Nvidia-GTX1080-%E6%90%AD%E5%BB%BACUDA%E8%BF%87%E7%A8%8B/">Ubuntu14.04 or 16.04 Nvidia GTX1080 搭建CUDA过程</a></li>
+		
+		<li><a href="/lewisjin/post/Auto-Drive-Series-2-YOLO-state-of-arts-algrithm-learn-and-Pascal-VOC/">Auto Drive Series 2-YOLO state-of-arts algrithm learn and Pascal VOC</a></li>
+		
+		<li><a href="/lewisjin/post/Autodrive-Series-1-kitti-dataset-search/">Autodrive Series 1-kitti dataset search</a></li>
+		
+		<li><a href="/lewisjin/post/Hexo%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF/">Hexo博客更换电脑的正确姿势</a></li>
+		
+		<li><a href="/lewisjin/post/%E5%A4%9C%E6%9C%89%E6%89%80%E6%80%9D/">夜有所思</a></li>
+		
+		<li><a href="/lewisjin/post/git%E5%91%BD%E4%BB%A4%E5%88%A0%E9%99%A4%E5%BD%93%E5%89%8D%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E4%BE%9D%E8%B5%96/">git命令删除当前远程仓库依赖</a></li>
+		
+	</ul>
+</div>
+
+
+	
+
+
+
+
+	
+
+
+<div class="mr-widget widget_tag_cloud">
+	<h4 class="mr-widget-title"><span class="mr-widget-title-inner">Tags</span></h4>
+	<div class="tagcloud">
+		
+			<a href="http://jintianme.github.io/lewisjintags/django" class="tag-link" title="django" style="font-size: 12px;">django</a>
+		
+			<a href="http://jintianme.github.io/lewisjintags/hexo" class="tag-link" title="hexo" style="font-size: 12px;">hexo</a>
+		
+			<a href="http://jintianme.github.io/lewisjintags/javaweb%e5%bc%80%e5%8f%91" class="tag-link" title="javaweb开发" style="font-size: 12px;">javaweb开发</a>
+		
+			<a href="http://jintianme.github.io/lewisjintags/linux" class="tag-link" title="linux" style="font-size: 12px;">linux</a>
+		
+			<a href="http://jintianme.github.io/lewisjintags/web%e5%90%8e%e5%8f%b0" class="tag-link" title="web后台" style="font-size: 12px;">web后台</a>
+		
+			<a href="http://jintianme.github.io/lewisjintags/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0" class="tag-link" title="深度学习" style="font-size: 12px;">深度学习</a>
+		
+	</div>
+</div>
+
+
+
+</aside>
+	</div>
+		<div class="mr-copyright-wrap">
+			<div class="mr-container mr-container-inner clearfix">
+				<p class="mr-copyright">&copy; 2017 Lewis Jin. Based on <a href="//wordpress.org/themes/mh-magazine-lite/" target="_blank" rel="nofollow noopener noreferrer">MH Magazine lite</a>.</p>
+			</div>
+		</div>
+	</div>
+
+<script>
+	var navigation = responsiveNav(".menu", {
+		navClass: "menu--collapse",
+	});
 </script>
 
-    
-  </body>
+</body>
 </html>
-

@@ -1,24 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-
-    <title>@’s Lewis Jin - Javaweb开发</title>
-    <link>http://lewisjin.coding.me/lewisjin/tags/javaweb%E5%BC%80%E5%8F%91/index.xml</link>
-    <description>All entries in Javaweb开发 on Lewis Jin</description>
+    <title>Javaweb开发 on Lewis Jin</title>
+    <link>http://jintianme.github.io/lewisjin/tags/javaweb%E5%BC%80%E5%8F%91/index.xml</link>
+    <description>Recent content in Javaweb开发 on Lewis Jin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <atom:link href="http://jintianme.github.io/lewisjin/tags/javaweb%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <atom:link href="/lewisjin/tags/javaweb%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
-    
+    <item>
+      <title>JavaWeb-搭建环境上传图片到后台并存储</title>
+      <link>http://jintianme.github.io/lewisjin/post/JavaWeb-%E6%90%AD%E5%BB%BA%E7%8E%AF%E5%A2%83%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%88%B0%E5%90%8E%E5%8F%B0%E5%B9%B6%E5%AD%98%E5%82%A8/</link>
+      <pubDate>Tue, 29 Nov 2016 15:33:26 +0000</pubDate>
       
-      <item>
-        <title>JavaWeb-搭建环境上传图片到后台并存储</title>
-        <link>http://lewisjin.coding.me/lewisjin/post/JavaWeb-%E6%90%AD%E5%BB%BA%E7%8E%AF%E5%A2%83%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%88%B0%E5%90%8E%E5%8F%B0%E5%B9%B6%E5%AD%98%E5%82%A8/</link>
-        <pubDate>Tue, 29 Nov 2016 15:33:26 +0000</pubDate>
-         ( )</author>
-        <guid>http://lewisjin.coding.me/lewisjin/post/JavaWeb-%E6%90%AD%E5%BB%BA%E7%8E%AF%E5%A2%83%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%88%B0%E5%90%8E%E5%8F%B0%E5%B9%B6%E5%AD%98%E5%82%A8/</guid>
-        <description>
+      <guid>http://jintianme.github.io/lewisjin/post/JavaWeb-%E6%90%AD%E5%BB%BA%E7%8E%AF%E5%A2%83%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%88%B0%E5%90%8E%E5%8F%B0%E5%B9%B6%E5%AD%98%E5%82%A8/</guid>
+      <description>
 
 &lt;p&gt;介绍使用intelliJ idea搭建JavaWeb开发环境，以及实现简单的Servlet，从此你就可以建立自己的服务器，结合安卓或者IPhone实现任何你想通过云来完成的工作啦！
 &lt;!-- more --&gt;&lt;/p&gt;
@@ -147,8 +143,7 @@ out.print(&amp;quot;我要毫不经意的打一个广告，是的，就是在这
 &lt;p&gt;也欢迎大家积极留言，让我看到你的存在&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
-      </item>
-      
+    </item>
     
   </channel>
 </rss>

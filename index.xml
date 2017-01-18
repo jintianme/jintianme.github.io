@@ -1,24 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-
-    <title>@’s Lewis Jin - Lewis Jin</title>
-    <link>http://lewisjin.coding.me/lewisjin/index.xml</link>
-    <description>All entries in Lewis Jin on Lewis Jin</description>
+    <title>Lewis Jin</title>
+    <link>http://jintianme.github.io/lewisjin/index.xml</link>
+    <description>Recent content on Lewis Jin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    
     <lastBuildDate>Mon, 16 Jan 2017 23:31:58 +0000</lastBuildDate>
-    <atom:link href="/lewisjin/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://jintianme.github.io/lewisjin/index.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>Django 3 分分钟搭建一个RESTful API</title>
+      <link>http://jintianme.github.io/lewisjin/post/Django-3-%E5%88%86%E5%88%86%E9%92%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AARESTful-API/</link>
+      <pubDate>Mon, 16 Jan 2017 23:31:58 +0000</pubDate>
       
-      <item>
-        <title>Django 3 分分钟搭建一个RESTful API</title>
-        <link>http://lewisjin.coding.me/lewisjin/post/Django-3-%E5%88%86%E5%88%86%E9%92%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AARESTful-API/</link>
-        <pubDate>Mon, 16 Jan 2017 23:31:58 +0000</pubDate>
-         ( )</author>
-        <guid>http://lewisjin.coding.me/lewisjin/post/Django-3-%E5%88%86%E5%88%86%E9%92%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AARESTful-API/</guid>
-        <description>
+      <guid>http://jintianme.github.io/lewisjin/post/Django-3-%E5%88%86%E5%88%86%E9%92%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AARESTful-API/</guid>
+      <description>
 
 &lt;h3 id=&#34;django-restframework-简介&#34;&gt;Django restframework 简介&lt;/h3&gt;
 
@@ -220,17 +217,15 @@ Vary: Accept&lt;/p&gt;
 ```
 在网页中你可以直接测试POST PUT GET等方法，总是很牛逼有没有！！分分钟做一套API啊！！比java web快出了不知道多少倍！！！明天我们继续深入探测这个东西！！！！！&lt;/p&gt;
 </description>
-      </item>
-      
+    </item>
     
+    <item>
+      <title>Django 2 MySQL and Blog</title>
+      <link>http://jintianme.github.io/lewisjin/post/Django-2-MySQL-and-Blog/</link>
+      <pubDate>Sun, 15 Jan 2017 18:14:45 +0000</pubDate>
       
-      <item>
-        <title>Django 2 MySQL and Blog</title>
-        <link>http://lewisjin.coding.me/lewisjin/post/Django-2-MySQL-and-Blog/</link>
-        <pubDate>Sun, 15 Jan 2017 18:14:45 +0000</pubDate>
-         ( )</author>
-        <guid>http://lewisjin.coding.me/lewisjin/post/Django-2-MySQL-and-Blog/</guid>
-        <description>
+      <guid>http://jintianme.github.io/lewisjin/post/Django-2-MySQL-and-Blog/</guid>
+      <description>
 
 &lt;h3 id=&#34;mysql-usage&#34;&gt;mysql usage&lt;/h3&gt;
 
@@ -302,17 +297,15 @@ collation-server=utf8_general_ci&lt;/p&gt;
 8 rows in set (0.01 sec)
 ```&lt;/p&gt;
 </description>
-      </item>
-      
+    </item>
     
+    <item>
+      <title>Django之歌-Post 1 Django和mysql</title>
+      <link>http://jintianme.github.io/lewisjin/post/Django%E4%B9%8B%E6%AD%8C-Post-1-Django-%E5%92%8C-mysql/</link>
+      <pubDate>Thu, 12 Jan 2017 20:31:45 +0000</pubDate>
       
-      <item>
-        <title>Django之歌-Post 1 Django和mysql</title>
-        <link>http://lewisjin.coding.me/lewisjin/post/Django%E4%B9%8B%E6%AD%8C-Post-1-Django-%E5%92%8C-mysql/</link>
-        <pubDate>Thu, 12 Jan 2017 20:31:45 +0000</pubDate>
-         ( )</author>
-        <guid>http://lewisjin.coding.me/lewisjin/post/Django%E4%B9%8B%E6%AD%8C-Post-1-Django-%E5%92%8C-mysql/</guid>
-        <description>
+      <guid>http://jintianme.github.io/lewisjin/post/Django%E4%B9%8B%E6%AD%8C-Post-1-Django-%E5%92%8C-mysql/</guid>
+      <description>
 
 &lt;p&gt;这个post是讲述django和mysql的故事，记录django常用命令以及mysql的python接口安装方法，环境为python3.6。
 &lt;!-- more --&gt;&lt;/p&gt;
@@ -480,17 +473,15 @@ mysql&amp;gt; SHOW TABLES;
 
 &lt;p&gt;基本上看完这些就可以入门了，接下来我们更加深入的剖析django，我们要充分利用这个利器，来实现我们想要的web程序，让云变的触手可及！！&lt;/p&gt;
 </description>
-      </item>
-      
+    </item>
     
+    <item>
+      <title>Yolo训练自己的数据集教程 Newest(2016-12-23)</title>
+      <link>http://jintianme.github.io/lewisjin/post/Yolo%E8%AE%AD%E7%BB%83%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86%E6%95%99%E7%A8%8B-Newest-2016-12-23/</link>
+      <pubDate>Thu, 22 Dec 2016 18:27:38 +0000</pubDate>
       
-      <item>
-        <title>Yolo训练自己的数据集教程 Newest(2016-12-23)</title>
-        <link>http://lewisjin.coding.me/lewisjin/post/Yolo%E8%AE%AD%E7%BB%83%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86%E6%95%99%E7%A8%8B-Newest-2016-12-23/</link>
-        <pubDate>Thu, 22 Dec 2016 18:27:38 +0000</pubDate>
-         ( )</author>
-        <guid>http://lewisjin.coding.me/lewisjin/post/Yolo%E8%AE%AD%E7%BB%83%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86%E6%95%99%E7%A8%8B-Newest-2016-12-23/</guid>
-        <description>
+      <guid>http://jintianme.github.io/lewisjin/post/Yolo%E8%AE%AD%E7%BB%83%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86%E6%95%99%E7%A8%8B-Newest-2016-12-23/</guid>
+      <description>
 
 &lt;h2 id=&#34;yolo-darknet训练自己的数据集教程-newest-2016-12-23&#34;&gt;Yolo darknet训练自己的数据集教程(Newest 2016.12.23)&lt;/h2&gt;
 
@@ -608,17 +599,15 @@ ok，这就setup完了，接着直接训练。
 &lt;p&gt;这里不要和直接copy我的代码，cfg/yolo-voc.cfg就是我们训练的网络。后面是训练保存的权重，最后是你要预测的图片。
 OK，看看结果咋么样～&lt;/p&gt;
 </description>
-      </item>
-      
+    </item>
     
+    <item>
+      <title>Ubuntu14.04 or 16.04 Nvidia GTX1080 搭建CUDA过程</title>
+      <link>http://jintianme.github.io/lewisjin/post/Ubuntu14-04-or-16-04-Nvidia-GTX1080-%E6%90%AD%E5%BB%BACUDA%E8%BF%87%E7%A8%8B/</link>
+      <pubDate>Sat, 17 Dec 2016 11:02:30 +0000</pubDate>
       
-      <item>
-        <title>Ubuntu14.04 or 16.04 Nvidia GTX1080 搭建CUDA过程</title>
-        <link>http://lewisjin.coding.me/lewisjin/post/Ubuntu14-04-or-16-04-Nvidia-GTX1080-%E6%90%AD%E5%BB%BACUDA%E8%BF%87%E7%A8%8B/</link>
-        <pubDate>Sat, 17 Dec 2016 11:02:30 +0000</pubDate>
-         ( )</author>
-        <guid>http://lewisjin.coding.me/lewisjin/post/Ubuntu14-04-or-16-04-Nvidia-GTX1080-%E6%90%AD%E5%BB%BACUDA%E8%BF%87%E7%A8%8B/</guid>
-        <description>&lt;p&gt;一定要ssh远程登录
+      <guid>http://jintianme.github.io/lewisjin/post/Ubuntu14-04-or-16-04-Nvidia-GTX1080-%E6%90%AD%E5%BB%BACUDA%E8%BF%87%E7%A8%8B/</guid>
+      <description>&lt;p&gt;一定要ssh远程登录
 关闭开启图形界面&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;sudo service lightdm start
@@ -635,17 +624,15 @@ uname -r
 &lt;p&gt;卸载Nvidia驱动
 sudo nvidia-uninstall&lt;/p&gt;
 </description>
-      </item>
-      
+    </item>
     
+    <item>
+      <title>Auto Drive Series 2-YOLO state-of-arts algrithm learn and Pascal VOC</title>
+      <link>http://jintianme.github.io/lewisjin/post/Auto-Drive-Series-2-YOLO-state-of-arts-algrithm-learn-and-Pascal-VOC/</link>
+      <pubDate>Fri, 16 Dec 2016 14:22:12 +0000</pubDate>
       
-      <item>
-        <title>Auto Drive Series 2-YOLO state-of-arts algrithm learn and Pascal VOC</title>
-        <link>http://lewisjin.coding.me/lewisjin/post/Auto-Drive-Series-2-YOLO-state-of-arts-algrithm-learn-and-Pascal-VOC/</link>
-        <pubDate>Fri, 16 Dec 2016 14:22:12 +0000</pubDate>
-         ( )</author>
-        <guid>http://lewisjin.coding.me/lewisjin/post/Auto-Drive-Series-2-YOLO-state-of-arts-algrithm-learn-and-Pascal-VOC/</guid>
-        <description>
+      <guid>http://jintianme.github.io/lewisjin/post/Auto-Drive-Series-2-YOLO-state-of-arts-algrithm-learn-and-Pascal-VOC/</guid>
+      <description>
 
 &lt;p&gt;This post about YOLO algrithm: you only look once.
 &lt;!-- more --&gt;&lt;/p&gt;
@@ -659,17 +646,15 @@ sudo nvidia-uninstall&lt;/p&gt;
 &lt;a href=&#34;http://host.robots.ox.ac.uk/pascal/VOC/voc2012/index.html#devkit&#34;&gt;Pascal VOC&lt;/a&gt;
 &lt;a href=&#34;http://mscoco.org/dataset/#overview&#34;&gt;coco test-dev&lt;/a&gt;&lt;/p&gt;
 </description>
-      </item>
-      
+    </item>
     
+    <item>
+      <title>Autodrive Series 1-kitti dataset search</title>
+      <link>http://jintianme.github.io/lewisjin/post/Autodrive-Series-1-kitti-dataset-search/</link>
+      <pubDate>Fri, 16 Dec 2016 13:08:17 +0000</pubDate>
       
-      <item>
-        <title>Autodrive Series 1-kitti dataset search</title>
-        <link>http://lewisjin.coding.me/lewisjin/post/Autodrive-Series-1-kitti-dataset-search/</link>
-        <pubDate>Fri, 16 Dec 2016 13:08:17 +0000</pubDate>
-         ( )</author>
-        <guid>http://lewisjin.coding.me/lewisjin/post/Autodrive-Series-1-kitti-dataset-search/</guid>
-        <description>
+      <guid>http://jintianme.github.io/lewisjin/post/Autodrive-Series-1-kitti-dataset-search/</guid>
+      <description>
 
 &lt;p&gt;This post about auto drive
 &lt;!-- more --&gt;&lt;/p&gt;
@@ -792,17 +777,15 @@ recall = 300/1400 = 3/14 = 21%
 注意：准确率和召回率是互相影响的，理想情况下肯定是做到两者都高，但是一般情况下准确率高、召回率就低，召回率低、准确率高，当然如果两者都低，那是什么地方出问题了。一般情况，用不同的阀值，统计出一组不同阀值下的精确率和召回率，如下图：
 &lt;a href=&#34;http://hi.csdn.net/attachment/201106/14/0_1308034738ZLr8.gif&#34;&gt;图片&lt;/a&gt;&lt;/p&gt;
 </description>
-      </item>
-      
+    </item>
     
+    <item>
+      <title>Hexo博客更换电脑的正确姿势</title>
+      <link>http://jintianme.github.io/lewisjin/post/Hexo%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF/</link>
+      <pubDate>Mon, 12 Dec 2016 10:47:07 +0000</pubDate>
       
-      <item>
-        <title>Hexo博客更换电脑的正确姿势</title>
-        <link>http://lewisjin.coding.me/lewisjin/post/Hexo%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF/</link>
-        <pubDate>Mon, 12 Dec 2016 10:47:07 +0000</pubDate>
-         ( )</author>
-        <guid>http://lewisjin.coding.me/lewisjin/post/Hexo%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF/</guid>
-        <description>
+      <guid>http://jintianme.github.io/lewisjin/post/Hexo%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF/</guid>
+      <description>
 
 &lt;p&gt;hexo指南
 &lt;!-- more --&gt;&lt;/p&gt;
@@ -868,17 +851,15 @@ Host coding.net
 &lt;p&gt;应该就可以了。
 &lt;strong&gt;更新ssh publickey 之后一定记得 ssh-add id_rsa,否则ssh依旧会提示登不上的！！！&lt;/strong&gt;&lt;/p&gt;
 </description>
-      </item>
-      
+    </item>
     
+    <item>
+      <title>夜有所思</title>
+      <link>http://jintianme.github.io/lewisjin/post/%E5%A4%9C%E6%9C%89%E6%89%80%E6%80%9D/</link>
+      <pubDate>Sun, 11 Dec 2016 23:35:30 +0000</pubDate>
       
-      <item>
-        <title>夜有所思</title>
-        <link>http://lewisjin.coding.me/lewisjin/post/%E5%A4%9C%E6%9C%89%E6%89%80%E6%80%9D/</link>
-        <pubDate>Sun, 11 Dec 2016 23:35:30 +0000</pubDate>
-         ( )</author>
-        <guid>http://lewisjin.coding.me/lewisjin/post/%E5%A4%9C%E6%9C%89%E6%89%80%E6%80%9D/</guid>
-        <description>
+      <guid>http://jintianme.github.io/lewisjin/post/%E5%A4%9C%E6%9C%89%E6%89%80%E6%80%9D/</guid>
+      <description>
 
 &lt;p&gt;本文是我的一个随笔
 &lt;!-- more --&gt;
@@ -890,17 +871,15 @@ Host coding.net
 今天把博客从实验室搬到了自己的笔记本，宾至如归，所有的事情我都想好好的握在手里，不至于等到失去之后我才后悔莫及。
 好吧这其实是一个测试，测试一下博客有没有迁移成功，也不能太伤感了，哎。&lt;/p&gt;
 </description>
-      </item>
-      
+    </item>
     
+    <item>
+      <title>git命令删除当前远程仓库依赖</title>
+      <link>http://jintianme.github.io/lewisjin/post/git%E5%91%BD%E4%BB%A4%E5%88%A0%E9%99%A4%E5%BD%93%E5%89%8D%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E4%BE%9D%E8%B5%96/</link>
+      <pubDate>Sun, 11 Dec 2016 21:51:12 +0000</pubDate>
       
-      <item>
-        <title>git命令删除当前远程仓库依赖</title>
-        <link>http://lewisjin.coding.me/lewisjin/post/git%E5%91%BD%E4%BB%A4%E5%88%A0%E9%99%A4%E5%BD%93%E5%89%8D%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E4%BE%9D%E8%B5%96/</link>
-        <pubDate>Sun, 11 Dec 2016 21:51:12 +0000</pubDate>
-         ( )</author>
-        <guid>http://lewisjin.coding.me/lewisjin/post/git%E5%91%BD%E4%BB%A4%E5%88%A0%E9%99%A4%E5%BD%93%E5%89%8D%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E4%BE%9D%E8%B5%96/</guid>
-        <description>
+      <guid>http://jintianme.github.io/lewisjin/post/git%E5%91%BD%E4%BB%A4%E5%88%A0%E9%99%A4%E5%BD%93%E5%89%8D%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E4%BE%9D%E8%B5%96/</guid>
+      <description>
 
 &lt;p&gt;git命令简介
 &lt;!-- more --&gt;&lt;/p&gt;
@@ -934,17 +913,15 @@ git push origin master
 
 &lt;p&gt;直接拔本地的remote仓库删除即可。&lt;/p&gt;
 </description>
-      </item>
-      
+    </item>
     
+    <item>
+      <title>Android开车第一弹-MaterialDesign设计规范</title>
+      <link>http://jintianme.github.io/lewisjin/post/Android%E5%BC%80%E8%BD%A6%E7%AC%AC%E4%B8%80%E5%BC%B9-MaterialDesign%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83/</link>
+      <pubDate>Sun, 04 Dec 2016 22:10:02 +0000</pubDate>
       
-      <item>
-        <title>Android开车第一弹-MaterialDesign设计规范</title>
-        <link>http://lewisjin.coding.me/lewisjin/post/Android%E5%BC%80%E8%BD%A6%E7%AC%AC%E4%B8%80%E5%BC%B9-MaterialDesign%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83/</link>
-        <pubDate>Sun, 04 Dec 2016 22:10:02 +0000</pubDate>
-         ( )</author>
-        <guid>http://lewisjin.coding.me/lewisjin/post/Android%E5%BC%80%E8%BD%A6%E7%AC%AC%E4%B8%80%E5%BC%B9-MaterialDesign%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83/</guid>
-        <description>
+      <guid>http://jintianme.github.io/lewisjin/post/Android%E5%BC%80%E8%BD%A6%E7%AC%AC%E4%B8%80%E5%BC%B9-MaterialDesign%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83/</guid>
+      <description>
 
 &lt;p&gt;本文是Android学的一个随笔
 &lt;!-- more --&gt;&lt;/p&gt;
@@ -1102,17 +1079,15 @@ recyclerView.setItemAnimator(new DefaultItemAnimator());&lt;/p&gt;
 recyclerView.setAdapter(adapter);
 ```&lt;/p&gt;
 </description>
-      </item>
-      
+    </item>
     
+    <item>
+      <title>mxnet开车教程series1-mnist上手</title>
+      <link>http://jintianme.github.io/lewisjin/post/mxnet%E5%BC%80%E8%BD%A6%E6%95%99%E7%A8%8Bseries1-mnist%E4%B8%8A%E6%89%8B/</link>
+      <pubDate>Sat, 03 Dec 2016 21:50:54 +0000</pubDate>
       
-      <item>
-        <title>mxnet开车教程series1-mnist上手</title>
-        <link>http://lewisjin.coding.me/lewisjin/post/mxnet%E5%BC%80%E8%BD%A6%E6%95%99%E7%A8%8Bseries1-mnist%E4%B8%8A%E6%89%8B/</link>
-        <pubDate>Sat, 03 Dec 2016 21:50:54 +0000</pubDate>
-         ( )</author>
-        <guid>http://lewisjin.coding.me/lewisjin/post/mxnet%E5%BC%80%E8%BD%A6%E6%95%99%E7%A8%8Bseries1-mnist%E4%B8%8A%E6%89%8B/</guid>
-        <description>
+      <guid>http://jintianme.github.io/lewisjin/post/mxnet%E5%BC%80%E8%BD%A6%E6%95%99%E7%A8%8Bseries1-mnist%E4%B8%8A%E6%89%8B/</guid>
+      <description>
 
 &lt;p&gt;mxnet入门中文教程，让我们从mnist果蝇数据集开始开车
 &lt;!-- more --&gt;
@@ -1234,17 +1209,15 @@ print(&#39;Classified as {0} with probability {1}&#39;.format(prob.argmax(), max
 
 &lt;p&gt;说明我们的预测准确度还是非常高的啊！&lt;/p&gt;
 </description>
-      </item>
-      
+    </item>
     
+    <item>
+      <title>Ubuntu下编译opencv并生成python链接库详细教程-吐血编译系列</title>
+      <link>http://jintianme.github.io/lewisjin/post/Ubuntu%E4%B8%8B%E7%BC%96%E8%AF%91opencv%E5%B9%B6%E7%94%9F%E6%88%90python%E9%93%BE%E6%8E%A5%E5%BA%93%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B-%E5%90%90%E8%A1%80%E7%BC%96%E8%AF%91%E7%B3%BB%E5%88%97/</link>
+      <pubDate>Sat, 03 Dec 2016 10:20:47 +0000</pubDate>
       
-      <item>
-        <title>Ubuntu下编译opencv并生成python链接库详细教程-吐血编译系列</title>
-        <link>http://lewisjin.coding.me/lewisjin/post/Ubuntu%E4%B8%8B%E7%BC%96%E8%AF%91opencv%E5%B9%B6%E7%94%9F%E6%88%90python%E9%93%BE%E6%8E%A5%E5%BA%93%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B-%E5%90%90%E8%A1%80%E7%BC%96%E8%AF%91%E7%B3%BB%E5%88%97/</link>
-        <pubDate>Sat, 03 Dec 2016 10:20:47 +0000</pubDate>
-         ( )</author>
-        <guid>http://lewisjin.coding.me/lewisjin/post/Ubuntu%E4%B8%8B%E7%BC%96%E8%AF%91opencv%E5%B9%B6%E7%94%9F%E6%88%90python%E9%93%BE%E6%8E%A5%E5%BA%93%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B-%E5%90%90%E8%A1%80%E7%BC%96%E8%AF%91%E7%B3%BB%E5%88%97/</guid>
-        <description>
+      <guid>http://jintianme.github.io/lewisjin/post/Ubuntu%E4%B8%8B%E7%BC%96%E8%AF%91opencv%E5%B9%B6%E7%94%9F%E6%88%90python%E9%93%BE%E6%8E%A5%E5%BA%93%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B-%E5%90%90%E8%A1%80%E7%BC%96%E8%AF%91%E7%B3%BB%E5%88%97/</guid>
+      <description>
 
 &lt;p&gt;本文将解决的是opencv这个洪水猛兽，opencv功能强大，但是无论在ubuntu下还是在windows下编译都非常麻烦，本文将编译它，并生成python调用库。哥搞了好几天才搞定，shit！
 &lt;!-- more --&gt;&lt;/p&gt;
@@ -1327,17 +1300,15 @@ OK，接着我们make&lt;/p&gt;
 
 &lt;p&gt;千辛万苦终于编译好了，得好好玩玩这个opencv，这里哥带领大家玩一个牛逼点的例子：&lt;/p&gt;
 </description>
-      </item>
-      
+    </item>
     
+    <item>
+      <title>Ubuntu大手术-更换home的挂载分区获取更大空间</title>
+      <link>http://jintianme.github.io/lewisjin/post/Ubuntu%E5%A4%A7%E6%89%8B%E6%9C%AF-%E6%9B%B4%E6%8D%A2home%E7%9A%84%E6%8C%82%E8%BD%BD%E5%88%86%E5%8C%BA%E8%8E%B7%E5%8F%96%E6%9B%B4%E5%A4%A7%E7%A9%BA%E9%97%B4/</link>
+      <pubDate>Sat, 03 Dec 2016 09:48:43 +0000</pubDate>
       
-      <item>
-        <title>Ubuntu大手术-更换home的挂载分区获取更大空间</title>
-        <link>http://lewisjin.coding.me/lewisjin/post/Ubuntu%E5%A4%A7%E6%89%8B%E6%9C%AF-%E6%9B%B4%E6%8D%A2home%E7%9A%84%E6%8C%82%E8%BD%BD%E5%88%86%E5%8C%BA%E8%8E%B7%E5%8F%96%E6%9B%B4%E5%A4%A7%E7%A9%BA%E9%97%B4/</link>
-        <pubDate>Sat, 03 Dec 2016 09:48:43 +0000</pubDate>
-         ( )</author>
-        <guid>http://lewisjin.coding.me/lewisjin/post/Ubuntu%E5%A4%A7%E6%89%8B%E6%9C%AF-%E6%9B%B4%E6%8D%A2home%E7%9A%84%E6%8C%82%E8%BD%BD%E5%88%86%E5%8C%BA%E8%8E%B7%E5%8F%96%E6%9B%B4%E5%A4%A7%E7%A9%BA%E9%97%B4/</guid>
-        <description>
+      <guid>http://jintianme.github.io/lewisjin/post/Ubuntu%E5%A4%A7%E6%89%8B%E6%9C%AF-%E6%9B%B4%E6%8D%A2home%E7%9A%84%E6%8C%82%E8%BD%BD%E5%88%86%E5%8C%BA%E8%8E%B7%E5%8F%96%E6%9B%B4%E5%A4%A7%E7%A9%BA%E9%97%B4/</guid>
+      <description>
 
 &lt;p&gt;Ubuntu系统安装时由于年少无知瞎几把设置分区，结果最后导致空间不够用，不过不用担心，本教程教你如何在不装系统的情况之下对分区进行修改
 &lt;!-- more --&gt;&lt;/p&gt;
@@ -1424,17 +1395,15 @@ UUID=YOURUUID   /home    ext4          defaults       0       2
 
 &lt;p&gt;OK,&lt;strong&gt;重启&lt;/strong&gt;，进入ubuntu你会发现所有的&lt;strong&gt;一切还和原来一样&lt;/strong&gt;，打开nautilus，查看以下home分区发现空间变大了！这就是linux，你可以尽情的做手术依旧保持着健壮的生命力。&lt;/p&gt;
 </description>
-      </item>
-      
+    </item>
     
+    <item>
+      <title>Ubuntu下设置AndroidStudio的启动快捷方式</title>
+      <link>http://jintianme.github.io/lewisjin/post/Ubuntu%E4%B8%8B%E8%AE%BE%E7%BD%AEAndroidStudio%E7%9A%84%E5%90%AF%E5%8A%A8%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/</link>
+      <pubDate>Fri, 02 Dec 2016 20:52:03 +0000</pubDate>
       
-      <item>
-        <title>Ubuntu下设置AndroidStudio的启动快捷方式</title>
-        <link>http://lewisjin.coding.me/lewisjin/post/Ubuntu%E4%B8%8B%E8%AE%BE%E7%BD%AEAndroidStudio%E7%9A%84%E5%90%AF%E5%8A%A8%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/</link>
-        <pubDate>Fri, 02 Dec 2016 20:52:03 +0000</pubDate>
-         ( )</author>
-        <guid>http://lewisjin.coding.me/lewisjin/post/Ubuntu%E4%B8%8B%E8%AE%BE%E7%BD%AEAndroidStudio%E7%9A%84%E5%90%AF%E5%8A%A8%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/</guid>
-        <description>
+      <guid>http://jintianme.github.io/lewisjin/post/Ubuntu%E4%B8%8B%E8%AE%BE%E7%BD%AEAndroidStudio%E7%9A%84%E5%90%AF%E5%8A%A8%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/</guid>
+      <description>
 
 &lt;p&gt;Ubuntu下设置AndroidStudio的快捷方式
 &lt;!-- more --&gt;&lt;/p&gt;
@@ -1469,593 +1438,7 @@ Type=Application
 
 &lt;p&gt;打开这个文件夹，找到AndroidStudio快捷方式，拖入到侧边栏即可。&lt;/p&gt;
 </description>
-      </item>
-      
-    
-      
-      <item>
-        <title>Linux下开发大神装机命令大全-从娱乐到开发</title>
-        <link>http://lewisjin.coding.me/lewisjin/post/Ubuntu%E4%B8%8B%E5%BC%80%E5%8F%91%E5%A4%A7%E7%A5%9E%E7%8E%A9%E6%9C%BA%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8-%E4%BB%8E%E5%A8%B1%E4%B9%90%E5%88%B0%E5%BC%80%E5%8F%91/</link>
-        <pubDate>Thu, 01 Dec 2016 18:55:15 +0000</pubDate>
-         ( )</author>
-        <guid>http://lewisjin.coding.me/lewisjin/post/Ubuntu%E4%B8%8B%E5%BC%80%E5%8F%91%E5%A4%A7%E7%A5%9E%E7%8E%A9%E6%9C%BA%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8-%E4%BB%8E%E5%A8%B1%E4%B9%90%E5%88%B0%E5%BC%80%E5%8F%91/</guid>
-        <description>
-
-&lt;p&gt;这篇文章是一个收藏集。
-&lt;!-- more --&gt;&lt;/p&gt;
-
-&lt;p&gt;我将列举在Ubuntu下所有遇到的命令行操作。在本篇文章收集的差不多的时候我将把所有命令整合为一个.sh文件，大家装机Ubuntu后可以选择对应的版本安装配置，从而节约大量配置一些环境的时间。暂时分为三个版本：&lt;strong&gt;娱乐版&lt;/strong&gt;，&lt;strong&gt;开发版&lt;/strong&gt;，&lt;strong&gt;极客版&lt;/strong&gt;。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;本文由中南大学较为牛逼的研究生金天同学原创，欢迎转载，但是请保留这段版权信息，如果你对文章有任何疑问，欢迎微信联系我：jintianiloveu。牛逼大神一一为你解答！&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;娱乐版面向普通大众，包括一些娱乐软件的安装如QQ，迅雷，Word，ubuntu主题美化软件等的安装，开发版则包括一些开发工具的安装，比如Cmake，g++，python3.5，java等环境的搭建，当然开发版在娱乐版的基础上的扩充，为了防止臃肿所以不放在一个版本；最后极客版是集成了深度学习、Java、Python、CUDA与一体的开发环境，对机器要求较高。
-&lt;strong&gt;更新&lt;/strong&gt;
-&lt;strong&gt;以后安装Ubuntu系统一定记得如果做开发的话home分区分至少50G！！太小了尼玛分分钟满了，root分区也至少50G，否则以后修改分区真鸡巴，麻烦&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;ubuntu装机命令之-娱乐版-麻瓜版&#34;&gt;Ubuntu装机命令之-娱乐版（麻瓜版）&lt;/h3&gt;
-
-&lt;p&gt;在这个版本我们将实现以下软件的安装和配置：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Longue QQ&lt;/li&gt;
-&lt;li&gt;wine 最新版本&lt;/li&gt;
-&lt;li&gt;迅雷替代软件-uget&lt;/li&gt;
-&lt;li&gt;主题美化软件-unity-tweak-tools&lt;/li&gt;
-&lt;li&gt;麻瓜版预装主题-macbuntu&lt;/li&gt;
-&lt;li&gt;麻瓜版预装图标-numbic-circle&lt;/li&gt;
-&lt;li&gt;终端美化-oh my zash&lt;/li&gt;
-&lt;li&gt;chrome 浏览器&lt;/li&gt;
-&lt;li&gt;搜狗拼音输入法 for linux&lt;/li&gt;
-&lt;li&gt;网易云音乐 for linux&lt;/li&gt;
-&lt;li&gt;仿mac dock栏软件plank&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;ubuntu装机命令之-开发版&#34;&gt;Ubuntu装机命令之-开发版&lt;/h3&gt;
-
-&lt;p&gt;开发版我们在娱乐版的基础之上，还将安装一下：
-* Python3.5
-* Java 8
-* Atom Markdown 写作神器
-* Brackets 前端神器
-* opencv(这个我会单独开一个版本，其中还包括Cmake，g++等的安装)
-* &amp;hellip;陆续补充中&lt;/p&gt;
-
-&lt;h3 id=&#34;ubuntu装机命令之-极客版&#34;&gt;Ubuntu装机命令之-极客版&lt;/h3&gt;
-
-&lt;p&gt;最后极客版在开发版的基础之上，我们还将实现一下的安装：
-* CUDA和CUDNN（前提是有支持的显卡）
-* Mxnet的编译和安装
-* Tensorflow的安装
-* &amp;hellip;.陆续补充中&lt;/p&gt;
-
-&lt;h3 id=&#34;具体安装代码集锦-方便大家拷贝代码段&#34;&gt;具体安装代码集锦（方便大家拷贝代码段）&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Ubuntu下常用命令集锦&lt;/strong&gt;
-切换到root用户：
-&lt;code&gt;
-su passwd root
-ENTER new UNIX password:
-&lt;/code&gt;
-这时就是设置新的密码，一开始是没有密码的你输入反而失败。&lt;/li&gt;
-&lt;li&gt;##### CMake的安装
-首先大家前往官网下载cmake包，解压到Download路径下，然后把文件夹复制到/usr/local中我们安装在这里：
-```
-sudo cp -r cmake-3.7.1 /usr/local
-cd /usr/local/cmake-3.7.1
-sudo ./bootstrap
-sudo make
-sudo make install
-cmake &amp;ndash;version&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt; **更新**
- 其实cmake可以直接用apt来下载和安装，apt不行的情况下在使用上面的方法，apt办法为：
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;sudo apt install cmake&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;
-
-* ##### OpenCV的编译和安装，生成python版本
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;export PYTHON3_EXECUTABLE=/usr/bin/python
-export PYTHON_INCLUDE_DIR=/usr/include/python3.5
-export PYTHON_INCLUDE_DIR2=/usr/include/x86_64-linux-gnu/python3.5
-export PYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.5.so
-export PYTHON3_NUMPY_INCLUDE_DIRS=/usr/lib/python3.5/dist-packages/numpy/core/include/&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;接下来clone opencv源码，cd进入新建一个build文件夹，进入这个文件夹，执行：
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;cmake -D CMAKE_BUILD_TYPE=bulid -D CMAKE_INSTALL_PREFIX=/usr/local -D CUDA_GENERATION=Kepler ..
-sudo make -j8
-sudo make install&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_PYTHON_EXAMPLES=ON -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.1.0/modules -D PYTHON_EXECUTABLE=/usr/bin/python -D BUILD_EXAMPLES=ON ..
-```
-这里由于我的电脑是有GPU的，而且安装了cuda，因此后面cmake的时候有一个参数为CUDA_GENERATION,我们选择Auto，如果不加这个就是编译CPU版本，但是我这里不加会报错，建议只用CPU的可以不加这个参数。这里，make -j8参数是指定多核编译，8是你的CPU核心数。&lt;/p&gt;
-
-&lt;p&gt;最后我会把源代码开源到github，欢迎大家前去使用把安装过程中遇到的错误开issue提出来，也欢迎大家fork然后pull自己的安装命令进来，把我们的命令大全不断的扩充，满足更多人的需要。&lt;/p&gt;
-</description>
-      </item>
-      
-    
-      
-      <item>
-        <title>Ubuntu16.04搭建Mxnet惊天地泣鬼神完整教程,深度学习起航</title>
-        <link>http://lewisjin.coding.me/lewisjin/post/Ubuntu16-04%E6%90%AD%E5%BB%BAMxnet%E6%83%8A%E5%A4%A9%E5%9C%B0%E6%B3%A3%E9%AC%BC%E7%A5%9E%E5%AE%8C%E6%95%B4%E6%95%99%E7%A8%8B-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%B5%B7%E8%88%AA/</link>
-        <pubDate>Thu, 01 Dec 2016 12:26:32 +0000</pubDate>
-         ( )</author>
-        <guid>http://lewisjin.coding.me/lewisjin/post/Ubuntu16-04%E6%90%AD%E5%BB%BAMxnet%E6%83%8A%E5%A4%A9%E5%9C%B0%E6%B3%A3%E9%AC%BC%E7%A5%9E%E5%AE%8C%E6%95%B4%E6%95%99%E7%A8%8B-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%B5%B7%E8%88%AA/</guid>
-        <description>
-
-&lt;p&gt;本文将详细介绍Ubuntu16.04下使用CUDA和CUDNN搭建Mxnet的深度学习框架教程，其中最重要的还是CUDA和CUDNN的安装，通过本教程你可以节约很多时间，如果有什么不懂的在下面留下评论，我可以给予帮助
-&lt;!-- more --&gt;
-&amp;gt; 本文由中南大学较为牛逼的研究生金天同学原创，欢迎转载，但是请保留这段版权信息，如果你对文章有任何疑问，欢迎微信联系我：jintianiloveu。牛逼大神一一为你解答！&lt;/p&gt;
-
-&lt;h4 id=&#34;前言&#34;&gt;前言&lt;/h4&gt;
-
-&lt;p&gt;在写这篇文章之前，我有必要吐一下草，没有错说的就是windows，JB太麻烦了，可能是我不是搞C++的吧，之前也没有搭建过caffe所以觉得非常麻烦。一直以来都是python和java，感觉就单单opencv搭建来说python下和C++相比，python就简单很多，当然也可能是因为我不熟悉visual studio的缘故，总之就整体步骤来说，我明白了一个道理，珍爱生命原理windows，如果你是搞技术的话。&lt;/p&gt;
-
-&lt;h4 id=&#34;ubuntu16-04-cuda8-cudnn-for-cuda8-mxnet&#34;&gt;Ubuntu16.04 CUDA8 CUDNN for CUDA8 Mxnet&lt;/h4&gt;
-
-&lt;p&gt;好闲话不多说让我们直接开始，如前所述，在进行我们伟大的革命事业之前，请原理windows，windows作为日常办公使用不可或缺，但是就开发来讲我拒绝它，太麻烦了，还是喜欢我们伟大的Linux，所有事情一个命令行轻松搞定，当然如果读者对Linux不熟悉的话，你可以把它当成Mac OS，毕竟Unix和Linux五八年前本是一家，慢慢你就会对Ubuntu系统的简单便捷所折服，Ubuntu已经为你准备好了一切，接下来你直接进行你伟大的创造即可。
-所以说我们在进行革命之前，先安装Ubuntu系统，追求个性的你不需要安装最新版本，因为我就是踩着坑过来的，新版本对中文输出法支持不好有很多莫名其妙的bug，所以还是推荐现在比较稳定的16.04.当然很多人更加追求个性，直接使用其他发行版本，比如国产的深度，Solus，Elementory OS，听老夫一言，我是踩着坑过来的，这些系统即使界面在花骚，在Ubuntu面前还是图样图森破，散木谈慕斯奈一福。哎呀这废话有点多了，相信你已经按装好了Ubuntu。接下来就是显卡。
-就显卡这一快我又有必要吐槽一下了，NVIDIA尼玛把显卡买那么贵真的好吗，真的不是炒作起来的吗，我有点愤青了，这让我们这些想搞点事情的年轻人情何以堪。不过不重要相信各位土豪手里都已经有了New TITAN X，如果你手里只有一块入门级的显卡，不过也没有关系，本文使用的显卡就是入门级的，丝毫不妨碍我们继续我们改变世界的伟大计划，当然以后升级是必然的，我们先吧我们的理论知识打好。
-接下来你要安装的就是CUDA和CUDNN。在这里我详细介绍一下，因为CUDA和CUDNN有没有安装好决定了后面Mxnet GPU版本能不能使用。&lt;/p&gt;
-
-&lt;h4 id=&#34;cuda8安装教程&#34;&gt;CUDA8安装教程&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;前往官网下载CUDA&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;这里我放出一个CUDA的下载链接，但是机智的我为了骗取评论数决定采取大家评论私发的方式，嘿嘿嘿～&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;CUDA8安装&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;接下来相信你已经在/Downloads文件接下有了一个文件，我们安装它&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo dpkg -i cuda-repo-ubuntu1604-8-0-rc_8.0.27-1_amd64.deb
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;后面使我们下载好的文件的名字。
-然而我们在从apt中安装cuda：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo apt update
-sudo install cuda
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;最后最重要的一部，得配置环境变量，如果在这一步没有配置环境变量的话，极有可能会出错。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;export CUDA_HOME=/usr/local/cuda
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;其实这样很简单，export是手动导入变量，如果接下来安装出错的话，首先输入命令：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;echo $CUDA_HOME
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;看看是不是环境变量配置出错了。这里我们刚才install cuda的时候实际上会在/usr/local/目录下生成cuda 和cuda-8.0两个文件夹，后面这个只是让我们知道cuda的版本，因为后面cudnn要和cuda版本配套，实际使用我们只是用cuda这个文件中的库。导入了cuda环境变量之后，我们还要手动导入cuda library的环境变量：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;然后我们echo一下$LD_LIBRARY_PATH,看看是否导入成功。
-OK，进行到这里我们就安装好了CUDA了，我们在terminal里面输入：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;nvcc --version
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;看看CUDA是否安装成功，如果出来了版本说明安装好了。
-* CUDNN安装&lt;/p&gt;
-
-&lt;p&gt;接下来安装CUDNN，这是加速卷积运算的库，最好安装一下，大家要去Nvidia官网下载，注册一个Nvidia的账号，不得不说，Nvidia的官网还是很有设计感的，这里我也放出一个下载链接，因为官网下载其实有点慢，猥琐的而又机智的我希望大家评论一下然后来上链接，嘿嘿嘿
-CUDNN安装就是直接解压，&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;tar zxvf cudnn8.0-linux64-amd.tar.gz
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;后面那个是你下载的文件的名字，接着你要复制这些文件到cuda的目录里面去：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo cp cuda/include/* /usr/local/cuda/include/
-sudo cp cuda/lib64/* /usr/local/cuda/lib64/
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;这个意思就是把cudnn下面的文件复制到cuda相应的文件夹之下。这样我们就安装好了吧，是的如果还报什么错就贴出来，应该这里的问题很好解决。&lt;/p&gt;
-
-&lt;h4 id=&#34;安装mxnet&#34;&gt;安装Mxnet&lt;/h4&gt;
-
-&lt;p&gt;接下来我们要安装Mxnet了，首先大家直接去github克隆最新的代码&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git clone --recursive https://github.com/dmlc/Mxnet
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;那个&amp;ndash;recursive命令前往别忘记了，因为mxnet有一些依赖，一起下载下来，这个时候我们会在home目录下看到mxnet，我们cd进去：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;cd ~/mxnet
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;这里就是mxnet，接下来我们要编译它，编译生成我们相应的python、R、Scala库。但是编译之前我们安装一下opencv，以防万一，安装opencv很简单直接在apt中安装即可。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo apt install opencv
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;如果安装不成功，可以直接百度一下，我这里就不详细说了。
-重点来了，接下来我们要编译mxnet，我们把mxnet/make文件夹下的config.mk文件拷贝到mxnet根目录，&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo cp ~/mxnet/make/config.mk ~/mxnet
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;这段代码我们在mxnet文件目录执行，然后我们sudo gedit config.mk
-对文件进行一个编辑。把USE_CUDA改为1，这里更改方式参考网上一些教程，同时USE_CUDNN也改为1，因为我们要安装GPU版本，所以这些都使用上，如果你是安装CPU版本的话那juice非常简单了你不需要编译直接下来官方的库即可。
-然后我们开始编译：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;make -j8
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;这里8指的是CPU的核心数，你可以查看一下你的CPU的核心数，我的是8核的。等待编译完成
-接下来重点来了，我们进入到python目录&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;cd /usr/bin/python
-python3 setup.py install
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;这里就是直接用setup工具来安装我们编译好的python mxnet库，至于为什么是python3是因为我安装了python3.5，如果你用的是2.7直接python就好了。&lt;/p&gt;
-
-&lt;h4 id=&#34;开始深度学习之旅&#34;&gt;开始深度学习之旅&lt;/h4&gt;
-
-&lt;p&gt;一切准备就绪，开始开车！我们进入mxnet的example文件夹，来跑一个简单的mnist看看速度如何：
-&lt;img src=&#34;http://lewisjin.coding.me/lewisjin/home/geekspace/Pictures&#34; alt=&#34;pic&#34; /&gt;
-可以说速度非常之快啊！现在我们只是开车，等一下就是真正你比吊炸天的深度学习教程了！
-&amp;gt; 感谢大家阅读我的博客，本文永久更新地址: jinfagang.coding.me 也欢迎大家积极留言，让我看到你的存在&lt;/p&gt;
-</description>
-      </item>
-      
-    
-      
-      <item>
-        <title>Mac mysql 安装配置以及忘记初始密码的解决方法</title>
-        <link>http://lewisjin.coding.me/lewisjin/post/Mac-mysql-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E4%BB%A5%E5%8F%8A%E5%BF%98%E8%AE%B0%E5%88%9D%E5%A7%8B%E5%AF%86%E7%A0%81%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</link>
-        <pubDate>Wed, 30 Nov 2016 12:04:10 +0000</pubDate>
-         ( )</author>
-        <guid>http://lewisjin.coding.me/lewisjin/post/Mac-mysql-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E4%BB%A5%E5%8F%8A%E5%BF%98%E8%AE%B0%E5%88%9D%E5%A7%8B%E5%AF%86%E7%A0%81%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</guid>
-        <description>
-
-&lt;p&gt;本文详细说明了mac下mysql的安装和配置，现在mysql出于安全考虑安装时会默认初始化一个随机密码，如果忘记了需要重置也可以从本文找到答案。
-&lt;!-- more --&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;本文由作者金天原创，欢迎大家转载，不过请保留这段版权信息，多谢合作，如对本文有任何问题欢迎联系作者: jintianiloveu&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&#34;mac下mysql的安装-推荐使用dmg安装-避免不必要的麻烦&#34;&gt;Mac下mysql的安装（推荐使用dmg安装，避免不必要的麻烦）&lt;/h3&gt;
-
-&lt;p&gt;Mac下安装mysql可以直接去官网下载dmg安装包，但是速度实在是慢，如果大家需要下载链接可以在下面回复邮箱我会第一时间打给大家，当然也可以加入我们的欧曼开发者联盟QQ群：373987228，中国新一代计算机高手聚集地。好了闲话不多说我们直接看看如何安装。&lt;/p&gt;
-
-&lt;p&gt;首先这个mysql如果用dmg安装的话就是傻瓜一键式安装了，非常方便简单快捷。dmg安装包默认安装sql在了/usr/local文件目录下：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/uyYThZ50NXdO0Hou.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;要重启或者停止mysql服务在设置中有：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/VYi0Ss4Rh7g3bhd4.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/e8O9q4MZzyPwhveL.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;可以说非常的简单方便快捷。好了接下来我们该干啥？安装好了对不对？我们在终端输入mysql发现并没有什么卵用啊。同志们莫慌，这是因为，你还没有吧mysql加入环境变量，怎么加也很简单。&lt;/p&gt;
-
-&lt;h3 id=&#34;mysql加入环境变量&#34;&gt;Mysql加入环境变量&lt;/h3&gt;
-
-&lt;p&gt;我们在终端输入&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-ba&#34;&gt;vim ~/.bash_profile
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;我们在里面增加一行：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;export PATH=$PATH:/usr/local/mysql/bin
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;这就把mysql添加进了环境变量，后面我们就可以用这个目录下的命令了。&lt;/p&gt;
-
-&lt;h3 id=&#34;mysql搭建好后忘记初始密码&#34;&gt;MySQL搭建好后忘记初始密码&lt;/h3&gt;
-
-&lt;p&gt;这是很多人遇到的问题，mysql安装时生成的密码又臭又长在终端输入根本看不到，很容易输错，而且很多时候我们搭建mysql的时候有妹子在旁边，跟妹子说话时就会忘记保存，这个时候我们就要重置密码了，在终端输入一下命令（先关闭mysql）：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo mysqld_safe --skip-grant-tables
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;这里mysqld_safe的意思是让mysql进入安全模式（麻瓜也知道），后面—skip-grant-tables意思是不需要密码进入，很容易理解吧，可以说这行命令很重要，大家在必要的时候可以记住，（如果你第二次忘记密码，那么你用这个命令的时候要关闭mysqld服务，怎么关闭Google一下）接着：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;mysql -u root
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;然后就用SQL语句修改密码：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;UPDATE mysql.user SET password=PASSWORD(&#39;yourpassword&#39;) WHERE User=&#39;root&#39;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;OK!确定之后/c，然后exit退出，在开一个终端输入&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;mysql -u root -p
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;接着输入新密码就可以进入mysql啦~&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;感谢大家阅读我的博客，本文永久更新地址: jinfagang.coding.me&lt;/p&gt;
-
-&lt;p&gt;也欢迎大家积极留言，让我看到你的存在&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-      </item>
-      
-    
-      
-      <item>
-        <title>Hexo如何在两台电脑上更新博客</title>
-        <link>http://lewisjin.coding.me/lewisjin/post/Hexo%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%A4%E5%8F%B0%E7%94%B5%E8%84%91%E4%B8%8A%E6%9B%B4%E6%96%B0%E5%8D%9A%E5%AE%A2/</link>
-        <pubDate>Tue, 29 Nov 2016 21:15:10 +0000</pubDate>
-         ( )</author>
-        <guid>http://lewisjin.coding.me/lewisjin/post/Hexo%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%A4%E5%8F%B0%E7%94%B5%E8%84%91%E4%B8%8A%E6%9B%B4%E6%96%B0%E5%8D%9A%E5%AE%A2/</guid>
-        <description>
-
-&lt;p&gt;本文介绍如何用了两台电脑进行博客的更新和配置，这样你就可以在两台电脑上更新自己的博客啦！想一想就很激动啊有没有，先来演示一下，其实本人这个博客和我另外一个博客是同步更新的:jinfagang.coding.me 欢迎大家去踩踩
-&lt;!-- more --&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;两台电脑配置hexo&#34;&gt;两台电脑配置hexo&lt;/h3&gt;
-
-&lt;p&gt;首先废话不多说，你需要准备两台电脑，相信各位土豪都能做到。接下来你需要两个账号，什么？两个账号？我只想更新一个账号怎么办？没有关系不要慌张，我这个教程教授大家的是使用两个账号开两个博客，但是更新的内容是一样的，这样其实也没有什么不好，你以后甚至可以用两个博客展示两面的你呢。&lt;/p&gt;
-</description>
-      </item>
-      
-    
-      
-      <item>
-        <title>JavaWeb-搭建环境上传图片到后台并存储</title>
-        <link>http://lewisjin.coding.me/lewisjin/post/JavaWeb-%E6%90%AD%E5%BB%BA%E7%8E%AF%E5%A2%83%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%88%B0%E5%90%8E%E5%8F%B0%E5%B9%B6%E5%AD%98%E5%82%A8/</link>
-        <pubDate>Tue, 29 Nov 2016 15:33:26 +0000</pubDate>
-         ( )</author>
-        <guid>http://lewisjin.coding.me/lewisjin/post/JavaWeb-%E6%90%AD%E5%BB%BA%E7%8E%AF%E5%A2%83%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%88%B0%E5%90%8E%E5%8F%B0%E5%B9%B6%E5%AD%98%E5%82%A8/</guid>
-        <description>
-
-&lt;p&gt;介绍使用intelliJ idea搭建JavaWeb开发环境，以及实现简单的Servlet，从此你就可以建立自己的服务器，结合安卓或者IPhone实现任何你想通过云来完成的工作啦！
-&lt;!-- more --&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;本文由中南大学较为牛逼的研究生金天同学原创，欢迎转载，但是请保留这段版权信息，如果你对文章有任何疑问，欢迎微信联系我：jintianiloveu。牛逼大神一一为你解答！&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&#34;intellij-idea-java-web环境的搭建&#34;&gt;intellij idea Java web环境的搭建&lt;/h3&gt;
-
-&lt;p&gt;很久以来，很多人用eclipse，什么都是eclipse，java是，安卓是，甚至连C++都有人用eclipse，然而作为一个对技术和审美有着强烈追求的男人，是不能忍受eclipse古老的界面的，这时候我们就应该使用intellij idea，地球表面以上3000米高空一下最牛逼的ide，是的你没有听错，就是它。闲话不多说，让我们看看人家idea的启动界面：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/EbuWOwE5PQn4GU8J.png&#34; alt=&#34;intellij idea启动界面&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;简直狂月酷炫有没有。好吧其实我知道你们很多人知道，我就不装逼了，直接说重点吧。&lt;/p&gt;
-
-&lt;p&gt;说先对于一个web项目来说，你的idea一定要是Ultramate版本，也就是旗舰版，不知道这个单词写错没有，大家将就看，实际上intellij全系的专业版ide都可以破解，在这里放一个破解链接，大家需要的就是获取个注册码：&lt;a href=&#34;http://idea.lanyus.com&#34;&gt;获取注册码通道&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;好了同志们要开车了，有了idea我们就要开始搭建开发环境了，请注意本次火箭即将开车。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;新建一个web工程&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;新建工程很简单，按照向导来，在选择页面我们选择webapp&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/8ojlFZmZ4eXniqVZ.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;然后给工程取一个名字，接下来我们可以看到idea已经帮我新建好了一个完成的web工程。这里我们还要新建两个文件夹，结构如图所示，先不要问为什么，等一下我会告诉大家。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/nnk0ezwtEVHwFUfm.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/Zf9Hed0OTO76m4W6.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;新建了一个classes一个lib文件夹，先建好，等一下我们再配置，建好了之后呢，我们在src文件夹下新建一个包：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/ZWCpALnd6rMKKAaC.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;包名自己取，最后我们在包下面新建一个Servlet，弹出菜单选中Servlet：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/ljYYqqHU9q4aMox7.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;是的，你没有看错我们这就新建好了servlet，但是你还得再web.xml中添加一下Servlet的映射：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/ua4KBGsEaws2e93e.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;来看看生成的sevlet：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/4L4H61xBRE5ypLki.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;配置java文件的输出路径和lib路径&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/Q8JZwUHn4OjMNj36.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;如图我们配置一下输出的路径，选择我们之前新建的classes和lib文件夹，classes和lib文件夹分别是我们java文件输出和jar依赖的文件夹。&lt;/p&gt;
-
-&lt;p&gt;然后切换到depencies选项卡，点击添加，添加一个jar的依赖路径：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/R6LhoUtL5FWPONJA.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;选择jar directory:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/G5KWmVXwiDqMoc3V.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;勾选然后确定：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/JYwlkbv6sU1BsICC.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;最后一步，我们就要配置tomcat服务器了&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;tomcat是什么猫我就不多说了，一个web容器，你的java web app就放在这个容器里面，web app运行依赖于我们的tomcat，那么配置的时候我们就需要点击右上角的这个地方：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/6EZVVTxxVV9Ds5d4.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;来配置，在这里选择local tomcat：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/mhkghnN7KdRixdX5.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;只需要给tomcat服务器娶一个名字，然后点击deployment下面的添加，添加artifact依赖：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/VP5Li9d6SWgG01n0.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;最后在旁边填写一个目录，写上工程的名字即可。哦忘了一步，在Server选项卡里面你要配置一下你的tomcat服务器，怎么配置很简单，只要configure选择你的tomcat文件夹就可以了，最外层的那个，idea自动识别。然后确定就OK。&lt;/p&gt;
-
-&lt;h3 id=&#34;开发小程序&#34;&gt;开发小程序&lt;/h3&gt;
-
-&lt;p&gt;好搭建好了我们来个开车小程序。对了，在这个时候你可能会遇到一个问题，就是servlet识别不了server包：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/A9dYfAvyqe7y3JTm.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这是因为我们还没有吧tomcat官方jar包放到lib文件夹下，就是我们刚才新建的那个依赖文件夹，在tomcat文件夹下的lib文件夹寻找：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/Flxq574wqsYzOrAh.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/jbnAqYzR4Hq8O2YU.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这个jar包，ok现在没有报错，我们在doPost方法里面写一段代码：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;response.setContentType(&amp;quot;text/html&amp;quot;);
-response.setCharacterEncoding(&amp;quot;utf-8&amp;quot;);
-PrintWriter out = response.getWriter();
-out.print(&amp;quot;我要毫不经意的打一个广告，是的，就是在这里，大家快使用PicBind图床神器写博客！！&amp;quot;);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;好的我们运行一下这个web app，如果控制台显示这样说名运行了&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/JGbp4rOS98l8UThb.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;好，接下来激动人心的时刻到了，我们在浏览器中输入：（或者直接在弹出的浏览器中后面加上我们servlet的名字 /HelloServlet），见证奇迹的时刻到了！！！&lt;/p&gt;
-
-&lt;p&gt;！！！！！&lt;/p&gt;
-
-&lt;p&gt;………….好像并没有什么卵反应？我故意的，把上面那段代码拷贝到doGet方法中，在更新一下资源并重启服务器看一下：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/UeyoJFQfikwjddss.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;骚年，你没有看错！！！你成功学会了使用servlet！！！&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;感谢大家阅读我的博客，本文永久更新地址: jinfagang.coding.me&lt;/p&gt;
-
-&lt;p&gt;也欢迎大家积极留言，让我看到你的存在&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-      </item>
-      
-    
-      
-      <item>
-        <title>PicBind--新一代图床神器</title>
-        <link>http://lewisjin.coding.me/lewisjin/post/PicBind-%E6%96%B0%E4%B8%80%E4%BB%A3%E5%9B%BE%E5%BA%8A%E7%A5%9E%E5%99%A8/</link>
-        <pubDate>Sat, 05 Nov 2016 20:56:22 +0000</pubDate>
-         ( )</author>
-        <guid>http://lewisjin.coding.me/lewisjin/post/PicBind-%E6%96%B0%E4%B8%80%E4%BB%A3%E5%9B%BE%E5%BA%8A%E7%A5%9E%E5%99%A8/</guid>
-        <description>
-
-&lt;p&gt;本文介绍一个界面设计美观，自由度非常高的图床软件，写博客必备小助手—PicBind，一键拖拽上传图片，生成永久外链或Markdown格式优化外链，妈妈再也不担心你的博客图裂问题了。
-&lt;!-- more --&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;picbind介绍&#34;&gt;PicBind介绍&lt;/h3&gt;
-
-&lt;p&gt;PicBind是有欧曼团队打造的专注Mac下博客创作效率软件，PicBind最大的特点就是界面非常简洁，而且很美观，当然如果你真正使用它的时候你会为它的设计感染，甚至想加入欧曼团队一起创造一些产品。然而你所想的并不是没有可能，任何一个使用PicBind的用户都有可能加入欧曼创建的创业者阵营中。&lt;/p&gt;
-
-&lt;p&gt;PicBind外表的特点自不必多言，实际使用起来也很顺手，很自由，比起市面上其他一些图床软件来说，PicBind可以让用户设置自己的服务器，很大程度的保护了用户的隐私性以及可控性。由此可见欧曼团队在打造这款产品时充分考虑到了用户的利益。&lt;/p&gt;
-
-&lt;p&gt;PicBind和其他同类产品一样，采用是如丝般顺滑的使用体验，你只需要将图片拖拽到任务栏的图标，即可实现自动上传，并且会自动在粘贴板生成外链。除此之外，PicBind还设置了MarkDown格式切换选项，用户可以选中MarkDown，这样每次生成的外链就是经过MarkDown格式优化的了。&lt;/p&gt;
-
-&lt;p&gt;最后必须要说明的一点是，与其他图床软件软件相比，PicBind完全免费，用户自由度很高，欧曼团队在这一点上很有诚意，当然作为PicBind的忠实粉丝，为了资助欧曼团队继续开发出更多优秀的免费产品，也可以捐献一点钱给他们（PicBind的Sponsor是自愿的），只要是PicBind的Sponsor欧曼团队都将把用户加入到他们建立的创业者群中，结实一些人脉，认识认识欧曼的大大们也未尝不可~&lt;/p&gt;
-
-&lt;p&gt;PicBind使用&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;PicBind的设计非常简洁，启动App之后你甚至在Dock栏都看不到PicBind的图标，而只在状态栏有一个小“外星人的图标”，PicBind团队设计的这个图标我还是很喜欢的。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/EgM6Wj51RPneUCbV.png&#34; alt=&#34;设计风格非常简洁&#34; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;通过设置界面来设置服务器，PicBind目前仅支持七牛云服务器，七牛云最近几年发展的也比较快，各种融资，服务器也比较稳定，用七牛云图床的人也很多，所以大家可以去七牛云官方申请个账号，有免费空间和访问次数。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/xCg83plQ6Sr23dwW.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;在写文章的时候把图片都放在桌面，需要哪张的时候就拖拽，自动生成Markdown格式的引用。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/Fo5qvdUA40bbazsm.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;PicBind还支持上传图片历史记录，用户就可以知道自己之前上传了哪些图片了&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/ZdKChjLqBowcGiBn.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;在PicBind关于界面大家可以成为PicBind的Sponsor，给PicBind官方团队捐点钱就可以被加入到PicBind创业者交流群中，认识各种大大的好机会~&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ofwzcunzi.bkt.clouddn.com/GEZbYrXsWEZuikuX.png&#34; alt=&#34;PicName&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;picbind的使用感受&#34;&gt;PicBind的使用感受&lt;/h3&gt;
-
-&lt;p&gt;如果你在寻找一款免费又有充分自由度的图床软件，那么PicBind绝对是你的首选，不仅有着欧曼团队的全程技术支持，而且一不小心就加入到了PicBind大大交流群中成为Sponsor，说不定哪天认识下PicBind团队CEO一起改变世界也说不定~&lt;/p&gt;
-
-&lt;h3 id=&#34;picbind的未来&#34;&gt;PicBind的未来&lt;/h3&gt;
-
-&lt;p&gt;据PicBind的开发团队，欧曼科技介绍，PicBind后期还将增加对Windows以及Linux平台的支持，我只想说，PicBind这么良心的软件应该跨平台，我也好追随PicBind的大大们一起打江山。（PS：PicBind团队也就是欧曼科技现在的核心业务是一款社交产品，我就说我咋感觉欧曼做产品有一股浓浓的社交味儿，手动偷笑，不过国内像这样的良心产品真的不多，大家且用且珍惜啊，别忘了给PicBind团队们赞助点资金，让我们的PicBind大大们去开发更多产品，创造更多的社会价值）&lt;/p&gt;
-</description>
-      </item>
-      
-    
-      
-      <item>
-        <title>深度学习的前景</title>
-        <link>http://lewisjin.coding.me/lewisjin/post/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%89%8D%E6%99%AF/</link>
-        <pubDate>Wed, 26 Oct 2016 13:18:00 +0000</pubDate>
-         ( )</author>
-        <guid>http://lewisjin.coding.me/lewisjin/post/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%89%8D%E6%99%AF/</guid>
-        <description>
-
-&lt;p&gt;本文讲述了个人对深度学习未来的看法。
-&lt;!-- more --&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;深度学习的未来&#34;&gt;深度学习的未来&lt;/h3&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;本文由作者金天原创，欢迎大家转载，不过请保留这段版权信息，多谢合作，如对本文有任何问题欢迎联系作者: jintianiloveu&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;深度学习可以说在近几年取得了非常好的发展以及社会关注度，很多公司慢慢的在把深度学习当做一种战略。而作为一个时刻在思考着未来的科技狂热分子，对于深度学习我更想表达的是，离我们真正希望的AI还差很远，纵然现在的深度学习能够解决很多问题，无论我们是否从理论上分析论证过，但是它就是work，有些时候我们就需要这样的东西，不管它多么复杂只要它能解决实际问题，那么它就是有用的，破解它也是迟早的事情。&lt;/p&gt;
-
-&lt;p&gt;那么深度学习的未来是什么？在哪里？&lt;/p&gt;
-
-&lt;p&gt;香港科技大学一位知名教授说：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;增强学习和迁移学习将是深度学习的未来。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;我非常认同这位教授的观点，因为现在深度学习算法最多只能算是奠定了一个人工智能的基础，要想发展为真正的普适智能还是需要更强大的模型适应能力，以及迁移能力。&lt;/p&gt;
-</description>
-      </item>
-      
+    </item>
     
   </channel>
 </rss>
