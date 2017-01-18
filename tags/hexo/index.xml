@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hexo on Lewis Jin</title>
-    <link>http://jintianme.github.io/lewisjin/tags/hexo/index.xml</link>
+    <link>https://jintianme.github.io/tags/hexo/index.xml</link>
     <description>Recent content in Hexo on Lewis Jin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="http://jintianme.github.io/lewisjin/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://jintianme.github.io/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Hexo如何在两台电脑上更新博客</title>
-      <link>http://jintianme.github.io/lewisjin/post/Hexo%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%A4%E5%8F%B0%E7%94%B5%E8%84%91%E4%B8%8A%E6%9B%B4%E6%96%B0%E5%8D%9A%E5%AE%A2/</link>
+      <link>https://jintianme.github.io/post/Hexo%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%A4%E5%8F%B0%E7%94%B5%E8%84%91%E4%B8%8A%E6%9B%B4%E6%96%B0%E5%8D%9A%E5%AE%A2/</link>
       <pubDate>Tue, 29 Nov 2016 21:15:10 +0000</pubDate>
       
-      <guid>http://jintianme.github.io/lewisjin/post/Hexo%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%A4%E5%8F%B0%E7%94%B5%E8%84%91%E4%B8%8A%E6%9B%B4%E6%96%B0%E5%8D%9A%E5%AE%A2/</guid>
+      <guid>https://jintianme.github.io/post/Hexo%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%A4%E5%8F%B0%E7%94%B5%E8%84%91%E4%B8%8A%E6%9B%B4%E6%96%B0%E5%8D%9A%E5%AE%A2/</guid>
       <description>
 
 &lt;p&gt;本文介绍如何用了两台电脑进行博客的更新和配置，这样你就可以在两台电脑上更新自己的博客啦！想一想就很激动啊有没有，先来演示一下，其实本人这个博客和我另外一个博客是同步更新的:jinfagang.coding.me 欢迎大家去踩踩

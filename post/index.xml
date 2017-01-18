@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Lewis Jin</title>
-    <link>http://jintianme.github.io/lewisjin/post/index.xml</link>
+    <link>https://jintianme.github.io/post/index.xml</link>
     <description>Recent content in Posts on Lewis Jin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 16 Jan 2017 23:31:58 +0000</lastBuildDate>
-    <atom:link href="http://jintianme.github.io/lewisjin/post/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://jintianme.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Django 3 分分钟搭建一个RESTful API</title>
-      <link>http://jintianme.github.io/lewisjin/post/Django-3-%E5%88%86%E5%88%86%E9%92%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AARESTful-API/</link>
+      <link>https://jintianme.github.io/post/Django-3-%E5%88%86%E5%88%86%E9%92%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AARESTful-API/</link>
       <pubDate>Mon, 16 Jan 2017 23:31:58 +0000</pubDate>
       
-      <guid>http://jintianme.github.io/lewisjin/post/Django-3-%E5%88%86%E5%88%86%E9%92%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AARESTful-API/</guid>
+      <guid>https://jintianme.github.io/post/Django-3-%E5%88%86%E5%88%86%E9%92%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AARESTful-API/</guid>
       <description>
 
 &lt;h3 id=&#34;django-restframework-简介&#34;&gt;Django restframework 简介&lt;/h3&gt;
@@ -221,10 +221,10 @@ Vary: Accept&lt;/p&gt;
     
     <item>
       <title>Django 2 MySQL and Blog</title>
-      <link>http://jintianme.github.io/lewisjin/post/Django-2-MySQL-and-Blog/</link>
+      <link>https://jintianme.github.io/post/Django-2-MySQL-and-Blog/</link>
       <pubDate>Sun, 15 Jan 2017 18:14:45 +0000</pubDate>
       
-      <guid>http://jintianme.github.io/lewisjin/post/Django-2-MySQL-and-Blog/</guid>
+      <guid>https://jintianme.github.io/post/Django-2-MySQL-and-Blog/</guid>
       <description>
 
 &lt;h3 id=&#34;mysql-usage&#34;&gt;mysql usage&lt;/h3&gt;
@@ -301,10 +301,10 @@ collation-server=utf8_general_ci&lt;/p&gt;
     
     <item>
       <title>Django之歌-Post 1 Django和mysql</title>
-      <link>http://jintianme.github.io/lewisjin/post/Django%E4%B9%8B%E6%AD%8C-Post-1-Django-%E5%92%8C-mysql/</link>
+      <link>https://jintianme.github.io/post/Django%E4%B9%8B%E6%AD%8C-Post-1-Django-%E5%92%8C-mysql/</link>
       <pubDate>Thu, 12 Jan 2017 20:31:45 +0000</pubDate>
       
-      <guid>http://jintianme.github.io/lewisjin/post/Django%E4%B9%8B%E6%AD%8C-Post-1-Django-%E5%92%8C-mysql/</guid>
+      <guid>https://jintianme.github.io/post/Django%E4%B9%8B%E6%AD%8C-Post-1-Django-%E5%92%8C-mysql/</guid>
       <description>
 
 &lt;p&gt;这个post是讲述django和mysql的故事，记录django常用命令以及mysql的python接口安装方法，环境为python3.6。
@@ -477,10 +477,10 @@ mysql&amp;gt; SHOW TABLES;
     
     <item>
       <title>Yolo训练自己的数据集教程 Newest(2016-12-23)</title>
-      <link>http://jintianme.github.io/lewisjin/post/Yolo%E8%AE%AD%E7%BB%83%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86%E6%95%99%E7%A8%8B-Newest-2016-12-23/</link>
+      <link>https://jintianme.github.io/post/Yolo%E8%AE%AD%E7%BB%83%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86%E6%95%99%E7%A8%8B-Newest-2016-12-23/</link>
       <pubDate>Thu, 22 Dec 2016 18:27:38 +0000</pubDate>
       
-      <guid>http://jintianme.github.io/lewisjin/post/Yolo%E8%AE%AD%E7%BB%83%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86%E6%95%99%E7%A8%8B-Newest-2016-12-23/</guid>
+      <guid>https://jintianme.github.io/post/Yolo%E8%AE%AD%E7%BB%83%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86%E6%95%99%E7%A8%8B-Newest-2016-12-23/</guid>
       <description>
 
 &lt;h2 id=&#34;yolo-darknet训练自己的数据集教程-newest-2016-12-23&#34;&gt;Yolo darknet训练自己的数据集教程(Newest 2016.12.23)&lt;/h2&gt;
@@ -603,10 +603,10 @@ OK，看看结果咋么样～&lt;/p&gt;
     
     <item>
       <title>Ubuntu14.04 or 16.04 Nvidia GTX1080 搭建CUDA过程</title>
-      <link>http://jintianme.github.io/lewisjin/post/Ubuntu14-04-or-16-04-Nvidia-GTX1080-%E6%90%AD%E5%BB%BACUDA%E8%BF%87%E7%A8%8B/</link>
+      <link>https://jintianme.github.io/post/Ubuntu14-04-or-16-04-Nvidia-GTX1080-%E6%90%AD%E5%BB%BACUDA%E8%BF%87%E7%A8%8B/</link>
       <pubDate>Sat, 17 Dec 2016 11:02:30 +0000</pubDate>
       
-      <guid>http://jintianme.github.io/lewisjin/post/Ubuntu14-04-or-16-04-Nvidia-GTX1080-%E6%90%AD%E5%BB%BACUDA%E8%BF%87%E7%A8%8B/</guid>
+      <guid>https://jintianme.github.io/post/Ubuntu14-04-or-16-04-Nvidia-GTX1080-%E6%90%AD%E5%BB%BACUDA%E8%BF%87%E7%A8%8B/</guid>
       <description>&lt;p&gt;一定要ssh远程登录
 关闭开启图形界面&lt;/p&gt;
 
@@ -628,10 +628,10 @@ sudo nvidia-uninstall&lt;/p&gt;
     
     <item>
       <title>Auto Drive Series 2-YOLO state-of-arts algrithm learn and Pascal VOC</title>
-      <link>http://jintianme.github.io/lewisjin/post/Auto-Drive-Series-2-YOLO-state-of-arts-algrithm-learn-and-Pascal-VOC/</link>
+      <link>https://jintianme.github.io/post/Auto-Drive-Series-2-YOLO-state-of-arts-algrithm-learn-and-Pascal-VOC/</link>
       <pubDate>Fri, 16 Dec 2016 14:22:12 +0000</pubDate>
       
-      <guid>http://jintianme.github.io/lewisjin/post/Auto-Drive-Series-2-YOLO-state-of-arts-algrithm-learn-and-Pascal-VOC/</guid>
+      <guid>https://jintianme.github.io/post/Auto-Drive-Series-2-YOLO-state-of-arts-algrithm-learn-and-Pascal-VOC/</guid>
       <description>
 
 &lt;p&gt;This post about YOLO algrithm: you only look once.
@@ -650,10 +650,10 @@ sudo nvidia-uninstall&lt;/p&gt;
     
     <item>
       <title>Autodrive Series 1-kitti dataset search</title>
-      <link>http://jintianme.github.io/lewisjin/post/Autodrive-Series-1-kitti-dataset-search/</link>
+      <link>https://jintianme.github.io/post/Autodrive-Series-1-kitti-dataset-search/</link>
       <pubDate>Fri, 16 Dec 2016 13:08:17 +0000</pubDate>
       
-      <guid>http://jintianme.github.io/lewisjin/post/Autodrive-Series-1-kitti-dataset-search/</guid>
+      <guid>https://jintianme.github.io/post/Autodrive-Series-1-kitti-dataset-search/</guid>
       <description>
 
 &lt;p&gt;This post about auto drive
@@ -781,10 +781,10 @@ recall = 300/1400 = 3/14 = 21%
     
     <item>
       <title>Hexo博客更换电脑的正确姿势</title>
-      <link>http://jintianme.github.io/lewisjin/post/Hexo%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF/</link>
+      <link>https://jintianme.github.io/post/Hexo%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF/</link>
       <pubDate>Mon, 12 Dec 2016 10:47:07 +0000</pubDate>
       
-      <guid>http://jintianme.github.io/lewisjin/post/Hexo%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF/</guid>
+      <guid>https://jintianme.github.io/post/Hexo%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF/</guid>
       <description>
 
 &lt;p&gt;hexo指南
@@ -855,10 +855,10 @@ Host coding.net
     
     <item>
       <title>夜有所思</title>
-      <link>http://jintianme.github.io/lewisjin/post/%E5%A4%9C%E6%9C%89%E6%89%80%E6%80%9D/</link>
+      <link>https://jintianme.github.io/post/%E5%A4%9C%E6%9C%89%E6%89%80%E6%80%9D/</link>
       <pubDate>Sun, 11 Dec 2016 23:35:30 +0000</pubDate>
       
-      <guid>http://jintianme.github.io/lewisjin/post/%E5%A4%9C%E6%9C%89%E6%89%80%E6%80%9D/</guid>
+      <guid>https://jintianme.github.io/post/%E5%A4%9C%E6%9C%89%E6%89%80%E6%80%9D/</guid>
       <description>
 
 &lt;p&gt;本文是我的一个随笔
@@ -875,10 +875,10 @@ Host coding.net
     
     <item>
       <title>git命令删除当前远程仓库依赖</title>
-      <link>http://jintianme.github.io/lewisjin/post/git%E5%91%BD%E4%BB%A4%E5%88%A0%E9%99%A4%E5%BD%93%E5%89%8D%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E4%BE%9D%E8%B5%96/</link>
+      <link>https://jintianme.github.io/post/git%E5%91%BD%E4%BB%A4%E5%88%A0%E9%99%A4%E5%BD%93%E5%89%8D%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E4%BE%9D%E8%B5%96/</link>
       <pubDate>Sun, 11 Dec 2016 21:51:12 +0000</pubDate>
       
-      <guid>http://jintianme.github.io/lewisjin/post/git%E5%91%BD%E4%BB%A4%E5%88%A0%E9%99%A4%E5%BD%93%E5%89%8D%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E4%BE%9D%E8%B5%96/</guid>
+      <guid>https://jintianme.github.io/post/git%E5%91%BD%E4%BB%A4%E5%88%A0%E9%99%A4%E5%BD%93%E5%89%8D%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E4%BE%9D%E8%B5%96/</guid>
       <description>
 
 &lt;p&gt;git命令简介
@@ -917,10 +917,10 @@ git push origin master
     
     <item>
       <title>Android开车第一弹-MaterialDesign设计规范</title>
-      <link>http://jintianme.github.io/lewisjin/post/Android%E5%BC%80%E8%BD%A6%E7%AC%AC%E4%B8%80%E5%BC%B9-MaterialDesign%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83/</link>
+      <link>https://jintianme.github.io/post/Android%E5%BC%80%E8%BD%A6%E7%AC%AC%E4%B8%80%E5%BC%B9-MaterialDesign%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83/</link>
       <pubDate>Sun, 04 Dec 2016 22:10:02 +0000</pubDate>
       
-      <guid>http://jintianme.github.io/lewisjin/post/Android%E5%BC%80%E8%BD%A6%E7%AC%AC%E4%B8%80%E5%BC%B9-MaterialDesign%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83/</guid>
+      <guid>https://jintianme.github.io/post/Android%E5%BC%80%E8%BD%A6%E7%AC%AC%E4%B8%80%E5%BC%B9-MaterialDesign%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83/</guid>
       <description>
 
 &lt;p&gt;本文是Android学的一个随笔
@@ -1083,10 +1083,10 @@ recyclerView.setAdapter(adapter);
     
     <item>
       <title>mxnet开车教程series1-mnist上手</title>
-      <link>http://jintianme.github.io/lewisjin/post/mxnet%E5%BC%80%E8%BD%A6%E6%95%99%E7%A8%8Bseries1-mnist%E4%B8%8A%E6%89%8B/</link>
+      <link>https://jintianme.github.io/post/mxnet%E5%BC%80%E8%BD%A6%E6%95%99%E7%A8%8Bseries1-mnist%E4%B8%8A%E6%89%8B/</link>
       <pubDate>Sat, 03 Dec 2016 21:50:54 +0000</pubDate>
       
-      <guid>http://jintianme.github.io/lewisjin/post/mxnet%E5%BC%80%E8%BD%A6%E6%95%99%E7%A8%8Bseries1-mnist%E4%B8%8A%E6%89%8B/</guid>
+      <guid>https://jintianme.github.io/post/mxnet%E5%BC%80%E8%BD%A6%E6%95%99%E7%A8%8Bseries1-mnist%E4%B8%8A%E6%89%8B/</guid>
       <description>
 
 &lt;p&gt;mxnet入门中文教程，让我们从mnist果蝇数据集开始开车
@@ -1213,10 +1213,10 @@ print(&#39;Classified as {0} with probability {1}&#39;.format(prob.argmax(), max
     
     <item>
       <title>Ubuntu下编译opencv并生成python链接库详细教程-吐血编译系列</title>
-      <link>http://jintianme.github.io/lewisjin/post/Ubuntu%E4%B8%8B%E7%BC%96%E8%AF%91opencv%E5%B9%B6%E7%94%9F%E6%88%90python%E9%93%BE%E6%8E%A5%E5%BA%93%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B-%E5%90%90%E8%A1%80%E7%BC%96%E8%AF%91%E7%B3%BB%E5%88%97/</link>
+      <link>https://jintianme.github.io/post/Ubuntu%E4%B8%8B%E7%BC%96%E8%AF%91opencv%E5%B9%B6%E7%94%9F%E6%88%90python%E9%93%BE%E6%8E%A5%E5%BA%93%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B-%E5%90%90%E8%A1%80%E7%BC%96%E8%AF%91%E7%B3%BB%E5%88%97/</link>
       <pubDate>Sat, 03 Dec 2016 10:20:47 +0000</pubDate>
       
-      <guid>http://jintianme.github.io/lewisjin/post/Ubuntu%E4%B8%8B%E7%BC%96%E8%AF%91opencv%E5%B9%B6%E7%94%9F%E6%88%90python%E9%93%BE%E6%8E%A5%E5%BA%93%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B-%E5%90%90%E8%A1%80%E7%BC%96%E8%AF%91%E7%B3%BB%E5%88%97/</guid>
+      <guid>https://jintianme.github.io/post/Ubuntu%E4%B8%8B%E7%BC%96%E8%AF%91opencv%E5%B9%B6%E7%94%9F%E6%88%90python%E9%93%BE%E6%8E%A5%E5%BA%93%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B-%E5%90%90%E8%A1%80%E7%BC%96%E8%AF%91%E7%B3%BB%E5%88%97/</guid>
       <description>
 
 &lt;p&gt;本文将解决的是opencv这个洪水猛兽，opencv功能强大，但是无论在ubuntu下还是在windows下编译都非常麻烦，本文将编译它，并生成python调用库。哥搞了好几天才搞定，shit！
@@ -1304,10 +1304,10 @@ OK，接着我们make&lt;/p&gt;
     
     <item>
       <title>Ubuntu大手术-更换home的挂载分区获取更大空间</title>
-      <link>http://jintianme.github.io/lewisjin/post/Ubuntu%E5%A4%A7%E6%89%8B%E6%9C%AF-%E6%9B%B4%E6%8D%A2home%E7%9A%84%E6%8C%82%E8%BD%BD%E5%88%86%E5%8C%BA%E8%8E%B7%E5%8F%96%E6%9B%B4%E5%A4%A7%E7%A9%BA%E9%97%B4/</link>
+      <link>https://jintianme.github.io/post/Ubuntu%E5%A4%A7%E6%89%8B%E6%9C%AF-%E6%9B%B4%E6%8D%A2home%E7%9A%84%E6%8C%82%E8%BD%BD%E5%88%86%E5%8C%BA%E8%8E%B7%E5%8F%96%E6%9B%B4%E5%A4%A7%E7%A9%BA%E9%97%B4/</link>
       <pubDate>Sat, 03 Dec 2016 09:48:43 +0000</pubDate>
       
-      <guid>http://jintianme.github.io/lewisjin/post/Ubuntu%E5%A4%A7%E6%89%8B%E6%9C%AF-%E6%9B%B4%E6%8D%A2home%E7%9A%84%E6%8C%82%E8%BD%BD%E5%88%86%E5%8C%BA%E8%8E%B7%E5%8F%96%E6%9B%B4%E5%A4%A7%E7%A9%BA%E9%97%B4/</guid>
+      <guid>https://jintianme.github.io/post/Ubuntu%E5%A4%A7%E6%89%8B%E6%9C%AF-%E6%9B%B4%E6%8D%A2home%E7%9A%84%E6%8C%82%E8%BD%BD%E5%88%86%E5%8C%BA%E8%8E%B7%E5%8F%96%E6%9B%B4%E5%A4%A7%E7%A9%BA%E9%97%B4/</guid>
       <description>
 
 &lt;p&gt;Ubuntu系统安装时由于年少无知瞎几把设置分区，结果最后导致空间不够用，不过不用担心，本教程教你如何在不装系统的情况之下对分区进行修改
@@ -1399,10 +1399,10 @@ UUID=YOURUUID   /home    ext4          defaults       0       2
     
     <item>
       <title>Ubuntu下设置AndroidStudio的启动快捷方式</title>
-      <link>http://jintianme.github.io/lewisjin/post/Ubuntu%E4%B8%8B%E8%AE%BE%E7%BD%AEAndroidStudio%E7%9A%84%E5%90%AF%E5%8A%A8%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/</link>
+      <link>https://jintianme.github.io/post/Ubuntu%E4%B8%8B%E8%AE%BE%E7%BD%AEAndroidStudio%E7%9A%84%E5%90%AF%E5%8A%A8%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/</link>
       <pubDate>Fri, 02 Dec 2016 20:52:03 +0000</pubDate>
       
-      <guid>http://jintianme.github.io/lewisjin/post/Ubuntu%E4%B8%8B%E8%AE%BE%E7%BD%AEAndroidStudio%E7%9A%84%E5%90%AF%E5%8A%A8%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/</guid>
+      <guid>https://jintianme.github.io/post/Ubuntu%E4%B8%8B%E8%AE%BE%E7%BD%AEAndroidStudio%E7%9A%84%E5%90%AF%E5%8A%A8%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/</guid>
       <description>
 
 &lt;p&gt;Ubuntu下设置AndroidStudio的快捷方式
