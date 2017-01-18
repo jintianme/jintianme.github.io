@@ -3,16 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hexo如何在两台电脑上更新博客</title>
+<title>hugo a new blog</title>
 <meta name="description" content="Jin Tian&#39;s blog about everything, artifical intelligence, Android, Web, iOS, you name it..">
 <meta name="generator" content="Hugo 0.18.1" />
-<meta property="og:title" content="Hexo如何在两台电脑上更新博客" />
-<meta property="og:description" content="本文介绍如何用了两台电脑进行博客的更新和配置，这样你就可以在两台电脑上更新自己的博客啦！想一想就很激动啊有没有，先来演示一下，其实本人这个博客和我另外一个博客是同步更新的:jinfagang.coding.me 欢迎大家去踩踩 两台电脑配置hexo 首先废话不多说，你需要准备两台电脑，相信各位土豪都能做到。接下来你需要两个账号，什么？两个账号？我只想更新一个账号怎么办？没有关系不要慌张，我这个教程教授大家的是使用两个账号开两个博客，但是更新的内容是一样的，这样其实也没有什么不好，你以后甚至可以用两个博客展示两面的你呢。" />
+<meta property="og:title" content="hugo a new blog" />
+<meta property="og:description" content="this post is something about blog migration from hexo to hugo, it the same thing, but you know, I&rsquo;d like search new things all the time.
+ Usage of hugo hugo is more complicated then hexo, I think, but it&rsquo;s more flexable however. Here is the general step of using hugo: * start a site first * start a post * select a theme * generate public files * push it on github" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://jintianme.github.io/post/Hexo%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%A4%E5%8F%B0%E7%94%B5%E8%84%91%E4%B8%8A%E6%9B%B4%E6%96%B0%E5%8D%9A%E5%AE%A2/" />
+<meta property="og:url" content="http://jintianme.github.io/post/hugo-a-new-blog/" />
 
 
-<meta property="og:updated_time" content="2016-11-29T21:15:10&#43;00:00"/>
+<meta property="og:updated_time" content="2017-01-18T22:59:15&#43;08:00"/>
 
 
 
@@ -64,33 +65,99 @@
 <div class="main-content mr-content" role="main" itemprop="mainContentOfPage">
 	<article class="post">
 		<header class="entry-header clearfix">
-			<h1 class="entry-title">Hexo如何在两台电脑上更新博客</h1>
+			<h1 class="entry-title">hugo a new blog</h1>
 			<p class="mr-meta entry-meta">
 				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="entry-meta-date updated" datetime="2016-11-29 21:15:10 &#43;0000 UTC">November 29, 2016</time>
+				<time class="entry-meta-date updated" datetime="2017-01-18 22:59:15 &#43;0800 CST">January 18, 2017</time>
+				<span class="entry-meta-categories">
+					<svg class="icon icon-category" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+					<a class="meta-categories" href="/categories/" rel="category"></a></span>
 			</p>
 		</header>
 		<div class="entry-content clearfix">
 			
-			<figure class="entry-thumbnail">
-				<img src="http://p4.gexing.com/G1/M00/E4/0E/rBABFFHmnGjw4Pu5AACD3CzIO6I672.jpg" alt="Hexo如何在两台电脑上更新博客">
-			</figure>
-			
 			
 
-<p>本文介绍如何用了两台电脑进行博客的更新和配置，这样你就可以在两台电脑上更新自己的博客啦！想一想就很激动啊有没有，先来演示一下，其实本人这个博客和我另外一个博客是同步更新的:jinfagang.coding.me 欢迎大家去踩踩
-<!-- more --></p>
+<blockquote>
+<p>this post is something about blog migration from hexo to hugo, it the same thing, but you know, I&rsquo;d like search new things all the time.</p>
+</blockquote>
 
-<h3 id="两台电脑配置hexo">两台电脑配置hexo</h3>
+<h3 id="usage-of-hugo">Usage of hugo</h3>
 
-<p>首先废话不多说，你需要准备两台电脑，相信各位土豪都能做到。接下来你需要两个账号，什么？两个账号？我只想更新一个账号怎么办？没有关系不要慌张，我这个教程教授大家的是使用两个账号开两个博客，但是更新的内容是一样的，这样其实也没有什么不好，你以后甚至可以用两个博客展示两面的你呢。</p>
+<p>hugo is more complicated then hexo, I think, but it&rsquo;s more flexable however. Here is the general step of using hugo:
+* start a site first
+* start a post
+* select a theme
+* generate public files
+* push it on github</p>
+
+<p>Ok, I am going write down those step one by one.
+For start a site, you gonna install hugo first, if you are using mac, you can install by brew:</p>
+
+<pre><code>brew install hugo
+</code></pre>
+
+<p>Then you can use <code>hugo</code> commond start a site:</p>
+
+<pre><code>hugo new site ~/Documents/myblog
+</code></pre>
+
+<p>And then, you can start a post for test:</p>
+
+<pre><code>hugo new post/my-first-post-on-hugo.md
+</code></pre>
+
+<p>ok, then you have to clone a theme on github,</p>
+
+<pre><code>cd themes
+git clone https://github.com/pdevty/material-design
+</code></pre>
+
+<p>then you just get a material-design theme in your themes folder.</p>
+
+<pre><code>cd ..
+hugo server --theme=material-design buildDrafts
+</code></pre>
+
+<p>you can see your blog on browser on <code>127.0.0.1:1313</code>,
+<img src="https://raw.githubusercontent.com/pdevty/material-design/master/images/tn.png" alt="sample blog" />
+All right, you must remember this:</p>
+
+<pre><code>hugo --theme=material-design --baseUrl=&quot;http://yourpage.github.io/&quot;
+</code></pre>
+
+<p>above commod is using generate static files of your site. then:</p>
+
+<pre><code>cd public
+git init
+git add .
+git commit -a -m &quot;init commit&quot;
+git remote add origin http://github.com/yourpage/yourpage.github.io.git
+git push -u origin master
+</code></pre>
+
+<p>And of course you can see your blog on <code>http://yourpage.github.io</code></p>
+
+<h3 id="some-notes">Some Notes</h3>
+
+<ul>
+<li><p><strong>You must set baseUrl in your config.atoml file</strong>
+If you don&rsquo;t, you may not see your site properly, it maybe have no css style!</p></li>
+
+<li><p><strong>That&rsquo;s All</strong>
+Enjoy your new hugo blog!</p></li>
+</ul>
 
 		</div>
 		
 <div class="entry-tags clearfix">
 	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
 	<ul>
+		<li><a href="/tags//" rel="tag"></a></li>
+		<li><a href="/tags//" rel="tag"></a></li>
 		
+	</ul>
+</div>
 	</article>
 	
 <div class="mr-author-box clearfix">
@@ -109,13 +176,9 @@
 
 	<nav class="mr-post-nav mr-row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 		
-		<div class="mr-col-1-2 mr-post-nav-item mr-post-nav-prev">
-			<a href="http://jintianme.github.io/post/Mac-mysql-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E4%BB%A5%E5%8F%8A%E5%BF%98%E8%AE%B0%E5%88%9D%E5%A7%8B%E5%AF%86%E7%A0%81%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" rel="prev"><span>«Previous</span><p>Mac mysql 安装配置以及忘记初始密码的解决方法</p></a>
-		</div>
-		
 		
 		<div class="mr-col-1-2 mr-post-nav-item mr-post-nav-next">
-			<a href="http://jintianme.github.io/post/JavaWeb-%E6%90%AD%E5%BB%BA%E7%8E%AF%E5%A2%83%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%88%B0%E5%90%8E%E5%8F%B0%E5%B9%B6%E5%AD%98%E5%82%A8/" rel="next"><span>Next»</span><p>JavaWeb-搭建环境上传图片到后台并存储</p></a>
+			<a href="http://jintianme.github.io/post/Django-3-%E5%88%86%E5%88%86%E9%92%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AARESTful-API/" rel="next"><span>Next»</span><p>Django 3 分分钟搭建一个RESTful API</p></a>
 		</div>
 		
 	</nav>
@@ -126,9 +189,9 @@
 	<div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'spf13';
-    var disqus_identifier = 'http:\/\/jintianme.github.io\/post\/Hexo%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%A4%E5%8F%B0%E7%94%B5%E8%84%91%E4%B8%8A%E6%9B%B4%E6%96%B0%E5%8D%9A%E5%AE%A2\/';
-    var disqus_title = 'Hexo如何在两台电脑上更新博客';
-    var disqus_url = 'http:\/\/jintianme.github.io\/post\/Hexo%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%A4%E5%8F%B0%E7%94%B5%E8%84%91%E4%B8%8A%E6%9B%B4%E6%96%B0%E5%8D%9A%E5%AE%A2\/';
+    var disqus_identifier = 'http:\/\/jintianme.github.io\/post\/hugo-a-new-blog\/';
+    var disqus_title = 'hugo a new blog';
+    var disqus_url = 'http:\/\/jintianme.github.io\/post\/hugo-a-new-blog\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
